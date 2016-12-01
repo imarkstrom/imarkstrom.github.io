@@ -1,0 +1,23 @@
+body {
+  padding-top: 50px;
+  background-color:black;
+  color:#a0a0a0;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+video#backgroundvideo{
+	gposition: relative;
+	g/*top: 50%;
+	gleft: 50%;*/
+	g/*min-width: 100%;*/
+	g/*min-height: 100%;*/
+	gwidth: 101%;
+	gheight: 101%;
+	g/*height: auto;*/
+	gz-index: -1;
+	g/*transform: translateX(-50%) translateY(-50%);*/
+	g/*background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;*/
+}
