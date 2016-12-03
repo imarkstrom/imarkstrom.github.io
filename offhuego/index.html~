@@ -37,7 +37,7 @@
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="#">Home</a></li>
 					<li><a href="#about">About</a></li>
-					<li><a href="#contact">Contact</a></li>
+					<li><a href="#devteam">Contact</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
@@ -104,7 +104,7 @@
 			</div>
 
 			<div class="row infobox">
-				<div class="col-md-8 col-md-offset-2">
+				<div class="col-md-8 col-md-offset-2" id="devteam">
 					<h1>The Developement Team</h1>	
 				</div>
 			</div>
