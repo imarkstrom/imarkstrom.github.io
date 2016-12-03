@@ -3,21 +3,70 @@ body {
   background-color:black;
   color:#a0a0a0;
 }
+
+.gameinformation{
+	width: 90%;
+	margin:auto;
+	font-size: 20px;
+/*	border-style:solid;
+	border-color: #303030;
+	border: 0px 15px 0px 15px;
+*/
+}
+
+
+.infobox{
+	border-color: #303030;
+	padding-top: 100px;
+}
+
+
+h1{
+	font-size: 70px;
+} 
+
 .starter-template {
   padding: 40px 15px;
   text-align: center;
 }
 
-video#backgroundvideo{
-	gposition: relative;
-	g/*top: 50%;
-	gleft: 50%;*/
-	g/*min-width: 100%;*/
-	g/*min-height: 100%;*/
-	gwidth: 101%;
-	gheight: 101%;
-	g/*height: auto;*/
-	gz-index: -1;
-	g/*transform: translateX(-50%) translateY(-50%);*/
-	g/*background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;*/
+img .hue_smallpic{
 }
+
+video#backgroundvideo{
+	position: relative;
+	/*top: 50%;
+	left: 50%;*/
+	/*min-width: 100%;*/
+	/*min-height: 100%;*/
+	width: 100%;
+/*	height: 100%; */
+	/*height: auto;*/
+	z-index: -1;
+	/*transform: translateX(-50%) translateY(-50%);*/
+	/*background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;*/
+}
+
+
+.dev_team_member{
+
+}
+
+.dev_team_members_row{
+	padding: 100px 0px 100px 0px;
+}
+
+.blurred_edges{
+	-moz-box-shadow:0px 0px 7px #000000;
+	-webkit-box-shadow:0px 0px 7px #000000;
+	box-shadow:0px 0px 7px #000000;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px; 
+}
+
+
+.person{
+
+}
+.
