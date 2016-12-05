@@ -71,8 +71,8 @@ video#backgroundvideo{
 	-webkit-border-radius: 12px;
 	-moz-border-radius: 12px;
 	border-radius: 12px; 
-	width:70%;
-	margin:auto;
+	/*width:70%;
+	margin:auto;*/
 }
 
 
@@ -81,7 +81,7 @@ video#backgroundvideo{
 }
 
 
-
+/*
 .image-ingemar {
     background-image: url('images/facebook_profile.jpg');
     background-size:10vw 10vw;
@@ -137,3 +137,4 @@ video#backgroundvideo{
     box-shadow: 0 0 12px 12px black inset;
     margin:auto;
 }
+*/
