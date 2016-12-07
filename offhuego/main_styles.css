@@ -1,7 +1,13 @@
 body {
   padding-top: 48px;
   background-color:black;
-  color:#a0a0a0;
+  background-image: url("images/DayLightLandscape.PNG");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+
+  color: #a0a0a0;
   width: 70vw;
   margin: auto;
   border-color:#404040;
@@ -10,20 +16,35 @@ body {
   border-right-width: 6px;
 }
 
+.mainContainer {
+	background-color: black;
+}
+
 .gameinformation{
 	width: 90%;
 	margin:auto;
 	font-size: 20px;
-/*	border-style:solid;
-	border-color: #303030;
-	border: 0px 15px 0px 15px;
-*/
 }
 
 
-.infobox{
-	border-color: #303030;
+.infobox_header{
+	padding-bottom:20px;
 	padding-top: 100px;
+	background-color:black;	
+}
+
+.infobox{
+	padding-bottom: 40px;
+	border-color: #303030;
+	padding-top: 20px;
+	background-color:black;
+}
+
+
+hr {
+	width: 60%;
+	height: 3px;
+	background: #101010;
 }
 
 
@@ -41,16 +62,10 @@ img .hue_smallpic{
 
 video#backgroundvideo{
 	position: relative;
-	/*top: 50%;
-	left: 50%;*/
-	/*min-width: 100%;*/
-	/*min-height: 100%;*/
 	width: 100%;
-/*	height: 100%; */
-	/*height: auto;*/
-	z-index: -1;
-	/*transform: translateX(-50%) translateY(-50%);*/
-	/*background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;*/
+	z-index: 1;
+	border-color: #404040;
+	border-right-width:6px;
 }
 
 .video_image_logo{
@@ -58,6 +73,7 @@ video#backgroundvideo{
 	width: 70%;
 	padding-left:20%;
 	padding-top:23%;
+	z-index:2;
 }
 
 .dev_team_member{
