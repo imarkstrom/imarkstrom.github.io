@@ -16,6 +16,8 @@ body {
   border-right-width: 6px;
 }
 
+
+
 .mainContainer {
 	background-color: black;
 }
@@ -26,6 +28,9 @@ body {
 	font-size: 18px;
 }
 
+#logoLogo{
+	max-width: 300px;
+}
 
 .infobox_header{
 	padding-bottom:20px;
