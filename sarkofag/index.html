@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<meta name="description" content="">
-	<meta name="author" content="">
+	<meta name="author" content="Ingemar Markström">
 	<link rel="icon" href="images/favicon.png">
 
 	<title>sARkofag</title>
@@ -31,7 +31,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				
+
 				<a class="navbar-brand" href="#">sARkofag</a>
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
@@ -45,46 +45,216 @@
 	</nav>
 
 	<div class="mainContainer" id="home">
-		<!-- <div class="fullscreen-bg">
-			<img class="video_image_logo" src="images/logo1.png">
-			<video loop muted autoplay poster="images/gameplayVid.mp4" id="backgroundvideo">
-				<source src="images/gameplayVid.mp4" type="video/mp4">
-			</video>
-
-		</div>
-		-->
 
 		<div class="container starter-template gameinformation">
 			<div class="row infobox_header" id="about">
-				<div class="col-md-8 col-md-offset-2">	
-					<h1>sARkofag</h1>
+				<div class="col-sm-8 col-sm-offset-2">
+					<img class="img-responsive" src="images/sarkologo.png" />
+				</div>
+			</div>
+			<div class="row infobox" id="about">
+				<div class="col-sm-8 col-sm-offset-2">
+					<p>
+						This is a project in the Advanced graphics and interaction <a href="https://www.kth.se/student/kurser/kurs/DH2413">course</a> in the <a href="">VIC Studio</a> at <a href="http://www.kth.se/">KTH</a>.
+					</p>
 				</div>
 			</div>
 			<hr>
-			
-			<div class="row infobox_header" id="about">
-				<div class="col-md-8 col-md-offset-2">	
-					<h1><a href="app/sARkofag.apk"  download > Download the Android App!</a></h1>
+			<div class="row infobox">
+				<div class="col-sm-12 gallery_image_row">
+					<img class="img-responsive blurred_edges gallery_image" src="images/s3.jpg">
 				</div>
 			</div>
 			<div class="row infobox_header" id="about">
-				<div class="col-md-8 col-md-offset-2">	
-					<p> This is a project in the Advanced graphics and interactinos course at KTH. More to follow here later when this page actually contains something.
+				<div class="col-sm-8 col-sm-offset-2">
+
+					<h1>Try it out!</h1>
+					<p>
+						Print this picture and put it on a box: <a href="images/mummytop.jpg" download>Tracker image</a>
+					</p>
+					<p>
+						Get and run the Android App: <a href="app/sARkofag.apk"  download > Download </a></h1>
+					</p>
+					<p>
+						When the app is running, use the camera to locate the tracker image. A looking glass should come visible when moving closer to the tracked image. The slider on the side changes what layer is visible of the mummy. The green button takes away the looking glass, and when moving really close you now cut through the mummy and can see through the sub layers.
+					</p>
 				</div>
 			</div>
-			
-			<div class="row infobox">	
-				<div class="col-md-12">
+			<div class="row infobox_header" id="about">
+				<div class="col-sm-8 col-sm-offset-2">
+				</div>
+			</div>
+			<hr/>
+			<div class="row infobox_header">
+				<div class="col-sm-8 col-sm-offset-2" id="devteam">
+					<h1>The Team members with interaction {I} and graphics {G} contributions</h1>
+				</div>
+			</div>
+			<div class="row infobox dev_team">
+				<div class="col-sm-4 dev_team_member">
+					<img src="images/4.png" class="img-responsive img_filter">
+					<div class="person">
+						Adrian Häggvik<br>
+						<a href="mailto:haggvik@kth.se?Subject=Regarding OffHueGo!">Mail</a> <br>
+						<a href="https://www.linkedin.com/in/adrian-häggvik-568871118" target="_blank">Facebook</a>
+						<hr />
+						<p>Personal contribution:</p>
+						<p>
+							AR interface with button for slicing on/off and the slider for switching viewable mummy layers {G}{I}, and modeling of the coins fitted to the mummy {G}.
+						</p>
+					</div>
+				</div>
+
+				<div class="col-sm-4 dev_team_member ">
+					<img src="images/5.png" class="img-responsive img_filter">
+					<div class="person">
+						Ingemar Markström<br>
+						<a href="mailto:ingemarmg@kth.se?Subject=Regarding OffHueGo!">Mail</a> <br>
+						<a href="https://www.linkedin.com/in/ingemar-markstr%C3%B6m-270020107" target="_blank">Linkedin</a>
+						<hr />
+						<p>Personal contribution:</p>
+						<p>
+							Shaders for modifying the Z-buffer and carving into the sarcophagus {I}{G}. Modeled the looking glass and created the particle system around it {G}. Looking glass size {G}{I}.
+						</p>
+					</div>
+				</div>
+
+				<div class="col-sm-4 dev_team_member">
+					<img src="images/3.png" class="img-responsive img_filter">
+					<div class="person">
+						Erik Markström<br>
+						<a href="mailto:erimar@kth.se?Subject=Regarding OffHueGo!">Mail</a> <br>
+						<a href="https://se.linkedin.com/in/erik-markström-66077aa8" target="_blank">Linkedin</a>
+						<hr />
+						<p>Personal contribution:</p>
+						<p>
+							3D model material construction {G}, Multi target tracker construction {I} (With Rasmus E) and poster graphics design.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="row infobox dev_team">
+				<div class="col-sm-4  dev_team_member">
+					<img src="images/1.png" class="img-responsive img_filter ">
+					<div class="person">
+						Eric Blomgren<br>
+						<a href="mailto:erikbl@kth.se?Subject=Regarding OffHueGo!">Mail</a> <br>
+						<a href="" target="_blank">Linkedin</a>
+						<hr />
+						<p>Personal contribution:</p>
+						<p>
+							Modeling {G} (with Rasmus E) and study visit to the museum.
+						</p>
+					</div>
+				</div>
+				<div class="col-sm-4 dev_team_member">
+					<img src="images/2.png" class="img-responsive img_filter">
+					<div class="person">
+						Rasmus Elmgren<br>
+						<a href="mailto:relmgren@kth.se?Subject=Regarding OffHueGo!">Mail</a> <br>
+						<a href="" target="_blank">Linkedin</a>
+						<hr />
+						<p>Personal contribution:</p>
+						<p>
+							Proof of concept and first demo {I}, Multi target tracker construction {I} (with Erik M) and Modeling {G} (with Eric B).
+						</p>
+					</div>
+				</div>
+				<div class="col-sm-4 dev_team_member">
+					<img src="images/6.png" class="img-responsive img_filter">
+					<div class="person">
+						Ewoud van der Heide <br>
+						<a href="mailto:ewoud@kth.se?Subject=Regarding OffHueGo!">Mail</a> <br>
+						<a href="" target="_blank">Linkedin</a>
+						<hr />
+						<p>Personal contribution:</p>
+						<p>
+							Translucency shader for the mummy.
+						</p>
+					</div>
+				</div>
+				<div class="clearfix visible-md-block"></div>
+			</div>
+
+			<hr>
+
+			<div class="row infobox_header">
+				<div class="col-sm-12">
+					<h1>Goal and motivation of the project</h1>
+				</div>
+			</div>
+			<div class="row infobox">
+				<div class="col-sm-12">
+					We wanted to experiment with modifying the percieved reality when exploring objects that are not fully accessible, and we choose to create the equivalent of "See but not touch, level 2". 
+				</div>
+			</div>
+
+			<hr />
+
+			<div class="row infobox_header">
+				<div class="col-sm-12">
+					<h1>How does it work?</h1>
+				</div>
+			</div>
+			<div class="row infobox">
+				<div class="col-sm-12">
+					<h3> Technology </h3>
+					The project was built using the game engine <a href="https://unity3d.com/">Unity3D</a> in combination with <a href="https://www.vuforia.com/">Vuforia</a>, which is a framework for image and tracker recognition. Our sarcophagus is (of course) made from an IKEA paper box. The phones used when displaying the project at the VIC Open House were sent to us and supplied by Sony.
+					
+					<h3> Graphics </h3>
+					The vuforia framework supplies the image recognition, and at the same time an easy set up of the camera in the scene. Then, with these simple (but twitchy to implement smoothly) steps below we achieve the X-ray effect. This is the same principle as when rendering boats in the sea (where the sea should not be rendered inside of the boat hull), or by other means modifying large vertices without actually cutting and slicing meshes in real time, which could be extremely slow to calculate. It all comes down to some clever modification of the Z-buffer (how close the nearest item is per pixel) and in what order all items in the scene are drawn. 
+					
+					<ul class="list-group">
+						<li class="list-group-item">1: Move the video screen layer close to the camera view port, and render it to both the color and the Z-buffer.</li>
+						<li class="list-group-item">2: Render a sphere only to the Z-buffer far away in the distance, with its' size relative to the distance to the camera and the position of the sarcophagus. Because the sphere is rendered only to the Z-buffer and not to the color buffer, this "punches a possible hole" in the already rendered video layer, where we get a hole to peek through (render new things behind it). </li>
+						<li class="list-group-item">3: Render the slider bar and green/red button that make up the user interface controls, not caring about the Z-buffer. These will therefore be rendered over the videolayer.</li>
+						<li class="list-group-item">4: Render the inside of the sarcophagus (a box with normals inverted) and the mummy, Because we check the Z-buffer, we will render new information only where the mummy and the box is closer to the camera than what is already in the Z-buffer. Thanks to the "invisible sphere" rendered far away in the distant in the first step, anything rendered inside of this circle will be visible in the looking glass.</li>
+						<li class="list-group-item">5: Render the looking glass, and some particles to give a more pleasing user experience.</li>
+					</ul>	
+					
+				</div>
+			</div>
+
+			<hr />
+
+
+			<!--
+			<div class="row infobox">
+
+				<div class="col-sm-12">
 					<img class="img-responsive" src="images/sarkofag.png">
 				</div>
 			</div>
-		</div>
-	</div>
+			-->
+			<div class="row infobox_header image-gallery">
+				<h1>Image Gallery</h1>
+			</div>
+			<div class="col-sm-12 gallery_image_row">
+				<img class="img-responsive blurred_edges gallery_image" src="images/s1.jpg">
+			</div>
 
-		<!-- Bootstrap core JavaScript
-		================================================== -->
-		<!-- Placed at the end of the document so the pages load faster -->
+			<div class="col-sm-12 gallery_image_row">
+				<img class="img-responsive blurred_edges gallery_image" src="images/s2.jpg">
+			</div>
+			<div class="col-sm-12 gallery_image_row">
+				<img class="img-responsive blurred_edges gallery_image" src="images/s4.png">
+			</div>
+<!--			<div class="col-sm-12 gallery_image_row">
+				<img class="img-responsive blurred_edges gallery_image" src="images/sarkofag.png">
+			</div> -->
+			<div class="col-sm-12 gallery_image_row">
+				<img class="img-responsive blurred_edges gallery_image" src="images/erikposter.jpg">
+			</div>
+
+			<div class="row infobox_header">
+				<div class="col-sm-12" >
+					<p>2016 © Ingemar Markström</p>
+				</div>
+			</div>
+
+		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	</div>
 
 
 </body>
