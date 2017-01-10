@@ -1,24 +1,26 @@
 body {
-  padding-top: 48px;
-  background-color:black;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
+	padding-top: 48px;
+	background-color:black;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
 
-  color: #a0a0a0;
-  width: 80vw;
-  margin: auto;
-  border-color:#404040;
-  border-style:solid;
-  border-left-width: 6px;
-  border-right-width: 6px;
+	color: #a0a0a0;
+	width: 80vw;
+	margin: auto;
+	border-color:#404040;
+	border-style:solid;
+	border-left-width: 6px;
+	border-right-width: 6px;
 }
 
 a{
   color: #a0a0c0;
 }
-
+p{
+	text-align: justify;
+}
 .list-group{
 	padding-top:40px;
 }
@@ -64,16 +66,22 @@ a{
 
 h1{
 	font-size: 40px;
+	text-align: center;
 }
 
 h2{
 	font-size: 30px;
+	text-align: center;
+}
+t3{
+
+	text-align: center;
 }
 
 
 .starter-template {
+	text-align: center;
   padding: 40px 1px;
-  text-align: center;
 }
 
 img .hue_smallpic{
