@@ -50,7 +50,7 @@
 		
 		<div class="container starter-template gameinformation">
 			<div class="row menurow">
-				<div class="col-sm-6 menuitem" id="homeselector">sARkofag</div> 
+				<div class="col-sm-6 menuitem" id="homeselector">About</div> 
 				<div class="col-sm-6 menuitem" id="makingofselector">Making Of</div> 
 			</div>	
 			
@@ -83,6 +83,7 @@
 			
 				<hr />
 				-->
+
 				<div class="row infobox">
 					<div class="col-sm-12 gallery_image_row">
 						<img class="img-responsive blurred_edges gallery_image" src="images/s3.jpg">
@@ -103,10 +104,76 @@
 						</p>
 					</div>
 				</div>
-				<div class="row infobox_header" >
-					<div class="col-sm-8 col-sm-offset-2">
+
+				<hr />
+				
+				<div class="row infobox_header">
+					<div class="col-sm-12">
+						<h1>Goal and motivation of the project</h1>
 					</div>
 				</div>
+				<div class="row infobox">
+					<div class="col-sm-12">
+						<p>
+							We wanted to experiment with modifying the percieved reality when exploring objects that are not fully accessible, and we choose to create the equivalent of "See but not touch, level 2". Using the app, you get the possibility to take a closer look at a modifyed reality through the camera of a phone in real time. One of the many interests of making sARkofag was the visualization of learning aspect, where the app can be used for educational purposes, for examples in museums. 
+						</p>
+						<p>
+						The application consists of two parst: The tracker box and the program run on an Android phone. The box is used as the tracker and the phone is our AR looking glass with extended X-Ray vision which is used when exploring what is inside the box. </p> 
+						<p>
+							Now, go <a href="#about">try it out!</a>
+						</p>
+					</div>
+				</div>
+
+				<hr />
+
+				<div class="row infobox_header" id="technology">
+					<div class="col-sm-12">
+						<h1>Technology</h1>
+					</div>
+				</div>
+				<div class="row infobox">
+					<div class="col-sm-12">
+						The project was built using the game engine <a href="https://unity3d.com/">Unity3D</a> in combination with <a href="https://www.vuforia.com/">Vuforia</a>, which is a framework for image and tracker recognition. Our sarcophagus is (of course) made from an IKEA paper box. The phones used when displaying the project at the VIC Open House were sent to us and supplied by Sony.
+						
+						<h3> Graphics and Interaction </h3>
+						<p>
+							The Vuforia framework supplies the image recognition, and at the same time an easy set up of the camera in the scene. Then, with these simple (but twitchy to implement smoothly) steps below we achieve the X-ray effect. This is the same principle as when rendering boats in the sea (where the sea should not be rendered inside of the boat hull), or by other means modifying large vertices without actually cutting and slicing meshes in real time, which could be extremely slow to calculate. It all comes down to some clever modification of the Z-buffer (how close the nearest item is per pixel) and in what order all items in the scene are drawn.</p>
+						<h2>Challenges and Obstacles</h2>
+						<h3>General graphics</h3>
+						<p>	
+							Difficulties was, among a few expected beginner first use errors with Vuforia, obviously getting the looking glass depth buffer modifications to become stable. Getting the size matching of the real world sarcophagus and the rendered image in the app to match up was critical, because the app should enhance the content of the viewport. Aspect ratios prooved really important, and before it really matched up the app felt really bad to use, but as soon as the sizes was right, all those user badness resolved.
+						</p>
+						<h3>Interaction</h3>
+						<p>
+							We discussed where to put the button and slider in the user interface, and we tried idea where the UI gives the impression that the button and slider is located on the table next to the sarcophagus. This involved some more quite unintuitive graphic hacking, and some confusion to which way to solve it led us to a couple of different solutions. On the positive side, we learned more graphics.
+						</p>
+						<h3>Collaboration in Unity</h3>
+						<p>
+							Using GIT with the right configurations from the start really helps, and we did most of the decide-once-then-follow decisions at the beginning of the build, and actually followed our set of rules. But, regardless of this, binaries in Unity works quite bad, and the (now) built in feature of Unity Collaboration did not work out, so we dropped it for this short project.
+						</p>
+
+						<hr/>
+						<h2>How does it work?</h2>
+						<ul class="list-group">
+							<li class="list-group-item">1: Move the video screen layer close to the camera view port, and render it to both the color and the Z-buffer.</li>
+							<li class="list-group-item">2: Render a sphere only to the Z-buffer far away in the distance, with its' size relative to the distance to the camera and the position of the sarcophagus. Because the sphere is rendered only to the Z-buffer and not to the color buffer, this "punches a possible hole" in the already rendered video layer, where we get a hole to peek through (render new things behind it). </li>
+							<li class="list-group-item">3: Render the slider bar and green/red button that make up the user interface controls, not caring about the Z-buffer. These will therefore be rendered over the videolayer.</li>
+							<li class="list-group-item">4: Render the inside of the sarcophagus (a box with normals inverted) and the mummy, Because we check the Z-buffer, we will render new information only where the mummy and the box is closer to the camera than what is already in the Z-buffer. Thanks to the "invisible sphere" rendered far away in the distant in the first step, anything rendered inside of this circle will be visible in the looking glass.</li>
+							<li class="list-group-item">5: Render the looking glass, and some particles to give a more pleasing user experience.</li>
+						</ul>	
+						
+					</div>
+				</div>
+
+				<hr />
+
+				<div class="row infobox_header image-gallery" id="pictures">
+					<h1 class="col-sm-12">Instructions and demonstration video</h1>
+				</div>
+
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/7e2hFzeNKKQ" frameborder="0" allowfullscreen></iframe>
+				
 				<hr/ id="devteam">
 				<div class="row infobox_header">
 					<div class="col-sm-8 col-sm-offset-2" >
@@ -197,73 +264,7 @@
 
 				<hr>
 
-				<div class="row infobox_header">
-					<div class="col-sm-12">
-						<h1>Goal and motivation of the project</h1>
-					</div>
-				</div>
-				<div class="row infobox">
-					<div class="col-sm-12">
-						<p>
-							We wanted to experiment with modifying the percieved reality when exploring objects that are not fully accessible, and we choose to create the equivalent of "See but not touch, level 2". Using the app, you get the possibility to take a closer look at a modifyed reality through the camera of a phone in real time. One of the many interests of making sARkofag was the visualization of learning aspect, where the app can be used for educational purposes, for examples in museums. 
-						</p>
-						<p>
-							The application consists of two parst: The tracker box and the program run on an Android phone. The box is used as the tracker and the phone is our AR looking glass with extended X-Ray vision which is used when exploring what is inside the box. Now, go <a href="#about">try it out!</a>
-						</p>
-					</div>
-				</div>
-
-				<hr />
-
-				<div class="row infobox_header" id="technology">
-					<div class="col-sm-12">
-						<h1>Technology</h1>
-					</div>
-				</div>
-				<div class="row infobox">
-					<div class="col-sm-12">
-						The project was built using the game engine <a href="https://unity3d.com/">Unity3D</a> in combination with <a href="https://www.vuforia.com/">Vuforia</a>, which is a framework for image and tracker recognition. Our sarcophagus is (of course) made from an IKEA paper box. The phones used when displaying the project at the VIC Open House were sent to us and supplied by Sony.
-						
-						<h3> Graphics and Interaction </h3>
-						<p>
-							The Vuforia framework supplies the image recognition, and at the same time an easy set up of the camera in the scene. Then, with these simple (but twitchy to implement smoothly) steps below we achieve the X-ray effect. This is the same principle as when rendering boats in the sea (where the sea should not be rendered inside of the boat hull), or by other means modifying large vertices without actually cutting and slicing meshes in real time, which could be extremely slow to calculate. It all comes down to some clever modification of the Z-buffer (how close the nearest item is per pixel) and in what order all items in the scene are drawn.</p>
-						<h2>Challenges and Obstacles</h2>
-						<h3>General graphics</h3>
-						<p>	
-							Difficulties was, among a few expected beginner first use errors with Vuforia, obviously getting the looking glass depth buffer modifications to become stable. Getting the size matching of the real world sarcophagus and the rendered image in the app to match up was critical, because the app should enhance the content of the viewport. Aspect ratios prooved really important, and before it really matched up the app felt really bad to use, but as soon as the sizes was right, all those user badness resolved.
-						</p>
-						<h3>Interaction</h3>
-						<p>
-							We discussed where to put the button and slider in the user interface, and we tried idea where the UI gives the impression that the button and slider is located on the table next to the sarcophagus. This involved some more quite unintuitive graphic hacking, and some confusion to which way to solve it led us to a couple of different solutions. On the positive side, we learned more graphics.
-						</p>
-						<h3>Collaboration in Unity</h3>
-						<p>
-							Using GIT with the right configurations from the start really helps, and we did most of the decide-once-then-follow decisions at the beginning of the build, and actually followed our set of rules. But, regardless of this, binaries in Unity works quite bad, and the (now) built in feature of Unity Collaboration did not work out, so we dropped it for this short project.
-						</p>
-
-						<hr/>
-						<h2>How does it work?</h2>
-						<ul class="list-group">
-							<li class="list-group-item">1: Move the video screen layer close to the camera view port, and render it to both the color and the Z-buffer.</li>
-							<li class="list-group-item">2: Render a sphere only to the Z-buffer far away in the distance, with its' size relative to the distance to the camera and the position of the sarcophagus. Because the sphere is rendered only to the Z-buffer and not to the color buffer, this "punches a possible hole" in the already rendered video layer, where we get a hole to peek through (render new things behind it). </li>
-							<li class="list-group-item">3: Render the slider bar and green/red button that make up the user interface controls, not caring about the Z-buffer. These will therefore be rendered over the videolayer.</li>
-							<li class="list-group-item">4: Render the inside of the sarcophagus (a box with normals inverted) and the mummy, Because we check the Z-buffer, we will render new information only where the mummy and the box is closer to the camera than what is already in the Z-buffer. Thanks to the "invisible sphere" rendered far away in the distant in the first step, anything rendered inside of this circle will be visible in the looking glass.</li>
-							<li class="list-group-item">5: Render the looking glass, and some particles to give a more pleasing user experience.</li>
-						</ul>	
-						
-					</div>
-				</div>
-
-				<hr />
-
-				<div class="row infobox_header image-gallery" id="pictures">
-					<h1 class="col-sm-12">Instructions and demonstration video</h1>
-				</div>
-
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/7e2hFzeNKKQ" frameborder="0" allowfullscreen></iframe>
-				
-				<hr />
-				<!--
+	<!--
 				<div class="row infobox">
 
 					<div class="col-sm-12">
@@ -547,7 +548,7 @@
 				<div class="row infobox">
 					<div class="col-sm-12">
 						<p>
-							We did not forgotten about the banana, and for the record it hides out in the final release of the executable (try finding it)! Logic were written for connecting the UI controls to the switching of layers, and it might sound like a big history skip, but after some few hours of testing and the obvious fixing of obvious bugs, we came to the point we are today. It might have been thanks to Unity being kind enough to cooperate with GIT in very controlled manners, but there were never really any collisions that took preacious time to fix. Below you can see the demonstration of the final app.
+							We did not forgotten about the banana, and for the record it hides out in the final release of the executable (try finding it)! Logic were written for connecting the UI controls to the switching of layers, and it might sound like a big history skip, but after some few hours of testing and the obvious fixing of obvious bugs, we came to the point we are today. It might have been thanks to Unity being kind enough to cooperate with GIT in very controlled manners, but there were never really any collisions that took precious time to fix. Below you can see the demonstration of the final app.
 						</p>
 					</div>
 					<iframe width="560" height="315" src="https://www.youtube.com/embed/7e2hFzeNKKQ" frameborder="0" allowfullscreen></iframe>  
