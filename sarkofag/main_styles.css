@@ -150,3 +150,7 @@ video#backgroundvideo{
   width: 80%;
   margin: auto;
 }
+
+.subtext {
+	font-size:14px;
+}

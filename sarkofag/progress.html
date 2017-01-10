@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<meta name="description" content="">
+	<meta name="author" content="Ingemar Markström">
+	<link rel="icon" href="images/favicon.png">
+
+	<title>sARkofag in the making</title>
+
+	<!-- Bootstrap core CSS -->
+<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Custom styles for this template -->
+	<link href="main_styles.css" rel="stylesheet">
+
+
+</head>
+<body>
+
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<a class="navbar-brand" href="#">sARkofag</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#devteam">DevTeam</a></li>
+					<li><a href="#technology">Technology</a></li>
+					<li><a href="#pictures">Image Gallery</a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</nav>
+
+	<div class="mainContainer" id="home">
+
+		<div class="container starter-template gameinformation">
+			<div class="row infobox_header" >
+				<div class="col-sm-8 col-sm-offset-2">
+					<img class="img-responsive" src="images/sarkologo.png" />
+				</div>
+			</div>
+			<div class="row infobox" id="about">
+				<div class="col-sm-8 col-sm-offset-2">
+					<p>
+						This is a project in the Advanced graphics and interaction <a href="https://www.kth.se/student/kurser/kurs/DH2413">course</a> in the <a href="">VIC Studio</a> at <a href="http://www.kth.se/">KTH</a>.
+					</p>
+				</div>
+			</div>
+			
+			<div class="row infobox_header">
+				<div class="col-sm-8 col-sm-offset-2" >
+					<h1>In the beginning, there was a banana</h1>
+				</div>
+			</div>
+			<div class="row infobox">
+				<div class="col-sm-12">
+					<p>
+						This project started off with a completely different idea that was soon abandoned. The first project proposal was to make an app that challenges your perception of size. Unfortunately, because the project should be about Augmented Reality and we could not find any real application for the use of AR in the project, it was scrapped and we came up with something else. It did however lay the foundations and helped us come up with ideas for what was later to become sARkofag, and it's features. In short, it all started with a <a href="http://knowyourmeme.com/memes/banana-for-scale" target="_blank">banana</a>.
+					</p>
+				</div>
+			</div>
+			<hr />
+			<div class="col-sm-12 gallery_image_row">
+				<img class="img-responsive blurred_edges gallery_image" src="images/makingof/1banana.png">
+				<div class="subtext"> Ingemars banana model under construction in Blender.</div>
+			</div>
+			<hr />
+
+			<div class="row infobox_header">
+				<div class="col-sm-8 col-sm-offset-2" >
+					<h1>sARkofag</h1>
+				</div>
+			</div>
+			<div class="row infobox">
+				<div class="col-sm-12">
+					<p>
+						The first prototype of sARkofag was put together extremely quickly as an exploit of how the camera planes are handled in 3d graphics, but it actually convinced us that this could really be done, and that there is use of AR in this context. The basic idea all boils down to being able to see what is inside of another object, without opening it physically. The app lets you sneak peak inside of an object, without touching it. See but not touch, level 2!
+					</p>
+
+				</div>
+			</div>
+			<div class="col-sm-12 gallery_image_row">
+				<img class="img-responsive blurred_edges gallery_image" src="images/makingof/2cameraplanecut.PNG">
+				<div class="subtext"> Here, we "do not render anything nearer" than the near clipping plane, and hence, a simple mesh cutter is created. This simple but yet effective design also proved useful later on.</div>
+			</div>
+			<div class="col-sm-12 gallery_image_row">
+
+				<video width="640" height="480" controls>
+					<source src="images/makingof/2cameracutvideo.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>	
+				<div class="subtext"> Erik M made an implementation with some boxes (but no banana) using a cup table protection pad as a tracker. Here he demonstrates the concept mentioned above.</div>
+			</div>
+			<hr />
+
+			<div class="row infobox_header">
+				<div class="col-sm-8 col-sm-offset-2" >
+					<h1>Further developement, and building from scratch again</h1>
+				</div>
+			</div>
+			<div class="row infobox">
+				<div class="col-sm-12">
+					<p>
+						We had a working demo, but now we wanted to do some real mesh cutting, so Ingemar began developement on a shader based implementation with some clever rendering order modifications. The first version worked something like this:
+					</p>
+					<ul class="list-group">
+						<li class="list-group-item">1: Render a sphere to the Z-buffer (but not to the color buffer) near the camera with position and size relative to the distance to the camera and the position of the sarcophagus. Usually. Everything rendered right after this will be rendered "around but not in" the sphere circle. 
+						<li class="list-group-item">2: Move the video screen layer close to the camera view port, and render it to both the color and the Z-buffer. Usually, objects are only rendered if it is closer to the camera than the already closest rendered object. Because the sphere from step 1 might be closer to the camera than the video, there might be a hole in the video now.</li> 
+						<li class="list-group-item">3: Render the (soon to be) sarcophagus box.</li>
+						<li class="list-group-item">4: Render a sphere far away in the distance (and dont consult the Z-buffer), with its' size relative to the distance to the camera and the position of the sarcophagus. This will overwrite the video and box layer with a black circle.</li>
+						<li class="list-group-item">5: Render the box inside the sarcophagus</li>
+					</ul>								
+					<p>
+						This solution was not that very flexible, but it shed some light over the problem. The goal was to make it a two layer solution, where everything regarding the sarcophagus and its contents could be rendered with standard (or custom translucency) shaders in the regular geometry pass, which could make for future modification of the model without having to rewrite the whole rendering order for the mesh cutting.
+					</p>
+				</div>
+			</div>
+
+			<div class="row infobox_header image-gallery">
+
+				<div class="col-sm-4 gallery_image_row">
+					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/3zmod1.png">
+				</div>
+				<div class="col-sm-4 gallery_image_row">
+					<img class="img-responive blurred_edges gallery_image" src="images/makingof/3zmod2.png">
+				</div>
+				<div class="col-sm-4 gallery_image_row">
+					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/3zmod3.png">
+				</div>
+				<div class="col-sm-12 gallery_image_row">
+					<div class="subtext">First we see the hole in the video layer. Then the white box is rendered behind the video layer, and in the third picture the box is renderded behind both the video and the "sarcophagus" box. </div>
+				</div>
+			</div>
+
+			<div class="row infobox_header image-gallery">
+				<div class="col-sm-6 gallery_image_row">
+					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/3depthmaskhax2.png">
+				</div>
+				<div class="col-sm-6 gallery_image_row">
+					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/3depthmaskhax3.png">
+				</div>
+			</div>
+			<div class="row infobox_header image-gallery">
+				<div class="col-sm-6 gallery_image_row">
+					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/3depthmaskhax4.png">
+				</div>
+				<div class="col-sm-6 gallery_image_row">
+					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/3depthmaskhax5.png">
+				</div>
+				<div class="col-sm-12 subtext">We see four scenarios, where the camera is far away from the box, getting closer, is close, and then a bit too close. This was solved later. Notice especially how the small near sphere moves closer to the camera when the camera moves closer to the box. This was quite messy to get right and to make it feel intuitive.</div>
+				<div class="col-sm-12 gallery_image_row">
+
+					<video width="640" height="480" controls>
+						<source src="images/makingof/3zmodVideo.mov" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>	
+				</div>
+
+			</div>
+
+			<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<div class="row infobox_header">
+				<div class="col-sm-8 col-sm-offset-2" >
+					<h1>Interface design can be messy</h1>
+				</div>
+			</div>
+			<div class="row infobox">
+				<div class="col-sm-12">
+					<p>
+						We then sat down and had a brain storm about what we wanted to show in the app, and how it should look and feel. We also thought about and discussed what controls to have and where to put them. 
+					</p>
+
+				</div>
+			</div>
+			<div class="col-sm-12 gallery_image_row">
+				<img class="img-responsive blurred_edges gallery_image" src="images/makingof/2cameraplanecut.PNG">
+				<div class="subtext"> Here, we "do not render anything nearer" than the near clipping plane, and hence, a simple mesh cutter is created. This simple but yet effective design also proved useful later on.</div>
+			</div>
+			<hr />
+
+
+
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	</div>
+
+
+</body>
+</html>
