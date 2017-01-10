@@ -21,12 +21,14 @@
 
 </head>
 <body>
-
+	
+	<!--
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
 					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
 
@@ -34,18 +36,25 @@
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li class="active" id="homeselector"><a href="#">Home</a></li>
+					<li id="homeselector"><a href="#">Home</a></li>
 					<li id="makingofselector"><a href="#pictures">Making of sARkofag</a></li>
 				</ul>
-			</div><!--/.nav-collapse -->
+			</div>
 		</div>
 	</nav>
+	-->
+
+	
 
 	<div class="mainContainer" id="home">
 		
-		
-		<div id="HOME">
-			<div class="container starter-template gameinformation">
+		<div class="container starter-template gameinformation">
+			<div class="row menurow">
+				<div class="col-sm-6 menuitem" id="homeselector">sARkofag</div> 
+				<div class="col-sm-6 menuitem" id="makingofselector">Making Of</div> 
+			</div>	
+			
+			<div id="HOME">
 				<div class="row infobox_header" >
 					<div class="col-sm-8 col-sm-offset-2">
 						<img class="img-responsive" src="images/sarkologo.png" />
@@ -59,7 +68,8 @@
 					</div>
 				</div>
 				<hr>
-
+				
+				<!--
 				<div class="row infobox_header">
 					<div class="col-sm-8 col-sm-offset-2" >
 						<h1>"Making of"-documentary</h1>
@@ -70,9 +80,9 @@
 
 
 				</div>
-				
+			
 				<hr />
-
+				-->
 				<div class="row infobox">
 					<div class="col-sm-12 gallery_image_row">
 						<img class="img-responsive blurred_edges gallery_image" src="images/s3.jpg">
@@ -104,83 +114,79 @@
 					</div>
 				</div>
 				<div class="row infobox dev_team">
-					<div class="col-sm-4 dev_team_member">
+					<div class="col-sm-6 dev_team_member">
 						<img src="images/4.png" class="img-responsive img_filter">
 						<div class="person">
 							Adrian Häggvik<br>
 							<a href="mailto:haggvik@kth.se?Subject=Regarding OffHueGo!">Mail</a> <br>
 							<a href="https://www.linkedin.com/in/adrian-häggvik-568871118" target="_blank">Facebook</a>
 							<hr />
-							<p>Personal contribution:</p>
 							<p>
 								AR interface with button for slicing on/off and the slider for switching viewable mummy layers {G}{I}, and modeling of the coins fitted to the mummy {G}.
 							</p>
 						</div>
 					</div>
 
-					<div class="col-sm-4 dev_team_member ">
+					<div class="col-sm-6 dev_team_member ">
 						<img src="images/5.png" class="img-responsive img_filter">
 						<div class="person">
 							Ingemar Markström<br>
 							<a href="mailto:ingemarmg@kth.se?Subject=Regarding OffHueGo!">Mail</a> <br>
 							<a href="https://www.linkedin.com/in/ingemar-markstr%C3%B6m-270020107" target="_blank">Linkedin</a>
 							<hr />
-							<p>Personal contribution:</p>
 							<p>
 								Shaders for modifying the Z-buffer and carving into the sarcophagus {I}{G}. Modeled the looking glass (and a banana), and created the particle system around it {G}. Looking glass size {G}{I}. Construction of this web page and writing the "making of" documentary. Creating the tutorial video (With Erik M).
 							</p>
 						</div>
 					</div>
 
-					<div class="col-sm-4 dev_team_member">
+				</div>
+				<div class="row infobox dev_team">
+					<div class="col-sm-6 dev_team_member">
 						<img src="images/3.png" class="img-responsive img_filter">
 						<div class="person">
 							Erik Markström<br>
 							<a href="mailto:erimar@kth.se?Subject=Regarding OffHueGo!">Mail</a> <br>
 							<a href="https://se.linkedin.com/in/erik-markström-66077aa8" target="_blank">Linkedin</a>
 							<hr />
-							<p>Personal contribution:</p>
 							<p>
 								3D model material construction {G}, Multi target tracker construction {I} (With Rasmus E) and poster graphics design. Study visit to the museum. Creating the tutorial video (with Ingemar).
 							</p>
 						</div>
 					</div>
-				</div>
-				<div class="row infobox dev_team">
-					<div class="col-sm-4  dev_team_member">
+					<div class="col-sm-6  dev_team_member">
 						<img src="images/1.png" class="img-responsive img_filter ">
 						<div class="person">
 							Eric Blomquist<br>
 							<a href="mailto:erikbl@kth.se?Subject=Regarding OffHueGo!">Mail</a> <br>
 							<a href="" target="_blank">Linkedin</a>
 							<hr />
-							<p>Personal contribution:</p>
 							<p>
 								Modeling {G} (with Rasmus E) and study visit to the museum.
 							</p>
 						</div>
 					</div>
-					<div class="col-sm-4 dev_team_member">
+				</div>
+				<div class="row infobox dev_team">
+					<div class="col-sm-6 dev_team_member">
 						<img src="images/2.png" class="img-responsive img_filter">
 						<div class="person">
 							Rasmus Elmgren<br>
 							<a href="mailto:relmgren@kth.se?Subject=Regarding OffHueGo!">Mail</a> <br>
 							<a href="" target="_blank">Linkedin</a>
 							<hr />
-							<p>Personal contribution:</p>
 							<p>
 								Proof of concept and first demo {I}, Multi target tracker construction {I} (with Erik M) and Modeling {G} (with Eric B).
 							</p>
 						</div>
 					</div>
-					<div class="col-sm-4 dev_team_member">
+					<div class="col-sm-6 dev_team_member">
 						<img src="images/6.png" class="img-responsive img_filter">
 						<div class="person">
 							Ewoud van der Heide <br>
 							<a href="mailto:ewoud@kth.se?Subject=Regarding OffHueGo!">Mail</a> <br>
 							<a href="" target="_blank">Linkedin</a>
 							<hr />
-							<p>Personal contribution:</p>
 							<p>
 								Translucency shader for the mummy.
 							</p>
@@ -249,7 +255,11 @@
 				</div>
 
 				<hr />
-				
+
+				<div class="row infobox_header image-gallery" id="pictures">
+					<h1 class="col-sm-12">Instructions and demonstration video</h1>
+				</div>
+
 				<iframe width="560" height="315" src="https://www.youtube.com/embed/7e2hFzeNKKQ" frameborder="0" allowfullscreen></iframe>
 				
 				<hr />
@@ -262,8 +272,9 @@
 				</div>
 				-->
 				<div class="row infobox_header image-gallery" id="pictures">
-					<h1>Image Gallery</h1>
+					<h1 class="col-sm-12">Image Gallery</h1>
 				</div>
+
 				<div class="col-sm-12 gallery_image_row">
 					<img class="img-responsive blurred_edges gallery_image" src="images/s1.jpg">
 				</div>
@@ -288,262 +299,260 @@
 				</div>
 
 			</div>
-		</div>
 
-	</div>
+	
 
 
-	<div id="MAKINGOF" >	
+			<div id="MAKINGOF" >	
 
-		<div class="container starter-template gameinformation">
-			<div class="row infobox_header" >
-				<div class="col-sm-8 col-sm-offset-2">
-					<img class="img-responsive" src="images/sarkologo.png" />
+				<div class="row infobox_header" >
+					<div class="col-sm-8 col-sm-offset-2">
+						<img class="img-responsive" src="images/sarkologo.png" />
+					</div>
 				</div>
-			</div>
-			<div class="row infobox" id="about">
-				<div class="col-sm-8 col-sm-offset-2">
-					<p>
-						This is a project in the Advanced graphics and interaction <a href="https://www.kth.se/student/kurser/kurs/DH2413">course</a> in the <a href="">VIC Studio</a> at <a href="http://www.kth.se/">KTH</a>.
-					</p>
+				<div class="row infobox" id="about">
+					<div class="col-sm-8 col-sm-offset-2">
+						<p>
+							This is a project in the Advanced graphics and interaction <a href="https://www.kth.se/student/kurser/kurs/DH2413">course</a> in the <a href="">VIC Studio</a> at <a href="http://www.kth.se/">KTH</a>.
+						</p>
+					</div>
 				</div>
-			</div>
-			<hr id="bananas" />		
-			<div class="row infobox_header">
-				<div class="col-sm-8 col-sm-offset-2" >
-					<h1>In the beginning: Bananas</h1>
+				<hr id="bananas" />		
+				<div class="row infobox_header">
+					<div class="col-sm-8 col-sm-offset-2" >
+						<h1>In the beginning: Bananas</h1>
+					</div>
 				</div>
-			</div>
-			<div class="row infobox">
-				<div class="col-sm-12">
-					<p>
-						This project started off with a completely different idea that was soon abandoned. The first project proposal was to make an app that challenges your perception of size. Unfortunately, because the project should be about Augmented Reality and we could not find any real application for the use of AR in the project, it was scrapped and we came up with something else. It did however lay the foundations and helped us come up with ideas for what was later to become sARkofag, and it's features. In short, it all started with a <a href="http://knowyourmeme.com/memes/banana-for-scale" target="_blank">banana</a>.
-					</p>
+				<div class="row infobox">
+					<div class="col-sm-12">
+						<p>
+							This project started off with a completely different idea that was soon abandoned. The first project proposal was to make an app that challenges your perception of size. Unfortunately, because the project should be about Augmented Reality and we could not find any real application for the use of AR in the project, it was scrapped and we came up with something else. It did however lay the foundations and helped us come up with ideas for what was later to become sARkofag, and it's features. In short, it all started with a <a href="http://knowyourmeme.com/memes/banana-for-scale" target="_blank">banana</a>.
+						</p>
+					</div>
 				</div>
-			</div>
 
-			<div class="row infobox_header image-gallery">
-				<div class="col-sm-8 col-sm-offset-2 gallery_image_row">
-					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/1banana.png">
-					<div class="subtext"> Ingemars banana model under construction in Blender.</div>
+				<div class="row infobox_header image-gallery">
+					<div class="col-sm-8 col-sm-offset-2 gallery_image_row">
+						<img class="img-responsive blurred_edges gallery_image" src="images/makingof/1banana.png">
+						<div class="subtext"> Ingemars banana model under construction in Blender.</div>
+					</div>
 				</div>
-			</div>
-			<hr  id="sARkofag" />
+				<hr  id="sARkofag" />
 
-			<div class="row infobox_header">
-				<div class="col-sm-8 col-sm-offset-2" >
-					<h1>sARkofag</h1>
+				<div class="row infobox_header">
+					<div class="col-sm-8 col-sm-offset-2" >
+						<h1>sARkofag</h1>
+					</div>
 				</div>
-			</div>
-			<div class="row infobox">
-				<div class="col-sm-12">
-					<p>
-						The first prototype of sARkofag was put together extremely quickly as an exploit of how the camera planes are handled in 3d graphics, but it actually convinced us that this could really be done, and that there is use of AR in this context. The basic idea all boils down to being able to see what is inside of another object, without opening it physically. The app lets you sneak peak inside of an object, without touching it. See but not touch, level 2!
-					</p>
+				<div class="row infobox">
+					<div class="col-sm-12">
+						<p>
+							The first prototype of sARkofag was put together extremely quickly as an exploit of how the camera planes are handled in 3d graphics, but it actually convinced us that this could really be done, and that there is use of AR in this context. The basic idea all boils down to being able to see what is inside of another object, without opening it physically. The app lets you sneak peak inside of an object, without touching it. See but not touch, level 2!
+						</p>
 
+					</div>
 				</div>
-			</div>
-		
-			<div class="row">
-				<div class="col-sm-12 gallery_image_row">
-					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/2cameraplanecut.PNG">
-					<div class="subtext"> Here, we "do not render anything nearer" than the near clipping plane, and hence, a simple mesh cutter is created. This simple but yet effective design also proved useful later on.</div>
-				</div>
-			</div>
-			<div class="row">
-			<div class="col-sm-12 gallery_image_row">
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/w5aRmjnDTtA" frameborder="0" allowfullscreen></iframe>
-				<!--
-				<video width="640" height="480" controls>
-					<source src="images/makingof/2cameracutvideo.mp4" type="video/mp4">
-					Your browser does not support the video tag.
-				</video>
-				-->	
-				<div class="subtext"> Erik M made an implementation with some boxes (but no banana) using a cup table protection pad as a tracker. Here he demonstrates the concept mentioned above.</div>
-				</div>
-			</div>
 			
-			<hr id="further"/>
-
-			<div class="row infobox_header">
-				<div class="col-sm-8 col-sm-offset-2" >
-					<h1>Further developement, and building from scratch again</h1>
+				<div class="row">
+					<div class="col-sm-8 col-sm-offset-2 gallery_image_row">
+						<img class="img-responsive blurred_edges gallery_image" src="images/makingof/2cameraplanecut.PNG">
+						<div class="subtext"> Here, we "do not render anything nearer" than the near clipping plane, and hence, a simple mesh cutter is created. This simple but yet effective design also proved useful later on.</div>
+					</div>
 				</div>
-			</div>
-			<div class="row infobox">
-				<div class="col-sm-12">
-					<p>
-						We had a working demo, but now we wanted to do some real mesh cutting, so Ingemar began developement on a shader based implementation with some clever rendering order modifications. The first version worked something like this:
-					</p>
-					<ul class="list-group">
-						<li class="list-group-item">1: Render a sphere to the Z-buffer (but not to the color buffer) near the camera with position and size relative to the distance to the camera and the position of the sarcophagus. Usually. Everything rendered right after this will be rendered "around but not in" the sphere circle. 
-						<li class="list-group-item">2: Move the video screen layer close to the camera view port, and render it to both the color and the Z-buffer. Usually, objects are only rendered if it is closer to the camera than the already closest rendered object. Because the sphere from step 1 might be closer to the camera than the video, there might be a hole in the video now.</li> 
-						<li class="list-group-item">3: Render the (soon to be) sarcophagus box.</li>
-						<li class="list-group-item">4: Render a sphere far away in the distance (and dont consult the Z-buffer), with its' size relative to the distance to the camera and the position of the sarcophagus. This will overwrite the video and box layer with a black circle.</li>
-						<li class="list-group-item">5: Render the box inside the sarcophagus</li>
-					</ul>								
-					<p>
-						This solution was not that very flexible, but it shed some light over the problem. The goal was to make it a two layer solution, where everything regarding the sarcophagus and its contents could be rendered with standard (or custom translucency) shaders in the regular geometry pass, which could make for future modification of the model without having to rewrite the whole rendering order for the mesh cutting.
-					</p>
-				</div>
-			</div>
-
-			<div class="row infobox_header image-gallery">
-
-				<div class="col-sm-4 gallery_image_row">
-					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/3zmod1.png">
-				</div>
-				<div class="col-sm-4 gallery_image_row">
-					<img class="img-responive blurred_edges gallery_image" src="images/makingof/3zmod2.png">
-				</div>
-				<div class="col-sm-4 gallery_image_row">
-					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/3zmod3.png">
-				</div>
+				<div class="row">
 				<div class="col-sm-12 gallery_image_row">
-					<div class="subtext">First we see the hole in the video layer. Then the white box is rendered behind the video layer, and in the third picture the box is renderded behind both the video and the "sarcophagus" box. </div>
-				</div>
-			</div>
-
-			<div class="row infobox_header image-gallery">
-				<div class="col-sm-6 gallery_image_row">
-					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/3depthmaskhax2.png">
-				</div>
-				<div class="col-sm-6 gallery_image_row">
-					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/3depthmaskhax3.png">
-				</div>
-			</div>
-			<div class="row infobox_header image-gallery">
-				<div class="col-sm-6 gallery_image_row">
-					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/3depthmaskhax4.png">
-				</div>
-				<div class="col-sm-6 gallery_image_row">
-					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/3depthmaskhax5.png">
-				</div>
-				<div class="col-sm-12 subtext">We see four scenarios, where the camera is far away from the box, getting closer, is close, and then a bit too close. This was solved later. Notice especially how the small near sphere moves closer to the camera when the camera moves closer to the box. This was quite messy to get right and to make it feel intuitive.</div>
-				<div class="col-sm-12 gallery_image_row">
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/p8m6b0Y5kcU" frameborder="0" allowfullscreen></iframe>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/w5aRmjnDTtA" frameborder="0" allowfullscreen></iframe>
 					<!--
 					<video width="640" height="480" controls>
-						<source src="images/makingof/3zmodVideo.mov" type="video/mp4">
+						<source src="images/makingof/2cameracutvideo.mp4" type="video/mp4">
 						Your browser does not support the video tag.
 					</video>
 					-->	
+					<div class="subtext"> Erik M made an implementation with some boxes (but no banana) using a cup table protection pad as a tracker. Here he demonstrates the concept mentioned above.</div>
+					</div>
+				</div>
+				
+				<hr id="further"/>
+
+				<div class="row infobox_header">
+					<div class="col-sm-8 col-sm-offset-2" >
+						<h1>Further developement, and building from scratch again</h1>
+					</div>
+				</div>
+				<div class="row infobox">
+					<div class="col-sm-12">
+						<p>
+							We had a working demo, but now we wanted to do some real mesh cutting, so Ingemar began developement on a shader based implementation with some clever rendering order modifications. The first version worked something like this:
+						</p>
+						<ul class="list-group">
+							<li class="list-group-item">1: Render a sphere to the Z-buffer (but not to the color buffer) near the camera with position and size relative to the distance to the camera and the position of the sarcophagus. Usually. Everything rendered right after this will be rendered "around but not in" the sphere circle. 
+							<li class="list-group-item">2: Move the video screen layer close to the camera view port, and render it to both the color and the Z-buffer. Usually, objects are only rendered if it is closer to the camera than the already closest rendered object. Because the sphere from step 1 might be closer to the camera than the video, there might be a hole in the video now.</li> 
+							<li class="list-group-item">3: Render the (soon to be) sarcophagus box.</li>
+							<li class="list-group-item">4: Render a sphere far away in the distance (and dont consult the Z-buffer), with its' size relative to the distance to the camera and the position of the sarcophagus. This will overwrite the video and box layer with a black circle.</li>
+							<li class="list-group-item">5: Render the box inside the sarcophagus</li>
+						</ul>								
+						<p>
+							This solution was not that very flexible, but it shed some light over the problem. The goal was to make it a two layer solution, where everything regarding the sarcophagus and its contents could be rendered with standard (or custom translucency) shaders in the regular geometry pass, which could make for future modification of the model without having to rewrite the whole rendering order for the mesh cutting.
+						</p>
+					</div>
 				</div>
 
-			</div>
+				<div class="row infobox_header image-gallery">
 
-			<hr id="sidenote" />
-
-
-			<div class="row infobox_header">
-				<div class="col-sm-8 col-sm-offset-2" >
-					<h1>A short side note on the next iteration of shaders</h1>
-				</div>
-			</div>
-			<div class="row infobox">
-				<div class="col-sm-12">
-					<p>
-						After finishing the first prototype of rendering setup, analyzing pros and cons of it, and thinking with pen and paper, a few modifications was made. The complexity was reduced to only using one depth mask sphere, and actually removing the front depth mask took away the black circle, giving the impression that two layer solution we were striving for. The prototype now performed according to our specifications. Ingemar was pleased. But still no banana.
-					</p>
-				</div>
-			</div>
-			<hr id="uinterface" />
-
-
-			<div class="row infobox_header">
-				<div class="col-sm-8 col-sm-offset-2" >
-					<h1>Interface design can be messy</h1>
-				</div>
-			</div>
-			<div class="row infobox">
-				<div class="col-sm-12">
-					<p>
-						We then sat down and had a brain storm about what we wanted to show in the app, and how it should look and feel. We also thought about and discussed what controls to have and where to put them. It turned into this scetch. We wanted to be able to switch between different layers of the mummy, so a slider were planned for this. We also wanted to keep the ability to cut through the different layers and switch back and forth to the looking glass, so of course we needed a big green/red button. We also wanted to try something a bit different, so the controls were "placed on the table" next to the sarcophagus. An idea was that we could do some clever image recognition and detect an arm in the picture pushing the Augmented button on the table physically. But when thinking a bit more, it would be quite difficult to actually use it, so it was left for future studies.
-					</p>
-
-				</div>
-			</div>
-
-			<div class="row infobox_header image-gallery">
-				<div class="col-sm-6 gallery_image_row">
-					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/4interface.jpg">
-					<div class="subtext">Quite a bit of a mess, but at least it covered what we spoke about. When in a creative process documentation is both hard and important.</div>
-				</div>
-				<div class="col-sm-6 gallery_image_row">
-					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/4lastslider.PNG">
-					<div class="subtext">And here we see the slider for the translucency choices.</div>
-				</div>
-			</div>
-			<hr id="models" />
-
-			<div class="row infobox_header">
-				<div class="col-sm-8 col-sm-offset-2" >
-					<h1>Models</h1>
-				</div>
-			</div>
-			<div class="row infobox">
-				<div class="col-sm-12">
-					<p>
-						We needed a mummy, a "something" inside of the mummy, the sarcophagus and some treasures that would be inside of it. In short one could say there were two runs in the modeling phase, where a first tier of the absolute nessessary models were created, and then a remake of them were done to the final version. They were either based off free-to-use models or created from scratch using a mix of programs, among others Blender, Maya, Photoshop and for the custom materials Erik M took a deep dive into Substance Designer, which is an extremely powerful program for creating realistic materials based on either the usual way with textures, or generating textures based of physical simulations. 
-					</p>
-
-				</div>
-			</div>
-
-			<div class="row infobox_header image-gallery">
-				<div class="col-sm-4 gallery_image_row">
-					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/5box.PNG">
-				</div>
-				<div class="col-sm-4 gallery_image_row">
-					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/5button.PNG">
-				</div>
-				<div class="col-sm-4 gallery_image_row">
-					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/5coin.PNG">
-				</div>
-			</div>
-			<div class="row infobox_header image-gallery">
-				<div class="col-sm-4 gallery_image_row">
-					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/5mummy.PNG">
-				</div>
-				<div class="col-sm-4 gallery_image_row">
-					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/5obi.PNG">
-				</div>
-				<div class="col-sm-4 gallery_image_row">
-					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/5skeleton.PNG">
-				</div>
-			</div>
-			<div class="row infobox_header image-gallery">
-				<div class="col-sm-12 gallery_image_row">
-					<div class="subtext">The raw models.</div>
+					<div class="col-sm-4 gallery_image_row">
+						<img class="img-responsive blurred_edges gallery_image" src="images/makingof/3zmod1.png">
+					</div>
+					<div class="col-sm-4 gallery_image_row">
+						<img class="img-responive blurred_edges gallery_image" src="images/makingof/3zmod2.png">
+					</div>
+					<div class="col-sm-4 gallery_image_row">
+						<img class="img-responsive blurred_edges gallery_image" src="images/makingof/3zmod3.png">
+					</div>
+					<div class="col-sm-12 gallery_image_row">
+						<div class="subtext">First we see the hole in the video layer. Then the white box is rendered behind the video layer, and in the third picture the box is renderded behind both the video and the "sarcophagus" box. </div>
+					</div>
 				</div>
 
-			</div>
-			
-			<div class="row infobox_header image-gallery">
-				<div class="col-sm-12 gallery_image_row">
-					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/5texturedmodels.PNG">
-					<div class="subtext">And here we see some of the models with proper materials applied.</div>
+				<div class="row infobox_header image-gallery">
+					<div class="col-sm-6 gallery_image_row">
+						<img class="img-responsive blurred_edges gallery_image" src="images/makingof/3depthmaskhax2.png">
+					</div>
+					<div class="col-sm-6 gallery_image_row">
+						<img class="img-responsive blurred_edges gallery_image" src="images/makingof/3depthmaskhax3.png">
+					</div>
 				</div>
-			</div>
+				<div class="row infobox_header image-gallery">
+					<div class="col-sm-6 gallery_image_row">
+						<img class="img-responsive blurred_edges gallery_image" src="images/makingof/3depthmaskhax4.png">
+					</div>
+					<div class="col-sm-6 gallery_image_row">
+						<img class="img-responsive blurred_edges gallery_image" src="images/makingof/3depthmaskhax5.png">
+					</div>
+					<div class="col-sm-12 subtext">We see four scenarios, where the camera is far away from the box, getting closer, is close, and then a bit too close. This was solved later. Notice especially how the small near sphere moves closer to the camera when the camera moves closer to the box. This was quite messy to get right and to make it feel intuitive.</div>
+					<div class="col-sm-12 gallery_image_row">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/p8m6b0Y5kcU" frameborder="0" allowfullscreen></iframe>
+						<!--
+						<video width="640" height="480" controls>
+							<source src="images/makingof/3zmodVideo.mov" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						-->	
+					</div>
 
-			<hr id="connecting" />
-			
-			
-			<div class="row infobox_header">
-				<div class="col-sm-8 col-sm-offset-2" >
-					<h1>Putting it all together! </h1>
-					<h2>(So, what about the banana?)</h2>
 				</div>
-			</div>
-			<div class="row infobox">
-				<div class="col-sm-12">
-					<p>
-						We did not forgotten about the banana, and for the record it hides out in the final release of the executable (try finding it)! Logic were written for connecting the UI controls to the switching of layers, and it might sound like a big history skip, but after some few hours of testing and the obvious fixing of obvious bugs, we came to the point we are today. It might have been thanks to Unity being kind enough to cooperate with GIT in very controlled manners, but there were never really any collisions that took preacious time to fix. Below you can see the demonstration of the final app.
-					</p>
-				</div>
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/7e2hFzeNKKQ" frameborder="0" allowfullscreen></iframe>  
-			</div>
 
+				<hr id="sidenote" />
+
+
+				<div class="row infobox_header">
+					<div class="col-sm-8 col-sm-offset-2" >
+						<h1>A short side note on the next iteration of shaders</h1>
+					</div>
+				</div>
+				<div class="row infobox">
+					<div class="col-sm-12">
+						<p>
+							After finishing the first prototype of rendering setup, analyzing pros and cons of it, and thinking with pen and paper, a few modifications was made. The complexity was reduced to only using one depth mask sphere, and actually removing the front depth mask took away the black circle, giving the impression that two layer solution we were striving for. The prototype now performed according to our specifications. Ingemar was pleased. But still no banana.
+						</p>
+					</div>
+				</div>
+				<hr id="uinterface" />
+
+
+				<div class="row infobox_header">
+					<div class="col-sm-8 col-sm-offset-2" >
+						<h1>Interface design can be messy</h1>
+					</div>
+				</div>
+				<div class="row infobox">
+					<div class="col-sm-12">
+						<p>
+							We then sat down and had a brain storm about what we wanted to show in the app, and how it should look and feel. We also thought about and discussed what controls to have and where to put them. It turned into this scetch. We wanted to be able to switch between different layers of the mummy, so a slider were planned for this. We also wanted to keep the ability to cut through the different layers and switch back and forth to the looking glass, so of course we needed a big green/red button. We also wanted to try something a bit different, so the controls were "placed on the table" next to the sarcophagus. An idea was that we could do some clever image recognition and detect an arm in the picture pushing the Augmented button on the table physically. But when thinking a bit more, it would be quite difficult to actually use it, so it was left for future studies.
+						</p>
+
+					</div>
+				</div>
+
+				<div class="row infobox_header image-gallery">
+					<div class="col-sm-6 gallery_image_row">
+						<img class="img-responsive blurred_edges gallery_image" src="images/makingof/4interface.jpg">
+						<div class="subtext">Quite a bit of a mess, but at least it covered what we spoke about. When in a creative process documentation is both hard and important.</div>
+					</div>
+					<div class="col-sm-6 gallery_image_row">
+						<img class="img-responsive blurred_edges gallery_image" src="images/makingof/4lastslider.PNG">
+						<div class="subtext">And here we see the slider for the translucency choices.</div>
+					</div>
+				</div>
+				<hr id="models" />
+
+				<div class="row infobox_header">
+					<div class="col-sm-8 col-sm-offset-2" >
+						<h1>Models</h1>
+					</div>
+				</div>
+				<div class="row infobox">
+					<div class="col-sm-12">
+						<p>
+							We needed a mummy, a "something" inside of the mummy, the sarcophagus and some treasures that would be inside of it. In short one could say there were two runs in the modeling phase, where a first tier of the absolute nessessary models were created, and then a remake of them were done to the final version. They were either based off free-to-use models or created from scratch using a mix of programs, among others Blender, Maya, Photoshop and for the custom materials Erik M took a deep dive into Substance Designer, which is an extremely powerful program for creating realistic materials based on either the usual way with textures, or generating textures based of physical simulations. 
+						</p>
+
+					</div>
+				</div>
+
+				<div class="row infobox_header image-gallery">
+					<div class="col-sm-4 gallery_image_row">
+						<img class="img-responsive blurred_edges gallery_image" src="images/makingof/5box.PNG">
+					</div>
+					<div class="col-sm-4 gallery_image_row">
+						<img class="img-responsive blurred_edges gallery_image" src="images/makingof/5button.PNG">
+					</div>
+					<div class="col-sm-4 gallery_image_row">
+						<img class="img-responsive blurred_edges gallery_image" src="images/makingof/5coin.PNG">
+					</div>
+				</div>
+				<div class="row infobox_header image-gallery">
+					<div class="col-sm-4 gallery_image_row">
+						<img class="img-responsive blurred_edges gallery_image" src="images/makingof/5mummy.PNG">
+					</div>
+					<div class="col-sm-4 gallery_image_row">
+						<img class="img-responsive blurred_edges gallery_image" src="images/makingof/5obi.PNG">
+					</div>
+					<div class="col-sm-4 gallery_image_row">
+						<img class="img-responsive blurred_edges gallery_image" src="images/makingof/5skeleton.PNG">
+					</div>
+				</div>
+				<div class="row infobox_header image-gallery">
+					<div class="col-sm-12 gallery_image_row">
+						<div class="subtext">The raw models.</div>
+					</div>
+
+				</div>
+				
+				<div class="row infobox_header image-gallery">
+					<div class="col-sm-12 gallery_image_row">
+						<img class="img-responsive blurred_edges gallery_image" src="images/makingof/5texturedmodels.PNG">
+						<div class="subtext">And here we see some of the models with proper materials applied.</div>
+					</div>
+				</div>
+
+				<hr id="connecting" />
+				
+				
+				<div class="row infobox_header">
+					<div class="col-sm-8 col-sm-offset-2" >
+						<h1>Putting it all together! </h1>
+						<h2>(So, what about the banana?)</h2>
+					</div>
+				</div>
+				<div class="row infobox">
+					<div class="col-sm-12">
+						<p>
+							We did not forgotten about the banana, and for the record it hides out in the final release of the executable (try finding it)! Logic were written for connecting the UI controls to the switching of layers, and it might sound like a big history skip, but after some few hours of testing and the obvious fixing of obvious bugs, we came to the point we are today. It might have been thanks to Unity being kind enough to cooperate with GIT in very controlled manners, but there were never really any collisions that took preacious time to fix. Below you can see the demonstration of the final app.
+						</p>
+					</div>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/7e2hFzeNKKQ" frameborder="0" allowfullscreen></iframe>  
+				</div>
+			</div>
 
 
 		</div>
@@ -556,11 +565,17 @@
 
 	<script>
 		$("#MAKINGOF").hide();
+
+		$("#homeselector").css("background-color","#404040")
 		$("#homeselector").click(function(){
+			$("#homeselector").css("background-color","#404040")
+			$("#makingofselector").css("background-color","#303030")
 			$("#HOME").show();
 			$("#MAKINGOF").hide();
 		});
 		$("#makingofselector").click(function(){
+			$("#makingofselector").css("background-color","#404040")
+			$("#homeselector").css("background-color","#303030")
 			$("#HOME").hide();
 			$("#MAKINGOF").show();
 		});

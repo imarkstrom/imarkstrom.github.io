@@ -1,5 +1,5 @@
 body {
-	padding-top: 48px;
+	/*padding-top: 48px;*/
 	background-color:black;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -17,6 +17,20 @@ body {
 
 a{
   color: #a0a0c0;
+}
+
+.menurow{
+	background-color:#303030;
+}
+
+.menuitem{
+	font-size:30px;
+	text-align:center;
+	color: #a0a0a0;
+}
+
+.menuitem:hover{
+	background-color: #505050;
 }
 
 #makingoflink{
@@ -112,7 +126,7 @@ video#backgroundvideo{
 }
 
 .person{
-  max-width: 15vw;
+  max-width: 30vw;
   margin:auto;
 }
 
@@ -123,7 +137,8 @@ video#backgroundvideo{
 }
 
 .dev_team_member img{
-  width: 250px;
+  /*width: 250px;*/
+	width: 20vw;
 }
 
 .dev_team_member p {
