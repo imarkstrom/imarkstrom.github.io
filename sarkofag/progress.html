@@ -178,15 +178,19 @@
 			<hr />
 
 
-
-
-
-
-
-
-
-
-
+			<div class="row infobox_header">
+				<div class="col-sm-8 col-sm-offset-2" >
+					<h1>A short side note on the next iteration of shaders</h1>
+				</div>
+			</div>
+			<div class="row infobox">
+				<div class="col-sm-12">
+					<p>
+						After finishing the first prototype of rendering setup, analyzing pros and cons of it, and thinking with pen and paper, a few modifications was made. The complexity was reduced to only using one depth mask sphere, and actually removing the front depth mask took away the black circle, giving the impression that two layer solution we were striving for. The prototype now performed according to our specifications. Ingemar was pleased. But still no banana.
+					</p>
+				</div>
+			</div>
+			<hr />
 
 
 			<div class="row infobox_header">
@@ -197,18 +201,76 @@
 			<div class="row infobox">
 				<div class="col-sm-12">
 					<p>
-						We then sat down and had a brain storm about what we wanted to show in the app, and how it should look and feel. We also thought about and discussed what controls to have and where to put them. 
+						We then sat down and had a brain storm about what we wanted to show in the app, and how it should look and feel. We also thought about and discussed what controls to have and where to put them. It turned into this scetch. We wanted to be able to switch between different layers of the mummy, so a slider were planned for this. We also wanted to keep the ability to cut through the different layers and switch back and forth to the looking glass, so of course we needed a big green/red button. We also wanted to try something a bit different, so the controls were "placed on the table" next to the sarcophagus. An idea was that we could do some clever image recognition and detect an arm in the picture pushing the Augmented button on the table physically. But when thinking a bit more, it would be quite difficult to actually use it, so it was left for future studies.
 					</p>
 
 				</div>
 			</div>
-			<div class="col-sm-12 gallery_image_row">
-				<img class="img-responsive blurred_edges gallery_image" src="images/makingof/2cameraplanecut.PNG">
-				<div class="subtext"> Here, we "do not render anything nearer" than the near clipping plane, and hence, a simple mesh cutter is created. This simple but yet effective design also proved useful later on.</div>
+
+			<div class="row infobox_header image-gallery">
+				<div class="col-sm-6 gallery_image_row">
+					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/4interface.jpg">
+					<div class="subtext">Quite a bit of a mess, but at least it covered what we spoke about. When in a creative process documentation is both hard and important.</div>
+				</div>
+				<div class="col-sm-6 gallery_image_row">
+					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/4lastslider.PNG">
+					<div class="subtext">And here we see the slider for the translucency choices.</div>
+				</div>
 			</div>
 			<hr />
 
+			<div class="row infobox_header">
+				<div class="col-sm-8 col-sm-offset-2" >
+					<h1>Models</h1>
+				</div>
+			</div>
+			<div class="row infobox">
+				<div class="col-sm-12">
+					<p>
+						We needed a mummy, a "something" inside of the mummy, the sarcophagus and some treasures that would be inside of it. In short one could say there were two runs in the modeling phase, where a first tier of the absolute nessessary models were created, and then a remake of them were done to the final version. They were either based off free-to-use models or created from scratch using a mix of programs, among others Blender, Maya, Photoshop and for the custom materials Erik M took a deep dive into Substance Designer, which is an extremely powerful program for creating realistic materials based on either the usual way with textures, or generating textures based of physical simulations. 
+					</p>
 
+				</div>
+			</div>
+
+			<div class="row infobox_header image-gallery">
+				<div class="col-sm-4 gallery_image_row">
+					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/5box.png">
+				</div>
+				<div class="col-sm-4 gallery_image_row">
+					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/5button.png">
+				</div>
+				<div class="col-sm-4 gallery_image_row">
+					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/5coin.png">
+				</div>
+			</div>
+			<div class="row infobox_header image-gallery">
+				<div class="col-sm-4 gallery_image_row">
+					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/5mummy.png">
+				</div>
+				<div class="col-sm-4 gallery_image_row">
+					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/5obi.png">
+				</div>
+				<div class="col-sm-4 gallery_image_row">
+					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/5skeleton.png">
+				</div>
+			</div>
+			<div class="row infobox_header image-gallery">
+				<div class="col-sm-12 gallery_image_row">
+					<div class="subtext">The raw models.</div>
+				</div>
+
+			</div>
+			
+			<div class="row infobox_header image-gallery">
+				<div class="col-sm-12 gallery_image_row">
+					<img class="img-responsive blurred_edges gallery_image" src="images/makingof/5texturedmodels.PNG">
+					<div class="subtext">And here we see some of the models with proper materials applied.</div>
+				</div>
+			</div>
+
+			<hr />
+			
 
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
