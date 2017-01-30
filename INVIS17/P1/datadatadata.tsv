@@ -1,0 +1,75 @@
+Number	Alias	IVIS	Stats	Math	Art	User	Prog	Graphic	HCI	UX	Interests
+1	Aldor	7	3	3	9	6	2	1	4	8	Visual Design	Film
+2	Aragorn	5	4	3	6	7	3	1	4	8	Aviation	Cooking	Sports
+3	Arwen	3	3	3	3	8	8	3	3	3	Visual Design
+4	Balin	3	4	4	6	8	2	1	2	7	Graphics	3D modeling
+5	Bereg	3	5	6	8	6	3	5	3	5	Science	Sports	Fashion	Traveling
+6	Bifur	4	4	5	6	10	7	7	6	7	Illustration
+7	Bilbo	6	5	8	7	8	7	7	7	8	Programming	Typography
+8	Bofur	4	4	6	5	7	7	3	3	2	Data Science
+9	Bombadil	4	6	6	2	6	5	1	5	8	Traveling	Sports	Photography
+10	Bombur	1	4	5	10	7	4	2	3	6	Sports	Illustration
+11	Borin	2	4	2	6	6	2	1	4	10	Reading	Music	Art	Traveling
+12	Boromir	3	5	5	1	7	8	2	6	5	Web Dev	Data Science
+13	Bounder	3	9	9	3	10	10	3	3	9	Art	Science
+14	Celeborn	7	6	5	6	8	4	1	6	7	Travelling	Cooking
+15	Damrod	3	2	5	6	7	1	2	3	8	Visualization
+16	Deagol	1	3	3	5	8	5	1	1	2	Reading	Sports	Nature
+17	Denethor	7	8	6	2	8	9	6	3	6	Visualization
+18	Dorlas	4	4	4	6	5	4	1	5	6	Visualization
+19	Dwalin	3	3	6	7	7	6	1	5	5	Music	Travelling	Dance
+20	Eldarion	3	4	9	8	8	3	2	8	9	Music	Sports
+21	Elendil	5	3	5	6	7	7	4	6	5	Illustration	3D modeling	Reading
+22	Elendur	3	3	5	2	7	5	2	6	9	Visualisation
+23	Elrond	3	10	8	1	6	9	4	3	3	Sports	Games	Programming
+24	Eomer	7	9	7	3	9	8	7	6	1	Art	Music	Data Science
+25	Eothain	5	5	7	4	9	9	8	4	3	Music	Graphics	Games
+26	Eowyn	2	4	4	4	4	2	6	4	4	Photography	Travelling
+27	Faramir	5	4	8	7	9	8	5	6	6	Illustration	Programming	Cooking
+28	Ferny	5	2	3	4	8	5	3	4	1	Graphics	Photography
+29	Fili	5	5	5	4	5	5	4	5	5	Programming	Visualisation
+30	Freda	3	3	9	7	7	2	2	3	8	Photography
+31	Frodo	3	3	4	4	6	5	3	4	3	Graphics	Sports
+32	Galadriel	7	5	6	7	9	8	7	8	5	Art	Sports
+33	Gamgee	2	4	6	2	7	6	2	4	3	Games	Programming
+34	Gandalf	4	6	8	1	9	8	6	5	5	Visualization
+35	Gimli	3	3	4	9	7	1	1	1	1	Sports	Nature	Illustration
+36	Gollum	4	2	2	4	9	1	1	1	6	Art	Science	Music
+37	Gorbag	5	2	5	5	9	7	3	6	3	Games	Film	Reading	Cooking
+38	Grimbold	4	4	7	5	9	6	1	1	4	Cooking	Beer
+39	Grishnakh	5	8	6	2	7	8	5	4	3	Data Science	Beer	
+40	Haldir	3	3	4	7	8	2	1	2	2	Sports
+41	Haleth	2	3	3	4	6	3	1	4	5	Film	Reading
+42	Hama	7	8	8	7	9	8	8	7	8	Programming	Games
+43	Hardang	2	4	7	9	7	2	2	3	8	Visualization
+44	Idril	6	3	3	8	10	5	3	5	5	Visualization
+45	Irolas	5	4	5	2	7	7	4	6	5	Nature	Games	VR	Music
+46	Isildur	4	5	5	4	8	8	3	5	5	Games	Music
+47	Kili	3	5	5	1	6	6	3	5	8	Cooking	Sports
+48	Legolas	4	4	4	7	8	8	4	4	4	Sports	Nature	Art
+49	Lindir	2	2	5	2	7	4	1	4	4	Photography	Music
+50	Lurtz	3	6	7	6	8	8	3	4	5	Sports	Reading
+51	Madril	4	4	5	4	9	5	2	7	5	Photography	Music
+52	Maiar	6	5	5	7	7	4	2	5	6	Illustration	Sports
+53	Mauhur	7	2	5	8	9	6	2	6	7	Reading	Illustration	Games	
+54	Merry	5	6	7	8	7	6	4	4	8	Traveling	Illustration	Cooking
+55	Morwen	3	5	4	3	10	6	2	7	5	Sports	Games	Music
+56	Nessa	1	1	1	2	2	1	1	1	2	Design	Film	Photography
+57	Ohtar	2	2	1	3	4	4	1	2	2	Technology	Science	Games	Nature	Sports
+58	Oin	7	5	8	5	8	9	7	9	7	Music
+59	Otho	6	3	4	6	10	7	5	9	7	Visualization
+60	Pelendur	2	5	4	3	4	5	4	4	1	Music
+61	Pippin	7	2	2	8	10	7	2	5	2	Art	Design	Games	Programming
+62	Quickbeam	3	3	5	8	8	2	3	3	3	Design	Art	Traveling	Fashion	Photography
+63	Rian	3	5	5	2	8	5	3	4	4	Games	Art	Reading	Film	Music
+64	Sam	6	3	5	9	8	4	4	4	9	Visualization
+65	Sauron	3	9	7	2	9	6	5	3	3	Sports	Dance	Nature	Traveling
+66	Shagrat	3	3	5	6	7	2	1	1	4	Sports	Film	Art
+67	Sharku	2	7	5	4	6	1	1	1	8	Visualization
+68	Smaug	7	4	4	6	10	8	5	7	6	Technology
+69	Smeagol	3	3	5	7	9	3	2	3	8	History	Maths	Games	Film	Illustration	Cooking
+70	Theoden	3	5	8	1	9	2	1	1	3	Design	Games
+71	Theodred	4	8	8	5	9	7	9	8	4	Beer	Graphics	Travel	Nature
+72	Thorin	7	6	7	2	10	8	6	7	7	Music	Photography	Nature
+73	Ugluk	4	3	5	5	8	6	4	4	2	Film	Games	Sports
+74	Uruk	5	8	7	7	9	9	8	7	7	Cooking	Sports	Film	Reading

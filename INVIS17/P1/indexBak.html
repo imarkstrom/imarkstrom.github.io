@@ -1,0 +1,75 @@
+<html>
+	<style>
+	</style>
+<head>
+<title>
+</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+.chart rect {
+  fill: steelblue;
+}
+
+.chart text {
+  fill: black;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+</style>
+<svg class="chart"></svg>
+<script>
+
+var width = 920;
+    height = 500;
+
+var y = d3.scaleLinear()
+    .range([height, 0]);
+
+var chart = d3.select(".chart")
+    .attr("width", width)
+    .attr("height", height);
+
+d3.tsv("dataNumsBackup.tsv", type, function(error, data) {
+	y.domain([0, 10 /*d3.max(data, function(d) { return d.value; }) */]);
+	
+	var barWidth = width / 10;  //data.length;
+	
+
+	//chart.attr("height", barHeight * data.length);
+
+	var bar = chart.selectAll("g")
+		.data(data)
+		.enter().append("g")
+		.attr("transform", function(d, i) { return "translate(" + 1 * barWidth + ",0)"; });
+
+	bar.append("rect")
+		.attr("y", function(d) {return y(d.value);})
+		.attr("width", barWidth - 1 )
+		.attr("height", function(d) {return height - y(d.value);});
+
+	bar.append("text")
+		.attr("y", function(d) { return y(d.value) + 3; })
+		.attr("x", barWidth / 2)
+		.attr("dy", ".75em")
+		.text(function(d) { return d["Alias"]; });
+});
+
+function type(d) {
+  d.value = +d["Art"]; // coerce to number
+  return d;
+}
+
+</script>
+
+
+<body>
+	<div class="chart"> </div>		
+</body>
+</html>
