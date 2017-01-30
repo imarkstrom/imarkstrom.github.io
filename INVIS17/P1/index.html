@@ -4,7 +4,7 @@
 <html>
 	<style>
 		/* data table styles */
-		#grid { height: 150px; width: 100%; }
+		#grid { height: 400px; width: 100%; padding:30px; overflow-y: scroll ; }
 		.row, .header { clear: left; font-size: 12px; line-height: 18px; height: 18px; }
 		.row:nth-child(odd) { background: rgba(0,0,0,0.05); }
 		.header { font-weight: bold; }
@@ -34,7 +34,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="styles.css">
 
-<body style="background-color:#fcfcfc; color:black;">
+<body style="background-color:white; color:black;">
 	<div class="container" style:"width:100%;margin:auto;">
 		
 		<div class="boxboxbox">
@@ -72,24 +72,26 @@
 					</div>
 				</div>
 				<!-- Large modal -->
-				<button type="button" class="btn btn-secondary" data-toggle="modal" data-target=".bs-example-modal-lg">Inspect Groups</button>
 
-				<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-					<div class="modal-dialog modal-lg" role="document">
-						<div class="modal-content" style="cursor:pointer;" id="viewGroups">
-							<span class="modal_radar_chart" id="seeGroup0">Group 0</span>
-							<span class="modal_radar_chart" id="seeGroup1">Group 1</span>
-							<span class="modal_radar_chart" id="seeGroup2">Group 2</span>
-							<span class="modal_radar_chart" id="seeGroup3">Group 3</span>
-							<span class="modal_radar_chart" id="seeGroup4">Group 4</span>
-							<span class="modal_radar_chart" id="seeGroup5">Group 5</span>
-							<span class="modal_radar_chart" id="seeGroup6">Group 6</span>
-							<span class="modal_radar_chart" id="seeGroup7">Group 7</span>
-							<span class="modal_radar_chart" id="seeGroup8">Group 8</span>
+				<div class="col-xs-2 col-xs-3">
+					<button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg">Inspect Groups</button>
+
+					<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+						<div class="modal-dialog modal-lg" role="document">
+							<div class="modal-content" style="cursor:pointer;" id="viewGroups">
+								<span class="modal_radar_chart" id="seeGroup0">Group 0</span>
+								<span class="modal_radar_chart" id="seeGroup1">Group 1</span>
+								<span class="modal_radar_chart" id="seeGroup2">Group 2</span>
+								<span class="modal_radar_chart" id="seeGroup3">Group 3</span>
+								<span class="modal_radar_chart" id="seeGroup4">Group 4</span>
+								<span class="modal_radar_chart" id="seeGroup5">Group 5</span>
+								<span class="modal_radar_chart" id="seeGroup6">Group 6</span>
+								<span class="modal_radar_chart" id="seeGroup7">Group 7</span>
+								<span class="modal_radar_chart" id="seeGroup8">Group 8</span>
+							</div>
 						</div>
 					</div>
 				</div>
-
 			
 				<!--	
 				<div class="col-xs-3">
@@ -113,15 +115,15 @@
 		</div>
 		
 		<div class="row">
-			<div id="gridDiv" class="col-xs-4" style="cursor:pointer;opacity:0.2;">	
+			<div id="gridDiv" class="col-xs-5" style="cursor:pointer;opacity:0.2;">	
 				<div id="grid"></div>
 			</div>
 			<div class="">
 				<div id="personInfo" style="visibility:hidden;">	
-					<div class="col-xs-4">
+					<div class="col-xs-3">
 							
 						<div id="personRadarChart" style="color:#afafaf"> </div>
-						<p style="margin:auto;padding-left: 30px; padding-top: 20px; "> Group mean values in brown </p>
+						<p style="margin:auto;padding-left: 30px; padding-top: 50px; "> Group mean values in brown </p>
 					</div>	
 					
 					<div class="col-xs-4">
@@ -247,6 +249,12 @@
 				})
 			
 			.hideAxis(["Number", "User", "Alias"])
+			.margin({
+				top: 20,
+				left: 20,
+				right: 20,
+				bottom: 20
+			})
 			.bundlingStrength(0.9)
 			.smoothness(0.08)
 			.color(color)
@@ -428,7 +436,7 @@
 
 				if (g != -1){
 					$(p).find(".col-2").text(g);
-					$(p).css("opacity","0.2");
+					$(p).css("opacity","0.3");
 				}else{
 					$(p).find(".col-2").text("");
 					$(p).css("opacity","1");
@@ -465,8 +473,8 @@
 		
 
 		var updateRadarChart = function(radar_data){
-			RadarChart.defaultConfig.w = 300;
-			RadarChart.defaultConfig.h = 300;	
+			RadarChart.defaultConfig.w = 250;
+			RadarChart.defaultConfig.h = 250;	
 			RadarChart.defaultConfig.levels=10;
 			RadarChart.defaultConfig.minValue=0;
 			RadarChart.defaultConfig.maxValue=10;
@@ -642,7 +650,7 @@
 			if (new_to_list.length > 0){
 				$("#gridDiv").css("opacity","1");
 			}else{
-				$("#gridDiv").css("opacity","0.2");
+				$("#gridDiv").css("opacity","0.3");
 			}
 			$("#personInfo").css("visibility", "hidden");
 			var already_in_table = []; 
