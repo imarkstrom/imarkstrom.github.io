@@ -16,6 +16,9 @@
 	Information Visualization Project 1 2017
 </title>
 	<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.4.13/d3.min.js"></script> -->
+	
+	<!-- Using Parcoords, Divgrid and Radar-chart, prebuilt plugin-style d3 libraries -->
+
 	<script src="parcoordslib/d3.min.js"></script>
 	<script src="d3.svg.multibrush.js"></script>
 	<script src="d3.parcoords.js"></script>
@@ -365,13 +368,11 @@
 		var update_group_select_items = function(){
 			$("#assignManyToGroup li").each(function(i,d){
 				if (i > 0){
-					console.log(d);
 					$(d).text("Group "+(i-1)+" ("+groups[i-1].length+" members)");
 				}
 			});
 			$("#personChoosenGroup li").each(function(i,d){
 				if (i > 0){
-					console.log(d);
 					$(d).text("Group "+(i-1)+" ("+groups[i-1].length+" members)");
 				}
 			});
