@@ -132,7 +132,7 @@
 								<button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">Assign Person to group:
 								<span class="caret"></span></button>
 								<ul class="dropdown-menu" style="cursor:pointer;" id="personChoosenGroup">
-									<li id="personunassigngroup">Remove Group assigns from person!</li>
+									<li id="personunassigngroup">Remove Group assigns!</li>
 									<li id="personassigngroup0">Group 0</li>
 									<li id="personassigngroup1">Group 1</li>
 									<li id="personassigngroup2">Group 2</li>
@@ -362,17 +362,35 @@
 			generateGroupChart();
 		};
 
+		var update_group_select_items = function(){
+			$("#assignManyToGroup li").each(function(i,d){
+				if (i > 0){
+					console.log(d);
+					$(d).text("Group "+(i-1)+" ("+groups[i-1].length+" members)");
+				}
+			});
+			$("#personChoosenGroup li").each(function(i,d){
+				if (i > 0){
+					console.log(d);
+					$(d).text("Group "+(i-1)+" ("+groups[i-1].length+" members)");
+				}
+			});
+		};
+
 		var remove_from_group = function(p){
 			for (var i = 0; i < groups.length; i++){	
 				var ii = groups[i].indexOf(p.Alias);
 				if (ii >= 0){
 					groups[i].splice(ii,1);
 					update_group_mean(i);
+					update_group_select_items();	
 					return true;
 				}
 			}
 			return false;
 		};
+		
+
 
 		var find_in_group = function(p){
 			for (var i = 0; i < groups.length; i++){
@@ -395,10 +413,9 @@
 					
 				}
 			}
-			
 			groups[groupnumber].push(person.Alias);
 			update_group_mean(groupnumber);
-
+			update_group_select_items();	
 		};
 
 
