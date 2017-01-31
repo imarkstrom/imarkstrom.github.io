@@ -1,7 +1,6 @@
-<script>
-"use strict";
-</script>
+<!DOCTYPE html>
 <html>
+<head>
 	<style>
 		/* data table styles */
 		#grid { height: 400px; width: 100%; padding:30px; overflow-y: scroll ; }
@@ -13,29 +12,29 @@
 		.col-1 { width: 60%; }
 		.col-2 { width: 10%; }
 	</style>
-<head>
 <title>
+	Information Visualization Project 1 2017
 </title>
+	<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.4.13/d3.min.js"></script> -->
+	<script src="parcoordslib/d3.min.js"></script>
+	<script src="d3.svg.multibrush.js"></script>
+	<script src="d3.parcoords.js"></script>
+	<script src="parcoordslib/sylvester.js"></script>
+	<script type="text/javascript" src="parcoordslib/divgrid.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="d3.parcoords.css">
+	<script src="radar-chart/src/radar-chart.js"></script>
+	<link rel="stylesheet" type="text/css" href="radar-chart/src/radar-chart.css">
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.4.13/d3.min.js"></script> -->
-<script src="parcoordslib/d3.min.js"></script>
-<script src="d3.svg.multibrush.js"></script>
-<script src="d3.parcoords.js"></script>
-<script src="parcoordslib/sylvester.js"></script>
-<script type="text/javascript" src="parcoordslib/divgrid.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="d3.parcoords.css">
-<script src="radar-chart/src/radar-chart.js"></script>
-<link rel="stylesheet" type="text/css" href="radar-chart/src/radar-chart.css">
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="styles.css">
 
 <body style="background-color:white; color:black;">
-	<div class="container" style:"width:100%;margin:auto;">
+	<div class="container" style="width:100%;margin:auto;">
 		
 		<div class="boxboxbox">
 			<!-- Based from the beginning on the examples from paracoord library, and then heavily modified. -->
@@ -120,19 +119,20 @@
 			</div>
 			<div class="">
 				<div id="personInfo" style="visibility:hidden;">	
-					<div class="col-xs-3">
-							
-						<div id="personRadarChart" style="color:#afafaf"> </div>
-						<p style="margin:auto;padding-left: 30px; padding-top: 50px; "> Group mean values in brown </p>
+					<div class="col-xs-4" style="width:300px;">
+						<div class="personalRadarHolder">		
+							<div id="personRadarChart"> </div>
+							<p style="margin:auto;padding-left: 30px; padding-top: 50px; "> Group mean values in brown </p>
+						</div>
 					</div>	
 					
-					<div class="col-xs-4">
+					<div class="col-xs-3">
 						<div id="person_info" style="padding-top:20px;">
 							<div class="dropdown">
 								<button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">Assign Person to group:
 								<span class="caret"></span></button>
 								<ul class="dropdown-menu" style="cursor:pointer;" id="personChoosenGroup">
-									<li id="unassigngroup">Remove Group assigns from person!</li>
+									<li id="personunassigngroup">Remove Group assigns from person!</li>
 									<li id="personassigngroup0">Group 0</li>
 									<li id="personassigngroup1">Group 1</li>
 									<li id="personassigngroup2">Group 2</li>
@@ -148,11 +148,14 @@
 						<div  class="boxboxbox">
 							<table class="table" style="margin-top:40px;" id="personInfoTable" >
 								<thead>
-									<th> Person </th>
-									<th> Information </th>
+									<tr>
+										<th> Person </th>
+										<th> Information </th>
+									</tr>
 								</thead>
 								<tr>
-
+									<td> Person </td>
+									<td> Information </td>
 								</tr>
 							</table>
 						</div>
@@ -164,7 +167,7 @@
 
 					
 <script>
-	
+"use strict";
 
 	d3.tsv('useDataData.tsv', function(data) {
 	  
@@ -306,9 +309,9 @@
 						className: "Group "+i,
 						axes:[
 						{axis: "Math", value:group_means[i][0] },	
-						{axis: "Prog & Graph", value:group_means[i][1] },	
+						{axis: "Prog & Graph", value:group_means[i][1],yOffset:-14 },	
 						{axis: "Art", value:group_means[i][2] },	
-						{axis: "HCI UX", value:group_means[i][3] },
+						{axis: "HCI UX", value:group_means[i][3],yOffset:12 },
 						],
 					},
 				];
@@ -351,10 +354,10 @@
 						 group_maxims[nr][3]=(p.HCI + p.UX)/2 
 					}
 				}
-				group_means[nr][0] = group_maxims[nr][0] - group_means[nr][0]*0.3 / number_of_members;
-				group_means[nr][1] = group_maxims[nr][1] - group_means[nr][1]*0.3 / number_of_members;
-				group_means[nr][2] = group_maxims[nr][2] - group_means[nr][2]*0.3 / number_of_members;
-				group_means[nr][3] = group_maxims[nr][3] - group_means[nr][3]*0.3 / number_of_members;
+				group_means[nr][0] =  group_maxims[nr][0] - ( group_maxims[nr][0] - group_means[nr][0] / number_of_members)*0.5;
+				group_means[nr][1] =  group_maxims[nr][1] - ( group_maxims[nr][1] - group_means[nr][1] / number_of_members)*0.5;
+				group_means[nr][2] =  group_maxims[nr][2] - ( group_maxims[nr][2] - group_means[nr][2] / number_of_members)*0.5;
+				group_means[nr][3] =  group_maxims[nr][3] - ( group_maxims[nr][3] - group_means[nr][3] / number_of_members)*0.5;
 			}
 			generateGroupChart();
 		};
@@ -364,6 +367,7 @@
 				var ii = groups[i].indexOf(p.Alias);
 				if (ii >= 0){
 					groups[i].splice(ii,1);
+					update_group_mean(i);
 					return true;
 				}
 			}
@@ -383,11 +387,11 @@
 
 		var assign_person_to_group = function(person, groupnumber){
 			var found = false;
-			for (var i = 0; i < groups.length; i++){	
-				var ii = groups[i].indexOf(person.Alias);
+			for (var iii = 0; iii < groups.length; iii++){
+				var ii = groups[iii].indexOf(person.Alias);
 				if (ii >= 0){
-					groups[i].splice(ii,1);
-					update_group_mean(ii);
+					groups[iii].splice(ii,1);
+					update_group_mean(iii);
 					
 				}
 			}
@@ -473,8 +477,8 @@
 		
 
 		var updateRadarChart = function(radar_data){
-			RadarChart.defaultConfig.w = 250;
-			RadarChart.defaultConfig.h = 250;	
+			RadarChart.defaultConfig.w = 290;
+			RadarChart.defaultConfig.h = 290;	
 			RadarChart.defaultConfig.levels=10;
 			RadarChart.defaultConfig.minValue=0;
 			RadarChart.defaultConfig.maxValue=10;
@@ -497,9 +501,9 @@
 					className: p.Alias,
 					axes:[
 						{axis: "Mathematics", value:(p.Stats+p.Math)/2},	
-						{axis: "Programming and Graphics", value:(p.Prog+p.Graphics)/2},	
+						{axis: "Programming and Graphics", value:(p.Prog+p.Graphics)/2,yOffset:-14},	
 						{axis: "Artistic skills", value:(p.Art+p.IVIS)/2},	
-						{axis: "Computer Interaction", value:(p.HCI + p.UX)/2},
+						{axis: "Computer Interaction", value:(p.HCI + p.UX)/2,yOffset:12},
 					],
 				},
 			];
@@ -518,7 +522,7 @@
 			$("#personInfoTable").find("tbody").append($("<tr>").append($("<td>").html("Graphics")).append($("<td>").html(p.Graphics)));
 			$("#personInfoTable").find("tbody").append($("<tr>").append($("<td>").html("H C I")).append($("<td>").html(p.HCI)));
 			$("#personInfoTable").find("tbody").append($("<tr>").append($("<td>").html("U X")).append($("<td>").html(p.UX)));
-
+			
 			var in_group = find_in_group(p);
 
 			$("#personChoosenGroup li").each(function(i){
@@ -537,18 +541,18 @@
 									className: p.Alias,
 									axes:[
 										{axis: "Mathematics", value:(p.Stats+p.Math)/2},	
-										{axis: "Programming and Graphics", value:(p.Prog+p.Graphics)/2},	
+										{axis: "Programming and Graphics", value:(p.Prog+p.Graphics)/2,yOffset:-14},	
 										{axis: "Artistic skills", value:(p.Art+p.IVIS)/2},	
-										{axis: "Computer Interaction", value:(p.HCI + p.UX)/2},
+										{axis: "Computer Interaction", value:(p.HCI + p.UX)/2,yOffset:12},
 									],
 								},
 								{
 									className: "Group "+(i-1) +" mean values",
 									axes:[
 										{axis: "Mathematics", value:group_means[i-1][0]},	
-										{axis: "Programming and Graphics", value:group_means[i-1][1]},	
+										{axis: "Programming and Graphics", value:group_means[i-1][1],yOffset:-14},	
 										{axis: "Artistic skills", value:group_means[i-1][2]},	
-										{axis: "Computer Interaction", value:group_means[i-1][3]},
+										{axis: "Computer Interaction", value:group_means[i-1][3],yOffset:12},
 									],
 								},
 							];
@@ -558,7 +562,7 @@
 							remove_from_group(p);
 						}
 						update_group_numbers_in_rows(rows);	
-						
+						//displayInfoInRightCorner(p);
 											//update_table();
 					},
 					"mouseover": function(sak){
@@ -568,18 +572,18 @@
 									className: p.Alias,
 									axes:[
 										{axis: "Mathematics", value:(p.Stats+p.Math)/2},	
-										{axis: "Programming and Graphics", value:(p.Prog+p.Graphics)/2},	
+										{axis: "Programming and Graphics", value:(p.Prog+p.Graphics)/2,yOffset:-14},	
 										{axis: "Artistic skills", value:(p.Art+p.IVIS)/2},	
-										{axis: "Computer Interaction", value:(p.HCI + p.UX)/2},
+										{axis: "Computer Interaction", value:(p.HCI + p.UX)/2,yOffset:12},
 									],
 								},
 								{
 									className: "Group "+(i-1) +" mean values",
 									axes:[
 										{axis: "Mathematics", value:group_means[i-1][0]},	
-										{axis: "Programming and Graphics", value:group_means[i-1][1]},	
+										{axis: "Programming and Graphics", value:group_means[i-1][1],yOffset:-14},	
 										{axis: "Artistic skills", value:group_means[i-1][2]},	
-										{axis: "Computer Interaction", value:group_means[i-1][3]},
+										{axis: "Computer Interaction", value:group_means[i-1][3],yOffset:12},
 									],
 								},
 							];
@@ -769,7 +773,7 @@
 				for (var j = 0; j < groups[i].length; j++){
 					s = s + "<li>"+ groups[i][j] + "</li>";
 				}
-				$('<div>').append($("<div>").html("Group "+i)).append($("<ul>").html(s)  ).attr("class","member_blob").css({"font-size": "12px","background-color": "#aaaaaa"}) .appendTo('body');
+				$('<div>').append($("<div>").html("Group "+i+ " ("+groups[i].length+" members)"  )).append($("<ul>").html(s)  ).attr("class","member_blob").css({"font-size": "12px","background-color": "#eaeaea"}) .appendTo('body');
 				var posx = eve.pageX+20;
 				var posy = eve.pageY+30;	
 				$('div.member_blob').css({'position': 'absolute', 'top': posy, 'left': posx, 'z-index':3000});	
