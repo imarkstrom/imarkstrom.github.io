@@ -12,6 +12,7 @@
   fill: rgba(120,120,120,0.2);
 }
 .parcoords canvas {
+  width:100%;
   opacity: 1;
   transition: opacity 0.3s;
   -moz-transition: opacity 0.3s;

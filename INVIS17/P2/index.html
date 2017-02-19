@@ -1,189 +1,77 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>
-			Information Visualization Project 1 2017
-		</title>
-			<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.4.13/d3.min.js"></script> -->
-			
-			<!-- Using Parcoords, Divgrid and Radar-chart, prebuilt plugin-style d3 libraries -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			/* data table styles */
+			#grid { height: 400px; width: 100%; padding:30px; overflow-y: scroll ; }
+			.row, .header { clear: left; font-size: 12px; line-height: 18px; height: 18px; }
+			.row:nth-child(odd) { background: rgba(0,0,0,0.05); }
+			.header { font-weight: bold; }
+			.cell { float: left; overflow: hidden; white-space: nowrap; width: 8%; height: 18px; }
+			/*.col-0 { width: 30%; }
+			.col-1 { width: 60%; }
+			.col-2 { width: 10%; }*/
+		</style>
+			<title>
+				Information Visualization Project 2 2017
+			</title>
+		<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.4.13/d3.min.js"></script> -->
+		
+		<!-- Using Parcoords, Divgrid and Radar-chart, prebuilt plugin-style d3 libraries -->
 
 		<script src="parcoordslib/d3.min.js"></script>
 		<script src="d3.svg.multibrush.js"></script>
 		<script src="d3.parcoords.js"></script>
 		<script src="parcoordslib/sylvester.js"></script>
 		<script type="text/javascript" src="parcoordslib/divgrid.js"></script>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="d3.parcoords.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="d3.parcoords.css" />
 		<script src="radar-chart/src/radar-chart.js"></script>
-		<link rel="stylesheet" type="text/css" href="radar-chart/src/radar-chart.css">
+		<link rel="stylesheet" type="text/css" href="radar-chart/src/radar-chart.css" />
+
+
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="styles.css">
+		<link rel="stylesheet" type="text/css" href="styles.css" />
 	</head>
 
 	<body style="background-color:white; color:black;">
-		
+		<div id="example0" class="parcoords" style="width:100%;height:800px;"></div>
 		<div class="container">
-			<div class="row"> 
-				<div class="col-xs-10 col-xs-offset-1">
-					<h1>Importance in life?</h1>
-					<p> Here, you will be presented with a series of countries (of course not the whole world, but a number of western countries and japan) and what they think about work, familly and other maybe related things over a 20 years period. The data and visuals are created and produced from the data and site of the World Values Survey. All waves do not include all countries.</p>
+			<div class="row">	
+				<div class="col-xs-12 ">
 				</div>
 			</div>
-
+			<div class="row" style="height:40px;">
+				<div class="col-xs-2"> 
+					<button id="showwave3" class="btn btn-success" type="button">Wave 3</button>
+				</div>
+				<div class="col-xs-2"> 
+					<button id="showwave4" class="btn btn-primary" type="button">Wave 4</button>
+				</div>
+				<div class="col-xs-2"> 
+					<button id="showwave5" class="btn btn-primary" type="button">Wave 5</button>
+				</div>
+				<div class="col-xs-2"> 
+					<button id="showwave6" class="btn btn-primary" type="button">Wave 6</button>
+				</div>
+				<div class="col-xs-2"> 
+					<button id="resetBrushes" class="btn btn-secondary" type="button">Reset Brushes</button>
+				</div>
+			</div>
+			
 			<div class="row">
-				<div class="col-xs-2 col-xs-offset-2" ><button id="important" type="button" class="btn btn-secondary">Important values</button></div>
-				<div class="col-xs-2" ><button id="trust" type="button" class="btn btn-secondary">Trust in society</button></div>
-				<div class="col-xs-2" ><button id="money" type="button" class="btn btn-secondary">Money</button></div>
-				<div class="col-xs-2" ><button id="war" type="button" class="btn btn-secondary">War and Terror</button></div>
+				<div id="gridDiv" class="col-xs-12" style="cursor:pointer;">	
+					<div id="grid"></div>
+				</div>
 			</div>
 		</div>
-		<span id="TRUST">
-			<div class="container">
-				<div class="row" >
-					<div class="col-xs-10 col-xs-offset-1">
-						<h2> Can we trust other people?</h2>
-						<p>Layed out below is a world map showing how people around the world have answered the question in the last couple of years if they think they can trust other people. Green marks high trust, falling to red where few people are really convinced one can really trust people around you.</p>
-						<div><img class="img-responsive" src="images/6-chart-trust-world.png"></img></div>
-						<p>Sweden is quite green. Have we allways (the last 20 years) been like this?</p>
-						<div><img class="img-responsive" src="images/7-time-trust-sweden.png"></img></div>
-					</div>
-				</div>
-				<div class="row" >
-					<div class="col-xs-10 col-xs-offset-1">
-						<h2> But how is our confidence in the police?</h2>
-						<p>Can we see some general mean in the confidence for the police force in the world? How has it evolved through the last 20 years? Let us have a look.</p>
-						<div><img class="img-responsive" src="images/8-time-police-world.png"></img></div>
-						<p>We hear sometimes that we have a higher trust for the police here in Sweden than in the US. Do we?</p>
-					</div>
-				</div>
-				
-				<div class="row" >
-					<div class="col-xs-5 col-xs-offset-1">
-						<div>
-							<h3>Sweden</h3>
-							<img class="img-responsive" src="images/9-1-bar-police-swe.png"></img>
-						</div>
-					</div>
-					<div class="col-xs-5 ">
-						<div>
-							<h3>USA</h3>
-							<img class="img-responsive" src="images/9-1-bar-police-us.png"></img>
-						</div>
-					</div>
-				</div>
-			</div>
-		</span>
-		<span id="MONEY">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-10 col-xs-offset-1">
-						<h2>Protecting Earth and the companies wallets might not match up... </h2>
-						<p>The balance between economic growth and being able to grow plants and protecting the enviroment among the countries in the survey program, could be layed out as this.<p>
-						<div><img class="img-responsive" src="images/10-bars-enviroment-world-today.png"></img></div>
-						<p>There seems to be a somehwat equal answer rate between the both camps. But, how about the correlation between those who enjoy quality leisure time, and saving the enviroment? We begin with what people around the world think about free time:<p>
-						<div><img class="img-responsive" src="images/11-pie-leisure-world.png"></img></div>
-					</div>
-				</div>
-			</div>
-		</span>
-		<span id="WAR">
-			<div class="container">
-				<div class="row" >
-					<div class="col-xs-10 col-xs-offset-1">
-						<h2>War? Here?</h2>
-						<p>Are people afraid their country is going to be involved in a war? <p>
-						<div><h3>Fear of war</h3><img class="img-responsive" src="images/12-chart-war-world-today.png"></img></div>
-						<p>In america people seems to be moderately afraid of war elsewhere but with them involved. But, one can question if they actually know that they are involved in quite a few conflicts around the world today. Russia on the other hand seems worse, and Sweden, as usual, pacificts as we are, are green, indicating no fear of war. But how about civil war? <p>
-						<div><h3>Fear of civil war</h3><img class="img-responsive" src="images/13-chart-civilwar-world-today.png"></img></div>
-						<p>And guess what: In the world, as a general: Those who are very afraid of civil wars, are also afraid of wars with other countries. Coincidence?<p>
-						<div><img class="img-responsive" src="images/14-pie-cross.png"></img></div>
-					</div>
-				</div>
 
-				</div>
-			</div>
-		</span>
-		<span id="IMPORTANT">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-10 col-xs-offset-1">
-						<h2>What do we think about work, really?</h2>
-						<p> Lets begin with the whole world. What do we think, generally, about how important work is in our life?<p>
-						<div><img class="img-responsive" src="images/1-pie-work-the-world-today.png"></img></div>
-						<p>but now rise the question, how this has evolved through time? Lets say the last 20 years? Obviously work seems really important, but, has it allways been the case?<p>
-						<div><img class="img-responsive" src="images/2-time-work-20years.png"></img></div>
-						<p> and because we are in Sweden, so what do we think here?</p>
-						<div><img class="img-responsive" src="images/3-pie-work-sweden.png"></img></div>
-						<p>We see a slight difference here. Interesting enough, that here in sweden we don't think work is as important as the mean of the world thinks...</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-xs-10 col-xs-offset-1">
-						<h2>But how about familly then?</h2>
-						<p>Many see the distinction between familly and work. But what did we think 20 years ago, and how is it today? Lets see the situation today: Is familly important today?<p>
-						<div><img class="img-responsive" src="images/4-bars-family-world.png"></img></div>
-						<p> and because we are still in Sweden, what do we think here? How has it evolved throughout the last 20 years?</p>
-						
-						<div><img class="img-responsive" src="images/5-time-family-sweden-20years.png"></img></div>
-						<p>We think our family is important. Lucky us! And with quite little surprise, we have had the same thought for quite some time now.</p>
-						<!--p>Those who say, in Sweden, that work is important, the question is of course if they think familly is important too?</p>
-						<div><img class="img-responsive" src="images/6-pie-workfamilly-sweden.png"></img></div>
-						<p>The people wo thought work is important, also seems to think.</p>
-						<div><img class="img-responsive" src="images/7-pie-workfamillybad-sweden.png"></img></div>
-						<p>The people wo thought family is not that important, also seems to think work is ... Interesting. Can we draw any conclusion about this?</p-->
-
-					</div>
-				</div>
-
-
-
-
-				<!--div class="row">
-					<div class="col-xs-10 col-xs-offset-1">
-						<h2>But, health then? </h2>
-						<p>How is the mean state of health in the countries today?<p>
-						<div><img class="img-responsive" src="images/8-pie-health-world.png"></img></div>
-						<p>But do people really feel worse today than many years ago?<p>
-						<div><img class="img-responsive" src="images/9-time-health-world-20years.png"></img></div>
-						<p>and singling out Sweden here, we have this curve through time:</p>
-						<div><img class="img-responsive" src="images/10-time-health-sweden.png"></img></div>
-					</div>
-				</div-->
-			</div>
-		</span>
-		<script>
-			"use strict;"
-			var shower = function(d){
-				console.log(d);
-				$("#WAR").hide();
-				$("#MONEY").hide();
-				$("#IMPORTANT").hide();
-				$("#TRUST").hide();
-				$("#"+d.target.id.toUpperCase()).show();
-			};
-			$("#important").on("click", function(d){
-				shower(d);
-			});
-			$("#war").on("click", function(d){
-				shower(d);
-			});
-			$("#money").on("click", function(d){
-				shower(d);
-			});
-			$("#trust").on("click", function(d){
-				shower(d);
-			});
-			//$("#WAR").hide();
-			$("#MONEY").hide();
-			$("#IMPORTANT").hide();
-			$("#TRUST").hide();
-
-		</script>
-
-
+		<script src="program.js"></script>
 	</body>
+
 </html>
 
 

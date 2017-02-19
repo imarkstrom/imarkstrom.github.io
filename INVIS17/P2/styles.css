@@ -1,7 +1,10 @@
+.row {
+	background-color:"white";
+}
+
 body {
-	margin: auto;
-	width: 80%;
-	text-align: center;
+	width: 100%;
+/*	text-align: center; */
 }
 
 img {
