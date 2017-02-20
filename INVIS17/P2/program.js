@@ -24,7 +24,21 @@ d3.csv('meanvals.sofartxt', function(data) {
 
 	console.log(question_answers);
 
+	var countries = [];
+	console.log(data);
+	
+	
+	data.forEach(function(c){
+		console.log(c);
+		if (countries.indexOf(c.Country) === -1){
+			countries.push(c.Country);
+		}
+	});
+	
+	console.log(countries);
+
 	data.forEach(function(d){
+		d.Index = countries.indexOf(d.Country);
 		d.Wave=parseFloat(d.Wave);
 		d.Sex=parseFloat(parseInt(100*parseFloat(d.Sex)))/100;
 		if (d.Sex < 0){
@@ -70,18 +84,18 @@ d3.csv('meanvals.sofartxt', function(data) {
 		
 	});
 
-	var from_color_to_color  = d3.scale.linear().domain([3,4,5,6]).range(["darkolivegreen", "maroon","chocolate","mediumpurple"]).interpolate(d3.interpolateLab);
+	var from_color_to_color  = d3.scale.linear().domain([0,countries.length]).range(["darkolivegreen", "maroon"]).interpolate(d3.interpolateLab);
 	var from_color_to_color_brushed  = from_color_to_color; //d3.scale.linear().domain([1,10]).range(["blue", "red"]).interpolate(d3.interpolateLab);
 
 
 	var color = function(d) {
 			if (d != null)
-				return from_color_to_color(d.Wave);
+				return from_color_to_color(d.Index);
 			return "white";
 	};
 
 	var color_brushed = function(d) { 
-			return from_color_to_color_brushed(d.Wave);
+			return from_color_to_color_brushed(d.Index);
 	};
 
 	var use_data = {3:[],4:[],5:[],6:[]};
@@ -91,19 +105,6 @@ d3.csv('meanvals.sofartxt', function(data) {
 	
 	//When brushing, we want to remember the country names...	
 	var brushed_countries = [];
-
-	var countries = [];
-	console.log(data);
-	
-	
-	data.forEach(function(c){
-		console.log(c);
-		if (countries.indexOf(c.Country) === -1){
-			countries.push(c.Country);
-		}
-	});
-	
-	console.log(countries);
 	
 	var pcCreate = function(data){
 				//data.sort(function(a,b){ 
@@ -209,7 +210,7 @@ d3.csv('meanvals.sofartxt', function(data) {
 					},
 				
 				})
-			.hideAxis(["Wave"])
+			.hideAxis(["Wave","Index"])
 			.margin({
 				top: 20,
 				left: 20,
