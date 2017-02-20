@@ -22,20 +22,16 @@ d3.csv('meanvals.sofartxt', function(data) {
 
 	var GMEQ = {3: {'Mal': 63.27, 'Georgi': 39.33, 'Ugand': 40.1, 'Zimbabw': 50.1, 'Franc': 32.74, 'Urugua': 42.83, 'Ukrain': 34.46, 'Indonesi': 30.16, 'Pakista': 30.84, 'Brazi': 60.29, 'Morocc': 39.46, 'Kazakhsta': 35.32, 'Azerbaija': 34.96, 'VietNa': 35.52, 'Macedoni': 28.13, 'Yeme': 33.44, 'Argentin': 49.62, 'Romani': 29.44, 'Hungar': 26.35, 'Philippine': 46.16, 'Venezuel': 47.68, 'Uzbekista': 45.28, 'Chin': 43.44, 'Zambi': 51.61, 'Banglades': 33.46, 'Armeni': 40.22, 'Ecuado': 54.34, 'Singapor': 42.48, 'Sloveni': 28.41, 'Nigeri': 46.5, 'Guatemal': 55.8, 'Per': 49.2, 'Ethiopi': 39.96, 'Albani': 29.12, 'Croati': 27.27, 'Netherland': 30.9, 'Mexic': 48.77, 'Russi': 41.8, 'Polan': 32.86, 'Chil': 55.21, 'Malaysi': 48.84, 'Ghan': 40.75, 'Lithuani': 31.23, 'Algeri': 35.33, 'Latvi': 31.97, 'Tunisi': 41.66, 'Estoni': 33.85, 'Bulgari': 28.7, 'Egyp': 30.13, 'Belaru': 29.52, 'Thailan': 42.48, 'Colombi': 57.84, 'Moldov': 38.57, 'Jorda': 36.42, 'Ira': 44.1}, 4: {'Tanzani': 34.62, 'Urugua': 45.86, 'Mal': 40.01, 'Bosni': 28.03, 'Georgi': 40.77, 'Tunisi': 40.81, 'Spai': 34.66, 'Ukrain': 28.43, 'Indonesi': 29.36, 'Pakista': 31.71, 'Turke': 43.06, 'Brazi': 59.53, 'Morocc': 40.05, 'Kazakhsta': 36.64, 'Swede': 25.0, 'Azerbaija': 36.5, 'VietNa': 37.55, 'Switzerlan': 33.68, 'Macedoni': 37.38, 'Israe': 39.2, 'Serbi': 32.78, 'Venezuel': 48.02, 'Argentin': 52.56, 'Romani': 30.84, 'Hungar': 27.21, 'Philippine': 45.28, 'Sloveni': 29.98, 'Uzbekista': 35.63, 'Chin': 40.91, 'Zambi': 42.08, 'Banglades': 33.46, 'Armeni': 35.42, 'Finlan': 26.88, 'Canad': 32.56, 'Ital': 36.03, 'Ugand': 44.42, 'Guatemal': 56.52, 'Per': 54.47, 'Rwand': 51.51, 'Ethiopi': 30.0, 'Albani': 28.15, 'Croati': 30.05, 'Netherland': 30.9, 'Mexic': 50.77, 'Russi': 37.51, 'Polan': 33.22, 'Chil': 54.95, 'Ecuado': 57.26, 'Lithuani': 32.19, 'German': 28.31, 'Latvi': 36.78, 'Estoni': 36.62, 'Norwa': 25.79, 'Bulgari': 31.78, 'Egyp': 32.76, 'Belaru': 30.33, 'Thailan': 42.64, 'Colombi': 58.79, 'Moldov': 37.59, 'Jorda': 38.87}, 5: {'Tanzani': 37.58, 'Mal': 38.99, 'Georgi': 40.72, 'Urugua': 46.65, 'Ukrain': 28.27, 'Indonesi': 34.01, 'Pakista': 31.31, 'Turke': 40.28, 'Brazi': 55.97, 'Morocc': 40.88, 'Kazakhsta': 30.0, 'Azerbaija': 33.71, 'VietNa': 35.66, 'Philippine': 43.51, 'Macedoni': 42.32, 'Yeme': 37.69, 'Argentin': 47.35, 'Romani': 31.39, 'Hungar': 31.18, 'Qata': 41.1, 'Venezuel': 47.12, 'Chin': 42.48, 'Zambi': 54.63, 'Banglades': 33.22, 'Armeni': 32.52, 'Ecuado': 52.34, 'Serbi': 29.68, 'Ugand': 43.46, 'Guatemal': 55.89, 'Per': 50.33, 'Ethiopi': 29.83, 'Jorda': 35.77, 'Albani': 33.77, 'Croati': 33.65, 'Bosni': 36.21, 'Mexic': 48.2, 'Russi': 41.15, 'Polan': 34.27, 'Chil': 51.95, 'Malaysi': 46.11, 'Ghan': 42.76, 'Indi': 33.38, 'Montenegr': 30.07, 'Lithuani': 37.57, 'Latvi': 36.44, 'Tunisi': 41.42, 'Bulgari': 28.19, 'Egyp': 31.45, 'Belaru': 28.13, 'Thailan': 40.96, 'Colombi': 57.51, 'Moldov': 35.4, 'Rwand': 53.09, 'Ira': 30.86}, 6: {}}
 
-	console.log(question_answers);
 
 	var countries = [];
-	console.log(data);
 	
 	
 	data.forEach(function(c){
-		console.log(c);
 		if (countries.indexOf(c.Country) === -1){
 			countries.push(c.Country);
 		}
 	});
 	
-	console.log(countries);
 
 	data.forEach(function(d){
 		d.Index = countries.indexOf(d.Country);
@@ -303,7 +299,6 @@ d3.csv('meanvals.sofartxt', function(data) {
 		locrows.each(function(lr){
 			$(this).mouseover(function(eve){
 				var country_short = $(this).find(".col-1").text();
-				console.log(country_short);
 				
 				var gmEMP = "No data for employment of age 15+ was accumulated (Gapminder)";
 				var gmCO2 = "During these years no data for CO2 emissions was collected (Gapminder)";
@@ -333,7 +328,6 @@ d3.csv('meanvals.sofartxt', function(data) {
 				
 			}).mouseout(function(eve){
 				$('div.member_blob').remove();
-				console.log("EXIT");
 			});
 		});
 
@@ -414,49 +408,19 @@ d3.csv('meanvals.sofartxt', function(data) {
 	
 
 
-//	console.log(q);
-//	console.log(question_answers);
 	var dimensions = $(".dimension .axis");
-//	console.log(dimensions);
 	
 	dimensions.each(function(i,d){
 		if (i > 2){
 			var question_code = q[WAVE][i-1] ;
 			var answers = question_answers[WAVE][question_code];
-//			console.log(question_code);
-//			console.log(answers);
 			var children = $(d).find(".tick");
-//			console.log(children);
 			children.each(function(j,c){
 				var answer = answers[parseInt($(c).text())];
-//				console.log(answer);
 				$(c).find("text").html(answer);
 			});
 		}
 	});
 		
-	/*
-	for (var iii = 3; iii < dimensions.length; ++iii){
-		var tickboxes = $(dimensions[iii]).find(".tick");
-		
-		
-		console.log(tickboxes);
-		var question_code = q[WAVE][ parseInt(iii-3) ] ;
-		console.log(question_code);
-		var answers = question_answers[WAVE][question_code];
-		console.log(answers);
-		for (var iiii = 0; iiii < tickboxes.length; ++iiii){
-			var tickbox = tickboxes[iiii];
-			var answer = answers[ $(tickbox).text() ];
-			console.log( answer );
-			if (typeof answer !== undefined){
-				$(tickbox).text(answer);
-			}	
-			else{
-				$(tickbox).text("");
-			}
-				
-		}		
-	}*/
 });
 
