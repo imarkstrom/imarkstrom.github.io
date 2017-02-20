@@ -2,17 +2,6 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<style>
-			/* data table styles */
-			#grid { height: 400px; width: 100%; padding:30px; overflow-y: scroll ; }
-			.row, .header { clear: left; font-size: 12px; line-height: 18px; height: 18px; }
-			.row:nth-child(odd) { background: rgba(0,0,0,0.05); }
-			.header { font-weight: bold; }
-			.cell { float: left; overflow: hidden; white-space: nowrap; width: 8%; height: 18px; }
-			/*.col-0 { width: 30%; }
-			.col-1 { width: 60%; }
-			.col-2 { width: 10%; }*/
-		</style>
 			<title>
 				Information Visualization Project 2 2017
 			</title>
@@ -20,56 +9,46 @@
 		
 		<!-- Using Parcoords, Divgrid and Radar-chart, prebuilt plugin-style d3 libraries -->
 
-		<script src="parcoordslib/d3.min.js"></script>
-		<script src="d3.svg.multibrush.js"></script>
-		<script src="d3.parcoords.js"></script>
-		<script src="parcoordslib/sylvester.js"></script>
-		<script type="text/javascript" src="parcoordslib/divgrid.js"></script>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-		<link rel="stylesheet" type="text/css" href="d3.parcoords.css" />
-		<script src="radar-chart/src/radar-chart.js"></script>
-		<link rel="stylesheet" type="text/css" href="radar-chart/src/radar-chart.css" />
-
-
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="styles.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 	</head>
 
-	<body style="background-color:white; color:black;">
-		<div id="example0" class="parcoords" style="width:100%;height:800px;"></div>
+	<body>
 		<div class="container">
-			<div class="row">	
-				<div class="col-xs-12 ">
+			<h2> Information Visualization, KTH, Project 2, by Ingemar Markström</h1>
+			<div class="row">
+				<h1>Visualizations: </h1>
+				<div class="col-xs-3">
+					<a href="indexInteractive.html">
+						<button class="btn btn-success" type="button">Go to Interactive version</button>
+					</a>
+				</div>
+				<div class="col-xs-3">
+					<a href="indexNonInteractive.html">
+						<button class="btn btn-success" type="button">Go to Static Non-Interactive version</button>
+					</a>
 				</div>
 			</div>
-			<div class="row" style="height:40px;">
-				<div class="col-xs-2"> 
-					<button id="showwave3" class="btn btn-success" type="button">Wave 3 (1995-1998)</button>
+
+			<div class="row">
+
+				<h1>Trails!</h1>	
+				<div class="col-xs-2">
+					<a href="Project2AnalyticTrail1short.pdf" download>
+						<button class="btn btn-success" type="button">Trail 1 (pdf)</button>
+					</a>
 				</div>
-				<div class="col-xs-2"> 
-					<button id="showwave4" class="btn btn-primary" type="button">Wave 4 (1999-2004)</button>
-				</div>
-				<div class="col-xs-2"> 
-					<button id="showwave5" class="btn btn-primary" type="button">Wave 5 (2005-2009)</button>
-				</div>
-				<div class="col-xs-2"> 
-					<button id="showwave6" class="btn btn-primary" type="button">Wave 6 (2010-2014)</button>
-				</div>
-				<div class="col-xs-2"> 
-					<button id="resetBrushes" class="btn btn-secondary" type="button">Reset Brushes</button>
+				<div class="col-xs-2">
+					<a href="Project2AnalyticTrail2short.pdf" download >
+						<button class="btn btn-success" type="button">Trail 2 (pdf)</button>
+					</a>
 				</div>
 			</div>
 			
-			<div class="row">
-				<div id="gridDiv" class="col-xs-12" style="cursor:pointer;">	
-					<div id="grid"></div>
-				</div>
-			</div>
 		</div>
 
-		<script src="program.js"></script>
 	</body>
 
 </html>
