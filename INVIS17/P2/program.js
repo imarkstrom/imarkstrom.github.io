@@ -214,7 +214,7 @@ d3.csv('responses.sofartxt',function(raw_surveydata){
 
 	var createParCoordGrid = function(){
 
-		var question_answers = {"4": {"V36": {"1": "Protecting environment", "2": "Economy growth and <br>creating jobs", "3": "Other answer"}, "V223": {"1": "Male", "2": "Female", "9": "NA"}, "V152": {"4": "None at all", "1": "A great deal", "2": "Quite a lot", "3": "Not very much"}, "V9": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very <br>important"}, "V7": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very <br>important"}, "V25": {"1": "Most people can <br>be trusted", "2": "Need to <br>be very careful"}, "V225": {}, "V8": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very important"}, "V4": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very <br>important"}, "V6": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very important"}}, "6": {"V113": {"4": "None at all", "1": "A great deal", "2": "Quite a lot", "3": "Not very much"}, "V240": {"1": "Male", "2": "Female"}, "V9": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very important"}, "V242": {}, "V7": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very <br>important"}, "V24": {"1": "Most people can <br>be trusted", "2": "Need to be <br>very careful"}, "V81": {"1": "Protecting the <br>environment should <br>be given priority", "2": "Economic growth and <br>creating jobs should <br>be the top priority", "3": "Other answer"}, "V8": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very <br>important"}, "V4": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very <br>important"}, "V6": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very <br>important"}}, "5": {"V23": {"1": "Most people <br>can be trusted", "2": "Need to be <br>very careful"}, "V235": {"1": "Male", "2": "Female"}, "V136": {"4": "None at all", "1": "A great deal", "2": "Quite a <br>lot", "3": "Not very much"}, "V9": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very <br>important"}, "V7": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very <br>important"}, "V104": {"1": "Protecting <br>environment", "2": "Economy growth and <br>creating jobs", "3": "Other answer"}, "V237": {}, "V8": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very <br>important"}, "V4": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very important"}, "V6": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very important"}}, "3": {"V141": {"4": "None at all", "1": "Great deal", "2": "Quite a lot", "3": "Not very much"}, "V9": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very <br>important"}, "V214": {"1": "Male", "2": "Female"}, "V7": {"4": "Not at <br>all important", "1": "Very important", "2": "Rather important", "3": "Not very <br>important"}, "V41": {"1": "Protecting the <br>environment should be <br>given priority, even if", "2": "Economic growth and <br>creating jobs should be <br>the top priority", "3": "Other answer"}, "V216": {}, "V27": {"1": "Most people can <br>be trusted", "2": "Cant be <br>too careful"}, "V8": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very important"}, "V4": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very important"}, "V6": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very <br>important"}}};
+		var question_answers = {"4": {"V36": {"1": "Protecting environment", "2": "Economy growth and <br>creating jobs", "3": "Other answer"}, "V223": {"1": "Male", "2": "Female", "9": "NA"}, "V152": {"4": "None at all", "1": "A great deal", "2": "Quite a lot", "3": "Not very much"}, "V9": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very <br>important"}, "V7": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very <br>important"}, "V25": {"1": "Most people can <br>be trusted", "2": "Need to <br>be very careful"}, "V225": {}, "V8": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very important"}, "V4": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very <br>important"}, "V6": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very important"}}, "6": {"V113": {"4": "None at all", "1": "A great deal", "2": "Quite a lot", "3": "Not very much"}, "V240": {"1": "Male", "2": "Female"}, "V9": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very important"}, "V242": {}, "V7": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very <br>important"}, "V24": {"1": "Most people can <br>be trusted", "2": "Need to be <br>very careful"}, "V81": {"1": "Protecting the <br>environment should <br>be given priority", "2": "Economic growth and <br>creating jobs should <br>be the top priority", "3": "Other answer"}, "V8": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very <br>important"}, "V4": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very <br>important"}, "V6": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very <br>important"}}, "5": {"V23": {"1": "Most people <br>can be trusted", "2": "Need to be <br>very careful"}, "V235": {"1": "Male", "2": "Female"}, "V136": {"4": "None at all", "1": "A great deal", "2": "Quite a <br>lot", "3": "Not very much"}, "V9": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very <br>important"}, "V7": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very <br>important"}, "V104": {"1": "Protecting <br>environment", "2": "Economy growth and <br>creating jobs", "3": "Other answer"}, "V237": {}, "V8": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very <br>important"}, "V4": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very important"}, "V6": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very important"}}, "3": {"V141": {"4": "None at all", "1": "Great deal", "2": "Quite a lot", "3": "Not very much"}, "V9": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very <br>important"}, "V214": {"1": "Male", "2": "Female"}, "V7": {"4": "Not at <br>all important", "1": "Very important", "2": "Rather important", "3": "Not very <br>important"}, "V41": {"1": "Protecting the <br>environment should be <br>given priority", "2": "Economic growth and <br>creating jobs should be <br>the top priority", "3": "Other answer"}, "V216": {}, "V27": {"1": "Most people can <br>be trusted", "2": "Cant be <br>too careful"}, "V8": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very important"}, "V4": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very important"}, "V6": {"4": "Not at all <br>important", "1": "Very important", "2": "Rather important", "3": "Not very <br>important"}}};
 		//d3.csv('meanvals.sofartxt', function(data) {
 		var WAVE = 3;
 		var q = {} 
@@ -224,15 +224,15 @@ d3.csv('responses.sofartxt',function(raw_surveydata){
 		q["6"]= "V240,V242,V8,V4,V24,V113,V81,V6,V7,V9".split(",");
 
 		$("#alternatives").unbind();
-		$("#alternatives2").unbind();
+	//	$("#alternatives2").unbind();
 
 		$("#alternatives").append(
-			$("<ul>").text("Sex").attr("id","qsex").append(
-				$("<li>").attr("id", "a-Sex:Male").text("Male")
+			$("<div>").html("<h4>Sex</h4>").attr("class","btn-group-vertical btn-group-sm mr-2").attr("id","qsex").append(
+				$("<button>").attr("id", "a-Sex:Male").attr("class","btn btn-secondary").attr("role","group").text("Male")
 			).append(
-				$("<li>").attr("id", "a-Sex:Female").text("Female")
+				$("<button>").attr("class","btn btn-secondary").attr("id", "a-Sex:Female").text("Female")
 			).append(
-				$("<li>").attr("id", "a-Sex:Other").text("Other")
+				$("<button>").attr("class","btn btn-secondary").attr("id", "a-Sex:Other").text("Other")
 			)
 
 		);
@@ -240,77 +240,77 @@ d3.csv('responses.sofartxt',function(raw_surveydata){
 		
 
 		$("#alternatives").append(
-			$("<ul>").attr("id","qwork").text("Work")
+			$("<div>").attr("id","qwork").attr("class","btn-group-vertical btn-group-sm mr-2").attr("role","group").html("<h4>Work</h4>")
 		);
 		$("#alternatives").append(
-			$("<ul>").attr("id","qfamily").text("Family")
+			$("<div>").attr("id","qfamily").attr("class","btn-group-vertical btn-group-sm mr-2").attr("role","group").html("<h4>Family</h4>")
 		);
 		$("#alternatives").append(
-			$("<ul>").attr("id","qtrust").text("Trust in people")
+			$("<div>").attr("id","qtrust").attr("class","btn-group-vertical btn-group-sm mr-2").attr("role","group").html("<h4>Trust in people</h4>")
 		);
 		$("#alternatives").append(
-			$("<ul>").attr("id","qpolice").text("Confidence in police")
+			$("<div>").attr("id","qpolice").attr("class","btn-group-vertical btn-group-sm mr-2").attr("role","group").html("<h4>Confidence in police</h4>")
 		);
-		$("#alternatives2").append(
-			$("<ul>").attr("id","qenvironment").html("Save the environment<br>or save the economy?")
+		$("#alternatives").append(
+			$("<div>").attr("id","qenvironment").attr("class","btn-group-vertical btn-group-sm mr-2").attr("role","group").html("<h4>Save the environment<br>or save the economy?</h4>")
 		);
-		$("#alternatives2").append(
-			$("<ul>").attr("id","qleisure").html("Free time")
+		$("#alternatives").append(
+			$("<div>").attr("id","qleisure").attr("class","btn-group-vertical btn-group-sm mr-2").attr("role","group").html("<h4>Free time</h4>")
 		);
-		$("#alternatives2").append(
-			$("<ul>").attr("id","qpolitics").html("Importance of politics")
+		$("#alternatives").append(
+			$("<div>").attr("id","qpolitics").attr("class","btn-group-vertical btn-group-sm mr-2").attr("role","group").html("<h4>Importance of politics</h4>")
 		);
-		$("#alternatives2").append(
-			$("<ul>").attr("id","qreligion").html("Importance of religion")
+		$("#alternatives").append(
+			$("<div>").attr("id","qreligion").attr("class","btn-group-vertical btn-group-sm mr-2").attr("role","group").html("<h4>Importance of religion</h4>")
 		);
 		
 		$.each(question_answers[3]["V8"], function(i,answer){
 			$("#alternatives #qwork").append(
-				$("<li>").attr("id", "a-Work:"+i).html(answer)
+				$("<button>").attr("class","btn btn-secondary").attr("id", "a-Work:"+i).html(answer)
 			);
 		});
 
 		$.each(question_answers[3]["V4"], function(i,answer){
 			$("#alternatives #qfamily").append(
-				$("<li>").attr("id", "a-Family:"+i).html(answer)
+				$("<button>").attr("class","btn btn-secondary").attr("id", "a-Family:"+i).html(answer)
 			);
 		});
 
 		$.each(question_answers[3]["V27"], function(i,answer){
 			$("#alternatives #qtrust").append(
-				$("<li>").attr("id", "a-Trust:"+i).html(answer)
+				$("<button>").attr("class","btn btn-secondary").attr("id", "a-Trust:"+i).html(answer)
 			);
 		});
 
 		$.each(question_answers[3]["V141"], function(i,answer){
 			$("#alternatives #qpolice").append(
-				$("<li>").attr("id", "a-Police:"+i).html(answer)
+				$("<button>").attr("class","btn btn-secondary").attr("id", "a-Police:"+i).html(answer)
 			);
 		});
 
 
 		$.each(question_answers[3]["V41"], function(i,answer){
-			$("#alternatives2 #qenvironment").append(
-				$("<li>").attr("id", "a-Environment:"+i).html(answer)
+			$("#alternatives #qenvironment").append(
+				$("<button>").attr("class","btn btn-secondary").attr("id", "a-Environment:"+i).html(answer)
 			);
 		});
 		$.each(question_answers[3]["V6"], function(i,answer){
-			$("#alternatives2 #qleisure").append(
-				$("<li>").attr("id", "a-Leisure:"+i).html(answer)
+			$("#alternatives #qleisure").append(
+				$("<button>").attr("class","btn btn-secondary").attr("id", "a-Leisure:"+i).html(answer)
 			);
 		});
 		$.each(question_answers[3]["V7"], function(i,answer){
-			$("#alternatives2 #qpolitics").append(
-				$("<li>").attr("id", "a-Politics:"+i).html(answer)
+			$("#alternatives #qpolitics").append(
+				$("<button>").attr("class","btn btn-secondary").attr("id", "a-Politics:"+i).html(answer)
 			);
 		});
 		$.each(question_answers[3]["V9"], function(i,answer){
-			$("#alternatives2 #qreligion").append(
-				$("<li>").attr("id", "a-Religion:"+i).html(answer)
+			$("#alternatives #qreligion").append(
+				$("<button>").attr("class","btn btn-secondary").attr("id", "a-Religion:"+i).html(answer)
 			);
 		});
 
-		$("#alternatives li").each(function(alt_i, elem){
+	/*	$("#alternatives btn").each(function(alt_i, elem){
 			$(elem).on("click",function(){
 				var parts = $(elem).attr('id').split("-");
 				var ind = user_selection.indexOf(parts[1]);
@@ -323,16 +323,22 @@ d3.csv('responses.sofartxt',function(raw_surveydata){
 				}
 			});
 		});
-		$("#alternatives2 li").each(function(alt_i, elem){
+
+	*/
+		$("#alternatives .btn").each(function(alt_i, elem){
 			$(elem).on("click",function(){
 				var parts = $(elem).attr('id').split("-");
 				var ind = user_selection.indexOf(parts[1]);
 				if (ind === -1){
-					$(elem).css("background-color","green");
+					$(elem).toggleClass("btn-secondary");
+					$(elem).toggleClass("btn-success");
+					//$(elem).css("background-color","green");
 					user_selection.push(parts[1]);
 				}else{
 					user_selection.splice(ind,1);
-					$(elem).css("background-color","white");
+					$(elem).toggleClass("btn-secondary");
+					$(elem).toggleClass("btn-success");
+					//$(elem).css("background-color","white");
 				}
 			});
 		});

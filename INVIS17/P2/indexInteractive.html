@@ -2,15 +2,16 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /-->
 		<style>
 			/* data table styles */
 			#grid { height: 400px; width: 100%; padding:30px; overflow-y: scroll ; }
 			#grid .row, .header { clear: left; font-size: 12px; line-height: 18px; height: 18px; }
 			#grid .row:nth-child(odd) { background: rgba(0,0,0,0.05); }
-			.header { font-weight: bold; }
-			.cell { float: left; overflow: hidden; white-space: nowrap; width: 8%; height: 18px; }
-			#grid .col-0 { width: 30%; }
-			#grid .col-1 { width: 60%; }
+			#grid .header { font-weight: bold; }
+			#grid .cell { float: left; white-space: nowrap; width: 20%; height: 24px; }
+			#grid .col-0 { width: 130px; }
+			#grid .col-1 { width: 140px; }
 			/*.col-2 { width: 10%; }*/
 		</style>
 			<title>
@@ -20,12 +21,12 @@
 		
 		<!-- Using Parcoords, Divgrid and Radar-chart, prebuilt plugin-style d3 libraries -->
 
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 		<script src="parcoordslib/d3.min.js"></script>
 		<script src="d3.svg.multibrush.js"></script>
 		<script src="d3.parcoords.js"></script>
 		<script src="parcoordslib/sylvester.js"></script>
 		<script type="text/javascript" src="parcoordslib/divgrid.js"></script>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="d3.parcoords.css" />
 		<script src="radar-chart/src/radar-chart.js"></script>
 		<link rel="stylesheet" type="text/css" href="radar-chart/src/radar-chart.css" />
@@ -63,20 +64,17 @@
 			</div>
 			
 			<div class="row">
-				<div id="gridDiv" class="col-xs-3" style="cursor:pointer;">	
+				<div id="gridDiv" class="col-md-4" style="cursor:pointer;">	
 					<div id="grid"></div>
 				</div>
-				<div class="col-xs-4" style="cursor:pointer;"> 
-					<button id="generateDataset" class="btn btn-success" type="button">Generate Fixed Selection</button>
+				<div class="col-md-8" style="cursor:pointer;"> 
+					<button class="btn btn-success" id="generateDataset">Generate data selection</button>
 					<form>
 						Age (From-To):<br>
 						<input type="text" name="AgeFrom" placeholder="From" id="from">	
 						<input type="text" name="AgeFrom" placeholder="To" id="to">	
 					</form>
-					<div id="alternatives"></div>
-				</div>
-				<div class="col-xs-5" style="cursor:pointer;"> 
-					<div id="alternatives2"></div>
+					<div id="alternatives" ></div>
 				</div>
 			</div>
 
