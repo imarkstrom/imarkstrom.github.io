@@ -13,4 +13,13 @@ img {
 	padding-bottom: 30px;
 }
 
-
+#alternatives ul{
+	border-style:solid;
+	border-width:2px;
+	border-color:black;
+}
+#alternatives2 ul{
+	border-style:solid;
+	border-width:2px;
+	border-color:black;
+}

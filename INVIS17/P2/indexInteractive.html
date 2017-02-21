@@ -5,13 +5,13 @@
 		<style>
 			/* data table styles */
 			#grid { height: 400px; width: 100%; padding:30px; overflow-y: scroll ; }
-			.row, .header { clear: left; font-size: 12px; line-height: 18px; height: 18px; }
-			.row:nth-child(odd) { background: rgba(0,0,0,0.05); }
+			#grid .row, .header { clear: left; font-size: 12px; line-height: 18px; height: 18px; }
+			#grid .row:nth-child(odd) { background: rgba(0,0,0,0.05); }
 			.header { font-weight: bold; }
 			.cell { float: left; overflow: hidden; white-space: nowrap; width: 8%; height: 18px; }
-			/*.col-0 { width: 30%; }
-			.col-1 { width: 60%; }
-			.col-2 { width: 10%; }*/
+			#grid .col-0 { width: 30%; }
+			#grid .col-1 { width: 60%; }
+			/*.col-2 { width: 10%; }*/
 		</style>
 			<title>
 				Information Visualization Project 2 2017
@@ -63,10 +63,23 @@
 			</div>
 			
 			<div class="row">
-				<div id="gridDiv" class="col-xs-12" style="cursor:pointer;">	
+				<div id="gridDiv" class="col-xs-3" style="cursor:pointer;">	
 					<div id="grid"></div>
 				</div>
+				<div class="col-xs-4" style="cursor:pointer;"> 
+					<button id="generateDataset" class="btn btn-success" type="button">Make Fixed Selection</button>
+					<form>
+						Age (From-To):<br>
+						<input type="text" name="AgeFrom" placeholder="From" id="from">	
+						<input type="text" name="AgeFrom" placeholder="To" id="to">	
+					</form>
+					<div id="alternatives"></div>
+				</div>
+				<div class="col-xs-5" style="cursor:pointer;"> 
+					<div id="alternatives2"></div>
+				</div>
 			</div>
+
 		</div>
 
 		<script src="program.js"></script>
