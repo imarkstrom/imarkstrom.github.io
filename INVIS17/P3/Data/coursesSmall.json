@@ -1,0 +1,32 @@
+{
+	"name":"Departments",
+	"children":
+	[
+		{
+		    "name":"DD",
+		    "children":[
+				{
+				    "code": "DD3501",
+				    "credits": 9.0,
+				    "dependencies": [],
+				    "level": "Third cycle",
+				    "name": "Current Research in Proof Complexity"
+				},
+				{
+				    "code": "DD2354",
+				    "credits": 6.0,
+				    "dependencies": [],
+				    "level": "Second cycle",
+				    "name": "Algorithms and Complexity"
+				},
+				{
+				    "code": "DD2450",
+				    "credits": 6.0,
+				    "dependencies": [],
+				    "level": "Second cycle",
+				    "name": "Algorithmic Bioinformatics"
+				}
+		    	]
+		}
+	]
+}    

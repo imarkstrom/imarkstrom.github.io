@@ -1,0 +1,1770 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "code": "DD1371",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "First cycle",
+                            "name": "Decision Support Systems"
+                        },
+                        {
+                            "code": "DD1364",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "First cycle",
+                            "name": "Database Technology"
+                        },
+                        {
+                            "code": "DD1051",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "First cycle",
+                            "name": "Database Technology and Data Communication"
+                        },
+                        {
+                            "code": "DD1370",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "First cycle",
+                            "name": "Database Technology and Information systems"
+                        },
+                        {
+                            "code": "DD112V",
+                            "credits": 15.0,
+                            "dependencies": [
+                                "DD1344",
+                                "DD1343"
+                            ],
+                            "level": "First cycle",
+                            "name": "Computer Science, Introduction to Programming with Java"
+                        },
+                        {
+                            "code": "DD1343",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DD1363"
+                            ],
+                            "level": "First cycle",
+                            "name": "Computer Science and Numerical Methods, part 1"
+                        },
+                        {
+                            "code": "DD150X",
+                            "credits": 15.0,
+                            "dependencies": [],
+                            "level": "First cycle",
+                            "name": "Degree Project in Engineering and Management, First Cycle"
+                        },
+                        {
+                            "code": "DD151X",
+                            "credits": 15.0,
+                            "dependencies": [
+                                "DD1050"
+                            ],
+                            "level": "First cycle",
+                            "name": "Degree Project in Computer Science, Communication and Industrial Management, First Level"
+                        },
+                        {
+                            "code": "DD1344",
+                            "credits": 6.0,
+                            "dependencies": [],
+                            "level": "First cycle",
+                            "name": "Fundamentals of Computer Science"
+                        },
+                        {
+                            "code": "DD1335",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "First cycle",
+                            "name": "Basic Internet Programming"
+                        },
+                        {
+                            "code": "DD1339",
+                            "credits": 19.0,
+                            "dependencies": [],
+                            "level": "First cycle",
+                            "name": "Introduction to Computer Science"
+                        },
+                        {
+                            "code": "DD1340",
+                            "credits": 18.0,
+                            "dependencies": [
+                                "DD1340",
+                                "DD1343"
+                            ],
+                            "level": "First cycle",
+                            "name": "Introduction to Computer Science"
+                        },
+                        {
+                            "code": "DD1341",
+                            "credits": 16.0,
+                            "dependencies": [
+                                "DD1339",
+                                "DD1050"
+                            ],
+                            "level": "First cycle",
+                            "name": "Introduction to Computer Science"
+                        },
+                        {
+                            "code": "DD1363",
+                            "credits": 12.0,
+                            "dependencies": [
+                                "DD1340",
+                                "DD1371"
+                            ],
+                            "level": "First cycle",
+                            "name": "Software Engineering"
+                        },
+                        {
+                            "code": "DD1365",
+                            "credits": 6.0,
+                            "dependencies": [],
+                            "level": "First cycle",
+                            "name": "Software Engineering"
+                        },
+                        {
+                            "code": "DA1011",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DD1363",
+                                "DD1311"
+                            ],
+                            "level": "First cycle",
+                            "name": "Scientific Computing for SU"
+                        },
+                        {
+                            "code": "DD1342",
+                            "credits": 6.0,
+                            "dependencies": [
+                                "DD1370",
+                                "DD1335"
+                            ],
+                            "level": "First cycle",
+                            "name": "Program Construction"
+                        },
+                        {
+                            "code": "DD1050",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DD150X"
+                            ],
+                            "level": "First cycle",
+                            "name": "Programming, Basic Course"
+                        },
+                        {
+                            "code": "DD1311",
+                            "credits": 6.0,
+                            "dependencies": [],
+                            "level": "First cycle",
+                            "name": "Programming Techniques with PBL"
+                        },
+                        {
+                            "code": "DD1322",
+                            "credits": 6.0,
+                            "dependencies": [],
+                            "level": "First cycle",
+                            "name": "Applied Programming and Computer Science, Part 1"
+                        }
+                    ],
+                    "name": "DD"
+                },
+                {
+                    "children": [
+                        {
+                            "code": "DM1021",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DM128X"
+                            ],
+                            "level": "First cycle",
+                            "name": "Audio and Video Technology"
+                        },
+                        {
+                            "code": "DM1576",
+                            "credits": 9.0,
+                            "dependencies": [
+                                "DH1620",
+                                "DH1603"
+                            ],
+                            "level": "First cycle",
+                            "name": "Image and Video Technology"
+                        },
+                        {
+                            "code": "DM100X",
+                            "credits": 15.0,
+                            "dependencies": [
+                                "DM1570",
+                                "DM1573",
+                                "DM1031"
+                            ],
+                            "level": "First cycle",
+                            "name": "Degree Project in Media Technology, First Cycle"
+                        },
+                        {
+                            "code": "DM128X",
+                            "credits": 15.0,
+                            "dependencies": [
+                                "DM1902",
+                                "DM1577"
+                            ],
+                            "level": "First cycle",
+                            "name": "Degree Project in Media Technology, First Cycle"
+                        },
+                        {
+                            "code": "DM129X",
+                            "credits": 15.0,
+                            "dependencies": [
+                                "DM1576"
+                            ],
+                            "level": "First cycle",
+                            "name": "Degree Project in Media Technology, First Cycle"
+                        },
+                        {
+                            "code": "DM1013",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "First cycle",
+                            "name": "Creation and Design"
+                        },
+                        {
+                            "code": "DM1573",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "First cycle",
+                            "name": "Graphic Arts Technology"
+                        },
+                        {
+                            "code": "DM1570",
+                            "credits": 7.0,
+                            "dependencies": [
+                                "DM129X",
+                                "DM1030"
+                            ],
+                            "level": "First cycle",
+                            "name": "Graphic Arts Technology 1"
+                        },
+                        {
+                            "code": "DM1902",
+                            "credits": 3.0,
+                            "dependencies": [
+                                "DM1010"
+                            ],
+                            "level": "First cycle",
+                            "name": "Individual Course in Media Technology"
+                        },
+                        {
+                            "code": "DM1010",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DM1020"
+                            ],
+                            "level": "First cycle",
+                            "name": "Information Technology and Engineering Methodology"
+                        },
+                        {
+                            "code": "DH1701",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "First cycle",
+                            "name": "Introduction to Linguistics"
+                        },
+                        {
+                            "code": "DM1011",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DH1601",
+                                "DM1902"
+                            ],
+                            "level": "First cycle",
+                            "name": "Introduction to Media Technology"
+                        },
+                        {
+                            "code": "DM1571",
+                            "credits": 6.0,
+                            "dependencies": [
+                                "DH1347"
+                            ],
+                            "level": "First cycle",
+                            "name": "Introduction to Media Technology"
+                        },
+                        {
+                            "code": "DM1572",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DM1578"
+                            ],
+                            "level": "First cycle",
+                            "name": "Introduction to Media Technology"
+                        },
+                        {
+                            "code": "DH156V",
+                            "credits": 6.0,
+                            "dependencies": [],
+                            "level": "First cycle",
+                            "name": "IT-design for the Disabled"
+                        },
+                        {
+                            "code": "DH1347",
+                            "credits": 6.0,
+                            "dependencies": [],
+                            "level": "First cycle",
+                            "name": "Communication"
+                        },
+                        {
+                            "code": "DH1602",
+                            "credits": 6.0,
+                            "dependencies": [
+                                "DH1347"
+                            ],
+                            "level": "First cycle",
+                            "name": "Communication"
+                        },
+                        {
+                            "code": "DH1600",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DM1575",
+                                "DM1580",
+                                "DM1011"
+                            ],
+                            "level": "First cycle",
+                            "name": "Communication in Engineering Sciences"
+                        },
+                        {
+                            "code": "DH1608",
+                            "credits": 5.0,
+                            "dependencies": [],
+                            "level": "First cycle",
+                            "name": "Communication and Information"
+                        },
+                        {
+                            "code": "DH1609",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DH1347",
+                                "DM1020"
+                            ],
+                            "level": "First cycle",
+                            "name": "Communication and information"
+                        },
+                        {
+                            "code": "DH1601",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "First cycle",
+                            "name": "Communication and Media"
+                        },
+                        {
+                            "code": "DH1603",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DH1347",
+                                "DM1010",
+                                "DM1902"
+                            ],
+                            "level": "First cycle",
+                            "name": "Communication and Media"
+                        },
+                        {
+                            "code": "DM1022",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "First cycle",
+                            "name": "Engineering Practice and Development in Media Technology"
+                        },
+                        {
+                            "code": "DH1607",
+                            "credits": 6.0,
+                            "dependencies": [],
+                            "level": "First cycle",
+                            "name": "Learning and ICT, Project Course"
+                        },
+                        {
+                            "code": "DM1577",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DH1600"
+                            ],
+                            "level": "First cycle",
+                            "name": "Media Design"
+                        },
+                        {
+                            "code": "DM1020",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DM1021"
+                            ],
+                            "level": "First cycle",
+                            "name": "Media Technology"
+                        },
+                        {
+                            "code": "DM1574",
+                            "credits": 18.0,
+                            "dependencies": [
+                                "DH156V",
+                                "DH1603",
+                                "DH1607"
+                            ],
+                            "level": "First cycle",
+                            "name": "Media Technology, Basic Course"
+                        },
+                        {
+                            "code": "DM1012",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DM1022"
+                            ],
+                            "level": "First cycle",
+                            "name": "Multimedia Production, Technical Project"
+                        },
+                        {
+                            "code": "DH1620",
+                            "credits": 6.0,
+                            "dependencies": [
+                                "DH1702",
+                                "DH1608"
+                            ],
+                            "level": "First cycle",
+                            "name": "Human-Computer Interaction, Introductory Course"
+                        },
+                        {
+                            "code": "DM1578",
+                            "credits": 7.0,
+                            "dependencies": [
+                                "DM1578",
+                                "DM1013"
+                            ],
+                            "level": "First cycle",
+                            "name": "Program Integrating Course in Media Technology"
+                        },
+                        {
+                            "code": "DM1575",
+                            "credits": 6.0,
+                            "dependencies": [],
+                            "level": "First cycle",
+                            "name": "Media Technology Programme Summary Course"
+                        },
+                        {
+                            "code": "DD1387",
+                            "credits": 6.0,
+                            "dependencies": [],
+                            "level": "First cycle",
+                            "name": "Program System Construction Using C++"
+                        },
+                        {
+                            "code": "DM1031",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DH1620",
+                                "DH1607",
+                                "DM128X"
+                            ],
+                            "level": "First cycle",
+                            "name": "Radio Technology"
+                        },
+                        {
+                            "code": "DH1702",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "First cycle",
+                            "name": "General Linguistics"
+                        },
+                        {
+                            "code": "DH1703",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "First cycle",
+                            "name": "Fonetics"
+                        },
+                        {
+                            "code": "DH1704",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "First cycle",
+                            "name": "Linguistic Methods"
+                        },
+                        {
+                            "code": "DM1030",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "First cycle",
+                            "name": "Television Technology"
+                        },
+                        {
+                            "code": "DM1580",
+                            "credits": 6.0,
+                            "dependencies": [
+                                "DH1607"
+                            ],
+                            "level": "First cycle",
+                            "name": "Video Technology"
+                        }
+                    ],
+                    "name": "DM"
+                }
+            ],
+            "name": "First Cycle"
+        },
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "code": "DD2354",
+                            "credits": 6.0,
+                            "dependencies": [
+                                "DD2486"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Algorithms and Complexity"
+                        },
+                        {
+                            "code": "DD2450",
+                            "credits": 6.0,
+                            "dependencies": [
+                                "DD2400",
+                                "DD2483"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Algorithmic Bioinformatics"
+                        },
+                        {
+                            "code": "DD2439",
+                            "credits": 21.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Artificial Intelligence and Multi-agent Systems, Project Course"
+                        },
+                        {
+                            "code": "DD2371",
+                            "credits": 6.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Theory of Automata"
+                        },
+                        {
+                            "code": "DD2453",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Advanced Formal Methods"
+                        },
+                        {
+                            "code": "DD2456",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DD2398",
+                                "DD2428",
+                                "DD2461"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Advanced Object-oriented Systems"
+                        },
+                        {
+                            "code": "DD2461",
+                            "credits": 20.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Advanced Course in Programming and Problem Solving, Part 1"
+                        },
+                        {
+                            "code": "DD2462",
+                            "credits": 10.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Advanced Course in Programming and Problem Solving, Part 2"
+                        },
+                        {
+                            "code": "DD2422",
+                            "credits": 6.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Image Analysis and Computer Vision"
+                        },
+                        {
+                            "code": "DD2396",
+                            "credits": 6.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Bioinformatics"
+                        },
+                        {
+                            "code": "DD2400",
+                            "credits": 15.0,
+                            "dependencies": [
+                                "DD2461",
+                                "DD2493"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Cellular and Molecular Biology"
+                        },
+                        {
+                            "code": "DD2430",
+                            "credits": 9.0,
+                            "dependencies": [
+                                "DD2400",
+                                "DD2439",
+                                "DD2446"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Data Analysis, Project Course"
+                        },
+                        {
+                            "code": "DD2472",
+                            "credits": 6.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Database Systems for Modern Applications"
+                        },
+                        {
+                            "code": "DD228V",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Database Techniques"
+                        },
+                        {
+                            "code": "DD2469",
+                            "credits": 6.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Database Theory"
+                        },
+                        {
+                            "code": "DD217V",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Computer Science II, Algorithms and Data Structures"
+                        },
+                        {
+                            "code": "DD2428",
+                            "credits": 6.0,
+                            "dependencies": [
+                                "DD2495",
+                                "DD2449"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Geometric Computing and Visualization"
+                        },
+                        {
+                            "code": "DD226X",
+                            "credits": 30.0,
+                            "dependencies": [
+                                "DD2354",
+                                "DD2392",
+                                "DD2393"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Degree Project in Biological Physics, Second Cycle"
+                        },
+                        {
+                            "code": "DD225X",
+                            "credits": 30.0,
+                            "dependencies": [
+                                "DD217V"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Degree Project in Biomedical Engineering, Second Cycle"
+                        },
+                        {
+                            "code": "DD221X",
+                            "credits": 30.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Degree Project in Computer Science, Second Cycle"
+                        },
+                        {
+                            "code": "DD245X",
+                            "credits": 15.0,
+                            "dependencies": [
+                                "DD2462",
+                                "DD2377"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Degree Project in Computer Science, Second Cycle"
+                        },
+                        {
+                            "code": "DD2475",
+                            "credits": 9.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Information Retrieval"
+                        },
+                        {
+                            "code": "DD2390",
+                            "credits": 6.0,
+                            "dependencies": [
+                                "DD2494",
+                                "DD2450",
+                                "DD2449"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Internet Programming"
+                        },
+                        {
+                            "code": "DD2392",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DD2388",
+                                "DD225X",
+                                "DD2492"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Protocols and Principles of the Internet"
+                        },
+                        {
+                            "code": "DD2393",
+                            "credits": 6.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Protocols and Principles of the Internet"
+                        },
+                        {
+                            "code": "DD2490",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DD2494",
+                                "DD2475",
+                                "DD221V"
+                            ],
+                            "level": "Second cycle",
+                            "name": "IP Routing in Simple Computer Networks"
+                        },
+                        {
+                            "code": "DD2491",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "IP Routing in Internet and Other Complex Networks"
+                        },
+                        {
+                            "code": "DD2446",
+                            "credits": 6.0,
+                            "dependencies": [
+                                "DD231V",
+                                "DD2387",
+                                "DD2422"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Complexity Theory"
+                        },
+                        {
+                            "code": "DD2449",
+                            "credits": 6.0,
+                            "dependencies": [
+                                "DD231V"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Foundations of Cryptography"
+                        },
+                        {
+                            "code": "DD2398",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DD2486",
+                                "DD2450"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Quantitative Systems Biology"
+                        },
+                        {
+                            "code": "DD221V",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DD2450"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Low Level Programming and Computer Architecture"
+                        },
+                        {
+                            "code": "DD2377",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DD2377",
+                                "DD2393"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Low Level Programming and Computer Architecture"
+                        },
+                        {
+                            "code": "DD2436",
+                            "credits": 6.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Modelling of Processes in Cell Biology"
+                        },
+                        {
+                            "code": "DD2492",
+                            "credits": 9.0,
+                            "dependencies": [
+                                "DD2396",
+                                "DD226X",
+                                "DD2399"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Net Design, Project Course"
+                        },
+                        {
+                            "code": "DD2495",
+                            "credits": 6.0,
+                            "dependencies": [
+                                "DD245X"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Network Security"
+                        },
+                        {
+                            "code": "DD235V",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DD221X",
+                                "DD2422"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Object-oriented Programming, Analysis and Design in Java"
+                        },
+                        {
+                            "code": "DD2399",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Omic Data and Systems Biology"
+                        },
+                        {
+                            "code": "DD2451",
+                            "credits": 6.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Parallel and Distributed Computing"
+                        },
+                        {
+                            "code": "DD2387",
+                            "credits": 6.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Program System Construction Using C++"
+                        },
+                        {
+                            "code": "DD2388",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DD235V",
+                                "DD228V",
+                                "DD2472"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Program System Construction using .NET Framework"
+                        },
+                        {
+                            "code": "DD243V",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Program Development Techniques with the .NET Framework"
+                        },
+                        {
+                            "code": "DD2426",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DD221V",
+                                "DD221X",
+                                "DD2428"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Robotics and Autonomous Systems"
+                        },
+                        {
+                            "code": "DD2494",
+                            "credits": 9.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Routing on the Internet and Other Packet Switched Networks"
+                        },
+                        {
+                            "code": "DD2454",
+                            "credits": 6.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Semantics for Programming Languages"
+                        },
+                        {
+                            "code": "DD2493",
+                            "credits": 6.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Seminars on Grid Computing and Internetworking"
+                        },
+                        {
+                            "code": "DD2441",
+                            "credits": 6.0,
+                            "dependencies": [
+                                "DD2483",
+                                "DD2462"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Seminars on Theoretical Computer Science"
+                        },
+                        {
+                            "code": "DD225V",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Systems Programming and Operating Systems"
+                        },
+                        {
+                            "code": "DD2486",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Systems Programming and Operating Systems"
+                        },
+                        {
+                            "code": "DD2455",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Theoretical Foundations of Object-Orientation"
+                        },
+                        {
+                            "code": "DD2397",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DD225X"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Applied Bioinformatics"
+                        },
+                        {
+                            "code": "DD231V",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DD2469",
+                                "DD2398",
+                                "DD221V"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Development of Web Applications with Enterprise Java"
+                        },
+                        {
+                            "code": "DD2483",
+                            "credits": 6.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Development of Web Applications with Enterprise Java"
+                        }
+                    ],
+                    "name": "DD"
+                },
+                {
+                    "children": [
+                        {
+                            "code": "DM2532",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DH2629",
+                                "DH2603",
+                                "DM2905"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Work Integrating Course in Media Technology"
+                        },
+                        {
+                            "code": "DH2466",
+                            "credits": 6.0,
+                            "dependencies": [
+                                "DH2418",
+                                "DM2593",
+                                "DM2561"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Advanced, Individual Course in Human-Computer Interaction"
+                        },
+                        {
+                            "code": "DM2799",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Advanced Projectcourse in Interactive Media Technology"
+                        },
+                        {
+                            "code": "DM2592",
+                            "credits": 9.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Processing of Moving Pictures"
+                        },
+                        {
+                            "code": "DH252V",
+                            "credits": 6.0,
+                            "dependencies": [
+                                "DM2601"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Methods in Behavioural Science"
+                        },
+                        {
+                            "code": "DH2630",
+                            "credits": 6.0,
+                            "dependencies": [
+                                "DM2577"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Methods in Behavioural Science"
+                        },
+                        {
+                            "code": "DM2583",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Big Data in Media Technology"
+                        },
+                        {
+                            "code": "DM2554",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Business to Business Marketing"
+                        },
+                        {
+                            "code": "DH2465",
+                            "credits": 15.0,
+                            "dependencies": [
+                                "DM2578"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Computer Science, Business and Management"
+                        },
+                        {
+                            "code": "DH2651",
+                            "credits": 9.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Computer Game Design and Advanced Graphics"
+                        },
+                        {
+                            "code": "DH2416",
+                            "credits": 9.0,
+                            "dependencies": [
+                                "DM2578",
+                                "DM2904"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Computer Support for Cooperative Work"
+                        },
+                        {
+                            "code": "DM2710",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Designing Technology for Learning and Behavior Change"
+                        },
+                        {
+                            "code": "DM2529",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Digital Images for Publication"
+                        },
+                        {
+                            "code": "DM2593",
+                            "credits": 6.0,
+                            "dependencies": [
+                                "DH252V",
+                                "DH2641"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Display and Projection Technology"
+                        },
+                        {
+                            "code": "DM228X",
+                            "credits": 30.0,
+                            "dependencies": [
+                                "DM2350",
+                                "DM2518"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Degree Project in Media Technology, Second Cycle"
+                        },
+                        {
+                            "code": "DH224X",
+                            "credits": 30.0,
+                            "dependencies": [
+                                "DM2561"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Degree Project in Human-Computer Interaction, Second Cycle"
+                        },
+                        {
+                            "code": "DH250X",
+                            "credits": 15.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Degree Project in Human-Computer Interaction, Second Cycle"
+                        },
+                        {
+                            "code": "DM2711",
+                            "credits": 9.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Research Methods in Interactive Media Technology"
+                        },
+                        {
+                            "code": "DM2571",
+                            "credits": 10.0,
+                            "dependencies": [
+                                "DM2711"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Future of Media"
+                        },
+                        {
+                            "code": "DH2400",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DT2350",
+                                "DH2621",
+                                "DH2651"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Physical Interaction Design and Realization"
+                        },
+                        {
+                            "code": "DH2640",
+                            "credits": 9.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Graphics and Interaction Programming"
+                        },
+                        {
+                            "code": "DM2531",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Graphic Arts Production"
+                        },
+                        {
+                            "code": "DH2660",
+                            "credits": 6.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Haptics"
+                        },
+                        {
+                            "code": "DH2670",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Haptics, Tactile and Tangible Interaction"
+                        },
+                        {
+                            "code": "DM2573",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DM2578",
+                                "DM2591"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Sustainability and Media Technology"
+                        },
+                        {
+                            "code": "DM2720",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DM2570",
+                                "DH2630",
+                                "DM2678"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Sustainable ICT in Practice"
+                        },
+                        {
+                            "code": "DM2904",
+                            "credits": 6.0,
+                            "dependencies": [
+                                "DH2628"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Individual Course in Media Technology"
+                        },
+                        {
+                            "code": "DM2905",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DM2554",
+                                "DM2350"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Individual Course in Media Technology"
+                        },
+                        {
+                            "code": "DM2906",
+                            "credits": 9.0,
+                            "dependencies": [
+                                "DM2593"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Individual Course in Media Technology"
+                        },
+                        {
+                            "code": "DM2570",
+                            "credits": 9.0,
+                            "dependencies": [
+                                "DM2678",
+                                "DH2465"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Content and Expression in Media"
+                        },
+                        {
+                            "code": "DM2577",
+                            "credits": 9.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Content and Expression in Media"
+                        },
+                        {
+                            "code": "DM2101",
+                            "credits": 5.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Innovative Technologies in Media Production"
+                        },
+                        {
+                            "code": "DH2626",
+                            "credits": 15.0,
+                            "dependencies": [
+                                "DM2561",
+                                "DM2720"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Interaction Design 1"
+                        },
+                        {
+                            "code": "DH2627",
+                            "credits": 15.0,
+                            "dependencies": [
+                                "DH2625",
+                                "DM2720"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Interaction Design 2"
+                        },
+                        {
+                            "code": "DH2417",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DM2578",
+                                "DM2703",
+                                "DH2417"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Interaction Design for Collaboration"
+                        },
+                        {
+                            "code": "DH2629",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DM2558"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Interaction Design as a Reflective Practice"
+                        },
+                        {
+                            "code": "DH2641",
+                            "credits": 6.0,
+                            "dependencies": [
+                                "DM2700"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Interaction Programming"
+                        },
+                        {
+                            "code": "DH2642",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DM2904",
+                                "DH2655",
+                                "DM228X"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Interaction Programming and the Dynamic Web"
+                        },
+                        {
+                            "code": "DM2033",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DM2551",
+                                "DM2558",
+                                "DM2532"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Interactive Media Technology"
+                        },
+                        {
+                            "code": "DM2556",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Intercultural communication"
+                        },
+                        {
+                            "code": "DM2700",
+                            "credits": 6.0,
+                            "dependencies": [
+                                "DM2573",
+                                "DM2033",
+                                "DM2600"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Introduction to Interactive Media Technology"
+                        },
+                        {
+                            "code": "DH2625",
+                            "credits": 6.0,
+                            "dependencies": [
+                                "DM228X"
+                            ],
+                            "level": "Second cycle",
+                            "name": "IT-design for the Disabled"
+                        },
+                        {
+                            "code": "DM2701",
+                            "credits": 9.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Specialisation Course in Journalism, Part 1"
+                        },
+                        {
+                            "code": "DM2600",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DH2610"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Communication and Culture - Chinese Perspectives"
+                        },
+                        {
+                            "code": "DM2557",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DH2629",
+                                "DH2605"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Consumer Behaviour"
+                        },
+                        {
+                            "code": "DM2551",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Consumer Marketing"
+                        },
+                        {
+                            "code": "DH2655",
+                            "credits": 9.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Cooperative IT-design"
+                        },
+                        {
+                            "code": "DT2300",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DH2629"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Sound in Interaction"
+                        },
+                        {
+                            "code": "DM2550",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Market Systems"
+                        },
+                        {
+                            "code": "DM2702",
+                            "credits": 6.0,
+                            "dependencies": [
+                                "DH2621",
+                                "DM2600"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Specialisation Course in Journalism, Part 2"
+                        },
+                        {
+                            "code": "DM2582",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DH2610"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Media Lab"
+                        },
+                        {
+                            "code": "DM2561",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DM2571",
+                                "DT2350",
+                                "DM2590"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Media Management"
+                        },
+                        {
+                            "code": "DM2560",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DM2701"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Media Management, practice module"
+                        },
+                        {
+                            "code": "DM2580",
+                            "credits": 5.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Media Distribution"
+                        },
+                        {
+                            "code": "DM2581",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Media Distribution"
+                        },
+                        {
+                            "code": "DM2076",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DM2553",
+                                "DH2418"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Media Law"
+                        },
+                        {
+                            "code": "DM2552",
+                            "credits": 15.0,
+                            "dependencies": [
+                                "DM2601",
+                                "DM2557",
+                                "DM2527"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Media Management"
+                        },
+                        {
+                            "code": "DM2558",
+                            "credits": 15.0,
+                            "dependencies": [
+                                "DM2559",
+                                "DM2556"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Media Management"
+                        },
+                        {
+                            "code": "DM2590",
+                            "credits": 6.0,
+                            "dependencies": [
+                                "DH2466",
+                                "DM2580"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Media Perception"
+                        },
+                        {
+                            "code": "DM2553",
+                            "credits": 15.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Media Production"
+                        },
+                        {
+                            "code": "DM2559",
+                            "credits": 11.0,
+                            "dependencies": [
+                                "DM2570",
+                                "DH2603"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Media Production"
+                        },
+                        {
+                            "code": "DM2574",
+                            "credits": 9.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Media Production"
+                        },
+                        {
+                            "code": "DM2601",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Media Technology and Interaction Design"
+                        },
+                        {
+                            "code": "DH2628",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DH2465",
+                                "DM2906"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Interaction Design Methods"
+                        },
+                        {
+                            "code": "DM2518",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DM2350"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Mobile Development with Web Technologies"
+                        },
+                        {
+                            "code": "DH2621",
+                            "credits": 6.0,
+                            "dependencies": [
+                                "DH2627"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Human-Computer Interaction, Advanced Course"
+                        },
+                        {
+                            "code": "DH2622",
+                            "credits": 9.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Human-Computer Interaction, Advanced Course with Prototyping"
+                        },
+                        {
+                            "code": "DH2632",
+                            "credits": 3.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Human-Computer Interaction, Research Seminars"
+                        },
+                        {
+                            "code": "DH2620",
+                            "credits": 6.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Human-Computer Interaction, Introductory Course"
+                        },
+                        {
+                            "code": "DH2624",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Human-Computer Interaction - a Didactive Perspective"
+                        },
+                        {
+                            "code": "DM2350",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Human Perception for Information Technology"
+                        },
+                        {
+                            "code": "DT2350",
+                            "credits": 6.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Human Perception for Information Technology"
+                        },
+                        {
+                            "code": "DM2500",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DM2527"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Telepresence Production"
+                        },
+                        {
+                            "code": "DM250N",
+                            "credits": 6.0,
+                            "dependencies": [
+                                "DM2572",
+                                "DM2593",
+                                "DM2559"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Telepresence Production"
+                        },
+                        {
+                            "code": "DM2591",
+                            "credits": 9.0,
+                            "dependencies": [
+                                "DM2591"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Production Technology for Moving Pictures"
+                        },
+                        {
+                            "code": "DM2678",
+                            "credits": 4.0,
+                            "dependencies": [
+                                "DH252V",
+                                "DM2560"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Program Integrating Course in Interactive Media Technology"
+                        },
+                        {
+                            "code": "DM2575",
+                            "credits": 4.0,
+                            "dependencies": [
+                                "DM2531",
+                                "DM2591"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Program Integrating Course in Media Management"
+                        },
+                        {
+                            "code": "DH2460",
+                            "credits": 12.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Software Design - Business - Leadership"
+                        },
+                        {
+                            "code": "DM2704",
+                            "credits": 7.5,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Specialisation Course in Journalism, Part 4"
+                        },
+                        {
+                            "code": "DM2555",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DM2592"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Project Course in Media Technology"
+                        },
+                        {
+                            "code": "DM2527",
+                            "credits": 15.0,
+                            "dependencies": [
+                                "DH2416"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Publishing Technology, Advanced Course"
+                        },
+                        {
+                            "code": "DH239V",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DM2500",
+                                "DM2571"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Real-Time Graphics and Visualization"
+                        },
+                        {
+                            "code": "DM2703",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DM228X",
+                                "DM2583"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Specialisation Course in Journalism, Part 3"
+                        },
+                        {
+                            "code": "DM2578",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DM2572"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Social Media Technologies"
+                        },
+                        {
+                            "code": "DH2418",
+                            "credits": 6.0,
+                            "dependencies": [
+                                "DM2905",
+                                "DM2600",
+                                "DM2551"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Language Engineering"
+                        },
+                        {
+                            "code": "DH2603",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DM2799",
+                                "DM2556"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Technologies that Change Time, Space and Reality"
+                        },
+                        {
+                            "code": "DM2572",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DM2580",
+                                "DM2701"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Theory and Method for Media Technology"
+                        },
+                        {
+                            "code": "DH2408",
+                            "credits": 6.0,
+                            "dependencies": [],
+                            "level": "Second cycle",
+                            "name": "Evaluation Methods in Human-Computer Interaction"
+                        },
+                        {
+                            "code": "DH2610",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DM2906",
+                                "DM2571"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Theory and Methodology of Science in Human-Computer Interaction"
+                        },
+                        {
+                            "code": "DH2605",
+                            "credits": 4.5,
+                            "dependencies": [
+                                "DM2558"
+                            ],
+                            "level": "Second cycle",
+                            "name": "Science, Technology and Learning, part II, incl Teaching Practice"
+                        },
+                        {
+                            "code": "DM2517",
+                            "credits": 7.5,
+                            "dependencies": [
+                                "DH2416",
+                                "DM2592"
+                            ],
+                            "level": "Second cycle",
+                            "name": "XML for Publishing"
+                        }
+                    ],
+                    "name": "DM"
+                }
+            ],
+            "name": "Second Cycle"
+        }
+    ],
+    "name": "Cykles"
+}
