@@ -51,6 +51,12 @@
 	 function showLastDiv() {
 	   document.getElementById('lastTour').style.display = "block";
 	 }
+     function showMedeltidsveckan2018trs(){
+       var rows = document.querySelectorAll(".medeltidsveckan2018tr");
+       rows.forEach(r => {
+         r.style.display = "table-row";
+       });
+     }
 
 	</script>
   </head>
@@ -112,84 +118,94 @@
 			  <td><p>25 - 27 May, <a href="http://oslomiddelalderfestival.org/" target="_blank">Medieval Market</a></p></td>
             </tr>
             <tr>
-			  <td></td>
-              <td><p><a href="http://medeltidsveckan.se/" target="_blank" >Medeltidsveckan Visby</a></p></td>
+              <td onclick="showMedeltidsveckan2018trs();" id="medeltidsveckan2018trs"><p>Medeltidsveckan Visby (click to show)</p></td>
+              <td><p>(SE)</p></td>
+			  <td><p>6 - 11 August, <a href="http://medeltidsveckan.se/" target="_blank" >Medieval Festival</a></p></td>
+            </tr>
+            <tr style="display:none;" class="medeltidsveckan2018tr">
+              <td><p>Day</p></td>
+              <td><p>Time</p></td>
+              <td><p>Show</p></td>
+            </tr>
+            <tr style="display:none;" class="medeltidsveckan2018tr">
+              <td><p>Monday, 6 August</p></td>
+              <td><p>12.00-13.00</p></td>
+              <td><p><a href="http://program.medeltidsveckan.se/a/426/kalabalik-pa-forum-vulgaris"> Forum Vulgaris </a></p></td>
+            </tr>
+            <tr style="display:none;" class="medeltidsveckan2018tr">
+              <td></td>
+              <td><p>16.00-17.00</p></td>
+              <td><p><a href="http://program.medeltidsveckan.se/a/426/kalabalik-pa-forum-vulgaris"> Forum Vulgaris </a></p></td>
+            </tr>
+            <tr style="display:none;" class="medeltidsveckan2018tr">
+              <td></td>
+              <td><p>22.00-...</p></td>
+              <td><p><a href="http://program.medeltidsveckan.se/a/443/kalabalik-pa-wisby-hof"> Visby Hof </a></p></td>
+            </tr>
+            <tr style="display:none;" class="medeltidsveckan2018tr">
+              <td><p>Tuesday, 7 August</p></td>
+              <td><p>12.00-12.30</p></td>
+              <td><p><a href="http://program.medeltidsveckan.se/a/426/kalabalik-pa-forum-vulgaris"> Forum Vulgaris </a></p></td>
+            </tr>
+            <tr style="display:none;" class="medeltidsveckan2018tr">
+              <td></td>
+              <td><p>18.00-19.00</p></td>
+              <td><p><a href="http://program.medeltidsveckan.se/a/426/kalabalik-pa-forum-vulgaris"> Forum Vulgaris </a></p></td>
+            </tr>
+            <tr style="display:none;" class="medeltidsveckan2018tr">
+              <td></td>
+              <td><p>21.00-22.00</p></td>
+              <td><p><a href="http://program.medeltidsveckan.se/a/424/kalabalik-back-to-bysans"> Back to Bysans, concert in S:ta Karin </a></p></td>
+            </tr>
+            <tr style="display:none;" class="medeltidsveckan2018tr">
+              <td><p>Thursday, 9 August</p></td>
+              <td><p>13.00-14.00</p></td>
+              <td><p><a href="http://program.medeltidsveckan.se/a/426/kalabalik-pa-forum-vulgaris"> Forum Vulgaris </a></p></td>
+            </tr>
+            <tr style="display:none;" class="medeltidsveckan2018tr">
+              <td></td>
+              <td><p>22.30-...</p></td>
+              <td><p><a href="http://program.medeltidsveckan.se/a/456/vikingaos-med-kalabalik"> Kapitelhus-gården </a></p></td>
+            </tr>
+            <tr style="display:none;" class="medeltidsveckan2018tr">
+              <td><p>Friday, 10 August</p></td>
+              <td><p>12.00-13.00</p></td>
+              <td><p><a href="http://program.medeltidsveckan.se/a/426/kalabalik-pa-forum-vulgaris"> Forum Vulgaris </a></p></td>
+            </tr>
+            <tr style="display:none;" class="medeltidsveckan2018tr">
               <td><p></p></td>
+              <td><p>17.00-18.00</p></td>
+              <td><p><a href="http://program.medeltidsveckan.se/a/426/kalabalik-pa-forum-vulgaris"> Forum Vulgaris </a></p></td>
             </tr>
-		    <tr>
-			  <td><p>Monday, 6 August</p></td>
-			  <td><p>12.00-13.00</p></td>
-			  <td><p><a href="http://program.medeltidsveckan.se/a/426/kalabalik-pa-forum-vulgaris"> Forum Vulgaris </a></p></td>
+            <tr style="display:none;" class="medeltidsveckan2018tr">
+              <td></td>
+              <td><p>18.30-20.00</p></td>
+              <td><p><a href="http://program.medeltidsveckan.se/a/457/vikingaos-med-kalabalik"> Kapitelhus-gården</a></p></td>
             </tr>
-		    <tr>
-			  <td></td>
-			  <td><p>16.00-17.00</p></td>
-			  <td><p><a href="http://program.medeltidsveckan.se/a/426/kalabalik-pa-forum-vulgaris"> Forum Vulgaris </a></p></td>
+            <tr style="display:none;" class="medeltidsveckan2018tr">
+              <td></td>
+              <td><p>22.00-23.00</p></td>
+              <td><p>Klosterlängan</a></p></td>
             </tr>
-		    <tr>
-			  <td></td>
-			  <td><p>22.00-...</p></td>
-			  <td><p><a href="http://program.medeltidsveckan.se/a/443/kalabalik-pa-wisby-hof"> Visby Hof </a></p></td>
+            <tr style="display:none;" class="medeltidsveckan2018tr">
+              <td><p>Saturday, 11 August</p></td>
+              <td><p>12.00-13.00</p></td>
+              <td><p><a href="http://program.medeltidsveckan.se/a/426/kalabalik-pa-forum-vulgaris"> Forum Vulgaris </a></p></td>
             </tr>
-		    <tr>
-			  <td><p>Tuesday, 7 August</p></td>
-			  <td><p>12.00-12.30</p></td>
-			  <td><p><a href="http://program.medeltidsveckan.se/a/426/kalabalik-pa-forum-vulgaris"> Forum Vulgaris </a></p></td>
+            <tr style="display:none;" class="medeltidsveckan2018tr">
+              <td><p></p></td>
+              <td><p>18.00-19.00</p></td>
+              <td><p><a href="http://program.medeltidsveckan.se/a/426/kalabalik-pa-forum-vulgaris"> Forum Vulgaris </a></p></td>
             </tr>
-		    <tr>
-			  <td></td>
-			  <td><p>18.00-19.00</p></td>
-			  <td><p><a href="http://program.medeltidsveckan.se/a/426/kalabalik-pa-forum-vulgaris"> Forum Vulgaris </a></p></td>
+            <tr style="display:none;" class="medeltidsveckan2018tr">
+              <td><p></p></td>
+              <td><p>21.00-22.00</p></td>
+              <td><p><a href="http://program.medeltidsveckan.se/a/424/kalabalik-back-to-bysans"> Back to Bysans, concert in S:ta Karin </a></p></td>
             </tr>
-		    <tr>
-			  <td></td>
-			  <td><p>21.00-22.00</p></td>
-			  <td><p><a href="http://program.medeltidsveckan.se/a/424/kalabalik-back-to-bysans"> Back to Bysans, concert in S:ta Karin </a></p></td>
-            </tr>
-		    <tr>
-			  <td><p>Thursday, 9 August</p></td>
-			  <td><p>13.00-14.00</p></td>
-			  <td><p><a href="http://program.medeltidsveckan.se/a/426/kalabalik-pa-forum-vulgaris"> Forum Vulgaris </a></p></td>
-            </tr>
-		    <tr>
-			  <td></td>
-			  <td><p>22.30-...</p></td>
-			  <td><p><a href="http://program.medeltidsveckan.se/a/456/vikingaos-med-kalabalik"> Kapitelhus-gården </a></p></td>
-            </tr>
-		    <tr>
-			  <td><p>Friday, 10 August</p></td>
-			  <td><p>12.00-13.00</p></td>
-			  <td><p><a href="http://program.medeltidsveckan.se/a/426/kalabalik-pa-forum-vulgaris"> Forum Vulgaris </a></p></td>
-            </tr>
-		    <tr>
-			  <td><p></p></td>
-			  <td><p>17.00-18.00</p></td>
-			  <td><p><a href="http://program.medeltidsveckan.se/a/426/kalabalik-pa-forum-vulgaris"> Forum Vulgaris </a></p></td>
-            </tr>
-		    <tr>
-			  <td></td>
-			  <td><p>18.30-20.00</p></td>
-			  <td><p><a href="http://program.medeltidsveckan.se/a/457/vikingaos-med-kalabalik"> Kapitelhus-gården</a></p></td>
-            </tr>
-		    <tr>
-			  <td></td>
-			  <td><p>22.00-23.00</p></td>
-			  <td><p>Klosterlängan</a></p></td>
-            </tr>
-		    <tr>
-			  <td><p>Saturday, 11 August</p></td>
-			  <td><p>12.00-13.00</p></td>
-			  <td><p><a href="http://program.medeltidsveckan.se/a/426/kalabalik-pa-forum-vulgaris"> Forum Vulgaris </a></p></td>
-            </tr>
-		    <tr>
-			  <td><p></p></td>
-			  <td><p>18.00-19.00</p></td>
-			  <td><p><a href="http://program.medeltidsveckan.se/a/426/kalabalik-pa-forum-vulgaris"> Forum Vulgaris </a></p></td>
-            </tr>
-		    <tr>
-			  <td><p></p></td>
-			  <td><p>21.00-22.00</p></td>
-			  <td><p><a href="http://program.medeltidsveckan.se/a/424/kalabalik-back-to-bysans"> Back to Bysans, concert in S:ta Karin </a></p></td>
+            <tr style="display:none;" class="medeltidsveckan2018tr">
+              <td></td>
+              <td><p>-------</p></td>
+              <td></td>
             </tr>
             <tr>
 			  <td><p>Horsens, Europaesk Middelalder Festival</p></td>
@@ -199,7 +215,12 @@
 			<tr>
 			  <td><p>Söderköpings Gästabud</p></td>
 			  <td><p>(SE)</p></td>
-			  <td><p>31 August - 2 September, <a href="http://www.gastabud.se/" target="_blank">Medieval Festival</a></p></td>
+			  <td><p>31 August - 1 September, <a href="http://www.gastabud.se/" target="_blank">Medieval Festival</a></p></td>
+            </tr>
+			<tr>
+			  <td><p>Riddarklubbens Stora Maskerad</p></td>
+			  <td><p>(SE)</p></td>
+			  <td><p>23 September, <a href="https://www.facebook.com/events/228184037896765/" target="_blank">Medival Masquerade</a></p></td>
             </tr>
           </tbody>
 		</table>
