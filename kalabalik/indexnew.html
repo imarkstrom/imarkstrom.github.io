@@ -1,0 +1,682 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>	Kalabalik </title>
+	<link rel="shortcut icon" href="images/thumb.jpeg">
+	<meta charset="UTF-8">
+	<meta name="Kalabalik" content="Kalabalik, viking band, stockholm, sweden, medieval, viking, market, party, music, band, bagpipe, bagpipes, nyckelharpa, guitar, flute, davul, darbuka, cd, record, historical">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"
+            integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+            crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="styles/main.css" type="text/css">
+	<script>
+	 //trolololol...
+	 window.onload = function setaddr(){
+	     var cc= "idsmusik@";
+	     var b = "ik.medelt";
+	     var a = "kalabal";
+	     var ac= "gma";
+	     var aa= "lol";
+	     var ai= "il.com";
+	     document.getElementById("ma1").innerHTML ='<p class="mail">' + a+b+cc+ac+ai + '</p>';
+	 }
+	 function showLostInNorway() {
+	     document.getElementById('lostinnorway').style.display = "block";
+	 }
+	 function showTotalKalabalik() {
+	     document.getElementById('totalkalabalik').style.display = "block";
+	 }
+	 function showGranfaderDiv() {
+	     document.getElementById('granfaderTour').style.display = "block";
+	 }
+	 function showOldDiv() {
+	     document.getElementById('oldTour').style.display = "block";
+	 }
+	 function showOlderDiv() {
+	     document.getElementById('olderTour').style.display = "block";
+	 }
+	 function showLastDiv() {
+	     document.getElementById('lastTour').style.display = "block";
+	 }
+     function showMedeltidsveckan2018trs(){
+         var rows = document.querySelectorAll(".medeltidsveckan2018tr");
+         rows.forEach(r => {
+             r.style.display = "table-row";
+         });
+     }
+
+	</script>
+  </head>
+  <body>
+
+	<div id="contactBar">
+	  <ul id="nav">
+		<li><a href="https://www.facebook.com/kalabalikmusic" target="_blank"><img src="images/fblogo2.png" width="40px" /></a></li>
+		<li><a href="http://www.youtube.com/playlist?list=PLq_re4eJb-ivQ3mFFK0Qh7kzYXb0VeBvd" target="_blank"><img src="images/youtube3.png" width="40px" /></a></li>
+		<li><a href="http://instagram.com/kalabalikmusic" target="_blank"><img src="images/instagram-logo-transparent.png" width="40px" /></a></li>
+		<li><a href="https://www.twitter.com/kalabalikswe" target="_blank"><img src="images/twittericon.png" width="40px" /></a></li>
+		<li><a href="https://kalabalik.bandcamp.com" target="_blank"><img src="images/bandcamp-button-square-green-256.png" width="40px" /></a></li>
+	  </ul>
+	</div>
+    <div class="container-fluid" >
+      <div class="row justify-content-sm-center" >
+	    <div class="col-sm-12">
+          <div id="titleImageDiv" >
+	        <img class="img-responsive" id="titleImage" src="images/titlelogo.png">
+	        <p id="headerInfo">- Viking Band from Stockholm, Sweden -</p>
+          </div>
+	    </div>
+      </div>
+	  <div id="pageContainer">
+	    <div class="row">
+          <div class="col-sm-12">
+            <div class="infoboxcontent" >
+		      <p>KALABALIK is a viking band from Stockholm, Sweden, which play original contemporary medieval music on a wide range of historic instruments.</p>
+		      <p> Since 2009 the band has toured during the summers making appearences on a numerous medieval and viking themed markets, weddings and parties. </p>
+            </div>
+          </div>
+	    </div>
+	    <div class="row">
+          <div class="col-sm-12">
+            <div class="infoboxcontent" >
+		      <h1>BOOKING AND CONTACT</h1>
+		      <span id="ma1"></span>
+            </div>
+          </div>
+	    </div>
+
+		<div class="row no-gutters menurow">
+		  <div class="col-sm-4" id="tourselector"><div class="menuitem"> Tours</div></div>
+          <div class="col-sm-4" id="instrumentselector"> <div class="menuitem" >Instruments</div></div>
+          <div class="col-sm-4" id="bandmemberselector"> <div class="menuitem" >Band Members</div></div>
+		</div>
+
+
+        <div id="bandmembers" style="display: none;">
+          <h1> Band Members</h1>
+          <div class="bandmember">
+            <h2> Hannes </h2>
+            <p>
+              With an arsenal of various percussion and the Davul, he is the drum machine of Kalabalik. With a background in classic percussion, Hannes also plays keyed percussion, such as the Santur and hammered Dulcimer.
+            </p>
+            <img class="img-responsive bandmemberphoto" src="images/hannes.jpg" />
+          </div>
+          <div class="bandmember">
+            <h2> Erik </h2>
+            <p>
+              Plays the capped shawm, keyed fiddles and other various string instruments.
+            </p>
+            <img class="img-responsive bandmemberphoto" src="images/erik.jpg" />
+          </div>
+          <div class="bandmember">
+            <h2> Otto </h2>
+            <p>
+              With many bagpipes and flutes at his disposal, everything from forest wind to ear piercing loudness is at control. Also have a lot of interest in the Vendel period.
+            </p>
+            <img class="img-responsive bandmemberphoto" src="images/otto.jpg" />
+          </div>
+          <div class="bandmember">
+            <h2> Oskar </h2>
+            <p>
+              In conjunction with Hannes, Oskar perfects the musical fundament of Kalabalik, with both accompaniment and melody playing on plucked strings, such as the guitar-cittern.
+            </p>
+            <img class="img-responsive bandmemberphoto" src="images/oskar.jpg" />
+          </div>
+          <div class="bandmember">
+            <h2> Ingemar </h2>
+            <p>
+              Glues the band together acousticly with his hurdy gurdy playing. Probably a world champion of some sort when it comes to tuning hurdy gurdies.
+            </p>
+            <img class="img-responsive bandmemberphoto" src="images/ingemar.jpg" />
+          </div>
+        </div>
+
+        <div id="instruments" style="display: none;">
+          <h1> Instruments </h1>
+          <div>
+            <h2>Shawm, Schalmei and Rauschpfeifes</h2>
+            <p>
+              In great company of Otto with his bagpipes is the capped shawm played by Erik. The shawms are loosely considered to be the ancestors of the modern oboe family instruments, with their double reeds and conical bores. With traditions many hundreds of years old, the shawm has been and is seen around the world in many different shapes and sizes, as the loud Zurna, the Bombarde most prominent in the Région Bretagne (Brittany) of France and Scottland, and the German schalmei. Erik plays a diatonic capped shawm built by Klaus Stecker from Germany.
+            </p>
+          </div>
+          <div>
+            <h2>Bagpipes</h2>
+            <p>
+              Think of the shawm, but stick it in a bag acting as an extended lung. And while you're at it, add some drones as well. There exist many different variants of bagpipes, different in size and shape, and with many different sets of drone and melody pipes. There are the most well known Scottish great highland bagpipes, the many different Gaitas from and around Spain and Portugal, the Bulgarian Kaba Gaida, further on to the many French shapes and sizes of Bechonets and Binious, all the way up to Sweden where we have our own sad and mellow-sounding companion in the Swedish bagpipes. Most often in our live performances you will hear Otto play, among many, a loud German Warpipe or a German Shepherds pipe custom built by Thorsten Stoye, closer related to the french bechonet than the Scottish Highland Pipes. Erik sometimes also play a Jens Günzel German Warpipe, while Ingemar preffer his Swedish bagpipes when lower volumes are preferred. Kalabalik has many bagpipes, but as someone famous once said: "you can never have to many bagpipes".
+            </p>
+          </div>
+          <div>
+            <h2> Hurdy Gurdy </h2>
+            <p>
+              In short, the hurdy gurdy can be described as the string version of the bagpipes. The instrument most often has drone strings, and at least one (but often more) melody strings, which are put into motion by turning the wheel using the crank. Many hurdy gurdies also carry the special drone string and bridges, which will make a distinct buzzing sound when the speed of the wheel is increased, allowing rhythmic patterns to be played at the same time as the melody. In some sense, the hurdy gurdy is a one man band, having both bass drones, melody and a drummer, which might be one of the many reasons for its succsess on the medieval dance floors around the world.
+            </p>
+            <p>
+              Following the theme of there being many different variants of the instruments already mentioned previously, the hurdy gurdy is no different. We have French hurdy gurdies recognizable for their lute shaped bodies and large wheels, the large German hurdy gurdies whith their flat backs, and the English ones being a mix of the qualities from the French and the German ones. Here in Sweden we have our own now somewhat famous Groddalira, which in many ways draw more resemblance to the Hungarian hurdy gurdy with the smaller wheel and flat shaped body. Ingemar plays two distinctly different hurdy gurdies, one being his Phoenix Alea, built by Alexandra Betz in Germany, which has large flexibility regarding different tunings and playability, and the other one being his Blekingelira built by Leif Eriksson, which is to be considered sounding more mean and haunting compared to the Phoenix.
+            </p>
+          </div>
+          <div>
+            <h2>Plucked Strings</h2>
+            <p>
+              The guitarr-like instruments primarily used by Oskar is the cittern, which specifically is constructed much like many, many related plucked instruments in the family containing everything from mandolins, guitars, mandolas, bouzoukis. It has the punch of a regular steel string guitar but with the tonality of the look-alikes such as the bouzouki, thanks to the body shape.
+            </p>
+            <p>
+              Also used are the other various plucked string instruments, some of them already mentioned above. We use different sizes of bouzoukis, mandolins, and the Saz, as different situations benefit from the varied instrument tonalities and ranges.
+            </p>
+          </div>
+        </div>
+
+        <div id="tours">
+          <h1> Tours </h1>
+          <h3>BACK TO BYSANS TOUR - 2018</h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col" >Event name</th>
+                <th scope="col" >Country</th>
+                <th scope="col" >Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><p>Aifur</p></td>
+                <td><p>(SE)</p></td>
+                <td><p>13 Mars, <a href="http://www.aifur.se/" target="_blank">Aifur</a></p></td>
+              </tr>
+              <tr>
+                <td><p>Oslo Middelalderfestival</p></td>
+                <td><p>(NO)</p></td>
+                <td><p>25 - 27 May, <a href="http://oslomiddelalderfestival.org/" target="_blank">Medieval Market</a></p></td>
+              </tr>
+              <tr>
+                <td onclick="showMedeltidsveckan2018trs();" id="medeltidsveckan2018trs"><p>Medeltidsveckan Visby (click to show)</p></td>
+                <td><p>(SE)</p></td>
+                <td><p>6 - 11 August, <a href="http://medeltidsveckan.se/" target="_blank" >Medieval Festival</a></p></td>
+              </tr>
+              <tr style="display:none;" class="medeltidsveckan2018tr">
+                <td><p>Day</p></td>
+                <td><p>Time</p></td>
+                <td><p>Show</p></td>
+              </tr>
+              <tr style="display:none;" class="medeltidsveckan2018tr">
+                <td><p>Monday, 6 August</p></td>
+                <td><p>12.00-13.00</p></td>
+                <td><p><a href="http://program.medeltidsveckan.se/a/426/kalabalik-pa-forum-vulgaris"> Forum Vulgaris </a></p></td>
+              </tr>
+              <tr style="display:none;" class="medeltidsveckan2018tr">
+                <td></td>
+                <td><p>16.00-17.00</p></td>
+                <td><p><a href="http://program.medeltidsveckan.se/a/426/kalabalik-pa-forum-vulgaris"> Forum Vulgaris </a></p></td>
+              </tr>
+              <tr style="display:none;" class="medeltidsveckan2018tr">
+                <td></td>
+                <td><p>22.00-...</p></td>
+                <td><p><a href="http://program.medeltidsveckan.se/a/443/kalabalik-pa-wisby-hof"> Visby Hof </a></p></td>
+              </tr>
+              <tr style="display:none;" class="medeltidsveckan2018tr">
+                <td><p>Tuesday, 7 August</p></td>
+                <td><p>12.00-12.30</p></td>
+                <td><p><a href="http://program.medeltidsveckan.se/a/426/kalabalik-pa-forum-vulgaris"> Forum Vulgaris </a></p></td>
+              </tr>
+              <tr style="display:none;" class="medeltidsveckan2018tr">
+                <td></td>
+                <td><p>18.00-19.00</p></td>
+                <td><p><a href="http://program.medeltidsveckan.se/a/426/kalabalik-pa-forum-vulgaris"> Forum Vulgaris </a></p></td>
+              </tr>
+              <tr style="display:none;" class="medeltidsveckan2018tr">
+                <td></td>
+                <td><p>21.00-22.00</p></td>
+                <td><p><a href="http://program.medeltidsveckan.se/a/424/kalabalik-back-to-bysans"> Back to Bysans, concert in S:ta Karin </a></p></td>
+              </tr>
+              <tr style="display:none;" class="medeltidsveckan2018tr">
+                <td><p>Thursday, 9 August</p></td>
+                <td><p>13.00-14.00</p></td>
+                <td><p><a href="http://program.medeltidsveckan.se/a/426/kalabalik-pa-forum-vulgaris"> Forum Vulgaris </a></p></td>
+              </tr>
+              <tr style="display:none;" class="medeltidsveckan2018tr">
+                <td></td>
+                <td><p>22.30-...</p></td>
+                <td><p><a href="http://program.medeltidsveckan.se/a/456/vikingaos-med-kalabalik"> Kapitelhus-gården </a></p></td>
+              </tr>
+              <tr style="display:none;" class="medeltidsveckan2018tr">
+                <td><p>Friday, 10 August</p></td>
+                <td><p>12.00-13.00</p></td>
+                <td><p><a href="http://program.medeltidsveckan.se/a/426/kalabalik-pa-forum-vulgaris"> Forum Vulgaris </a></p></td>
+              </tr>
+              <tr style="display:none;" class="medeltidsveckan2018tr">
+                <td><p></p></td>
+                <td><p>17.00-18.00</p></td>
+                <td><p><a href="http://program.medeltidsveckan.se/a/426/kalabalik-pa-forum-vulgaris"> Forum Vulgaris </a></p></td>
+              </tr>
+              <tr style="display:none;" class="medeltidsveckan2018tr">
+                <td></td>
+                <td><p>18.30-20.00</p></td>
+                <td><p><a href="http://program.medeltidsveckan.se/a/457/vikingaos-med-kalabalik"> Kapitelhus-gården</a></p></td>
+              </tr>
+              <tr style="display:none;" class="medeltidsveckan2018tr">
+                <td></td>
+                <td><p>22.00-23.00</p></td>
+                <td><p>Klosterlängan</a></p></td>
+              </tr>
+              <tr style="display:none;" class="medeltidsveckan2018tr">
+                <td><p>Saturday, 11 August</p></td>
+                <td><p>12.00-13.00</p></td>
+                <td><p><a href="http://program.medeltidsveckan.se/a/426/kalabalik-pa-forum-vulgaris"> Forum Vulgaris </a></p></td>
+              </tr>
+              <tr style="display:none;" class="medeltidsveckan2018tr">
+                <td><p></p></td>
+                <td><p>18.00-19.00</p></td>
+                <td><p><a href="http://program.medeltidsveckan.se/a/426/kalabalik-pa-forum-vulgaris"> Forum Vulgaris </a></p></td>
+              </tr>
+              <tr style="display:none;" class="medeltidsveckan2018tr">
+                <td><p></p></td>
+                <td><p>21.00-22.00</p></td>
+                <td><p><a href="http://program.medeltidsveckan.se/a/424/kalabalik-back-to-bysans"> Back to Bysans, concert in S:ta Karin </a></p></td>
+              </tr>
+              <tr style="display:none;" class="medeltidsveckan2018tr">
+                <td></td>
+                <td><p>-------</p></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><p>Horsens, Europaesk Middelalder Festival</p></td>
+                <td><p>(DK)</p></td>
+                <td><p>24 - 25 August, <a href="http://www.middelalderfestival.dk" target="_blank">Medieval Festival</a></p></td>
+              </tr>
+              <tr>
+                <td><p>Söderköpings Gästabud</p></td>
+                <td><p>(SE)</p></td>
+                <td><p>31 August - 1 September, <a href="http://www.gastabud.se/" target="_blank">Medieval Festival</a></p></td>
+              </tr>
+              <tr>
+                <td><p>Riddarklubbens Stora Maskerad</p></td>
+                <td><p>(SE)</p></td>
+                <td><p>23 September, <a href="https://www.facebook.com/events/228184037896765/" target="_blank">Medival Masquerade</a></p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div id="lostinnorway" style="display:none;">
+            <h3>LOST IN NORWAY TOUR - 2017</h3>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col" >Event name</th>
+                  <th scope="col" >Country</th>
+                  <th scope="col" >Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><p>Valborg på Aifur</p></td>
+                  <td><p>(SE)</p></td>
+                  <td><p>30 April, <a href="http://www.aifur.se/" target="_blank">Aifur</a></p></td>
+                </tr>
+                <tr>
+                  <td><p>ParadoxCon 2017</p></td>
+                  <td><p>(SE)</p></td>
+                  <td><p>13 May, <a href="https://www.paradoxplaza.com/pdxcon2017" target="_blank">PDXCON2017</a></p></td>
+                </tr>
+                <tr>
+                  <td><p>Oslo Middelalderfestival</p></td>
+                  <td><p>(NO)</p></td>
+                  <td><p>26 - 28 May, <a href="http://oslomiddelalderfestival.org/" target="_blank">Medieval Market</a></p></td>
+                </tr>
+                <tr>
+                  <td><p>Tønsberg Middelalderfestival</p></td>
+                  <td><p>(NO)</p></td>
+                  <td><p>2 - 4 June, <a href="http://www.tonsbergmiddelalderfestival.no" target="_blank">Medieval Market</a></p></td>
+                </tr>
+                <tr>
+                  <td><p>Wolin Viking Festival</p></td>
+                  <td><p>(PL)</p></td>
+                  <td><p>4 - 6 August</p></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="showolddivbutton" onclick="showLostInNorway(); this.style.display = 'none'">Show 2017</div>
+          <div id="totalkalabalik" style="display:none;">
+            <h3>TOTAL KALABALIK TOUR - 2016</h3>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col" >Event name</th>
+                  <th scope="col" >Country</th>
+                  <th scope="col" >Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><p>Aifur</p></td>
+                  <td><p>(SE)</p></td>
+                  <td><p>6 February, <a href="http://www.aifur.se/" target="_blank">Aifur</a></p></td>
+                </tr>
+                <tr>
+                  <td><p>Valborg på Aifur</p></td>
+                  <td><p>(SE)</p></td>
+                  <td><p>30 February, <a href="http://www.aifur.se/" target="_blank">Aifur</a></p></td>
+                </tr>
+                <tr>
+                  <td><p>Leksands Medeltidsmarknad</p></td>
+                  <td><p>(SE)</p></td>
+                  <td><p>27 - 29 May, <a href="http://www.medeltidsmarknad.se/" target="_blank">Medieval Market</a></p></td>
+                </tr>
+                <tr>
+                  <td><p>Tønsberg Middelalderfestival</p></td>
+                  <td><p>(NO)</p></td>
+                  <td><p>10 - 12 June, <a href="http://www.tonsbergmiddelalderfestival.no" target="_blank">Medieval Market</a></p></td>
+                </tr>
+                <tr>
+                  <td><p>Wolin Viking Festival</p></td>
+                  <td><p>(PL)</p></td>
+                  <td><p>5 August - 7 August</p></td>
+                </tr>
+                <tr>
+                  <td><p>Medeltidsveckan på Gotland</p></td>
+                  <td><p>(SE)</p></td>
+                  <td><p>11 - 14 August, <a href="http://www.medeltidsveckan.se" target="_blank">Medieval Festival</a></p></td>
+                </tr>
+                <tr>
+                  <td><p>Horsens, Europaesk Middelalder Festival</p></td>
+                  <td><p>(DK)</p></td>
+                  <td><p>26 - 27 August, <a href="http://www.middelalderfestival.dk" target="_blank">Medieval Market</a></p></td>
+                </tr>
+                <tr>
+                  <td><p>Riddarklubbens årliga maskerad i Stadshuset</p></td>
+                  <td><p>(SE)</p></td>
+                  <td><p>18 September, <a href="http://livrustkammaren.se/sv/riddarklubbens-arliga-maskerad/13-09-2015" target="_blank">Medieval Masquerade</a></p></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="showolddivbutton" onclick="showTotalKalabalik(); this.style.display = 'none'">Show 2016</div>
+
+          <div id="granfaderTour"  style="display:none;">
+            <h3>THE GRANFADER GRAND GALA TOUR - 2015</h3>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col" >Event name</th>
+                  <th scope="col" >Country</th>
+                  <th scope="col" >Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><p>Medeltidssveckans Halvvägsangille</p></td>
+                  <td><p>(SE)</p></td>
+                  <td><p>14 February, <a href="http://www.medeltidsveckan.se/halvvagsgille" target="_blank">Medieval Party</a></p></td>
+                </tr>
+                <tr>
+                  <td><p>Aifur</p></td>
+                  <td><p>(SE)</p></td>
+                  <td><p>13 Mars, <a href="http://www.aifur.se/" target="_blank">Aifur</a></p></td>
+                </tr>
+                <tr>
+                  <td><p>Valborgsfirande på Aifur</p></td>
+                  <td><p>(SE)</p></td>
+                  <td><p>30 April, <a href="http://www.aifur.se/" target="_blank">Aifur</a></p></td>
+                </tr>
+                <tr>
+                  <td><p>Leksands Medeltidsmarknad</p></td>
+                  <td><p>(SE)</p></td>
+                  <td><p>29 - 31 May, <a href="http://www.medeltidsmarknad.se/" target="_blank">Medieval Market</a></p></td>
+                </tr>
+                <tr>
+                  <td><p>Tønsberg Middelalderfestival</p></td>
+                  <td><p>(NO)</p></td>
+                  <td><p>5 - 7 June, <a href="http://www.tonsbergmiddelalderfestival.no" target="_blank">Medieval Market</a></p></td>
+                </tr>
+                <tr>
+                  <td><p>Hamar Middelalderfestival</p></td>
+                  <td><p>(NO)</p></td>
+                  <td><p>12 - 14 June, <a href="http://www.middelalderfestival.no" target="_blank">Medieval Market</a></p></td>
+                </tr>
+                <tr>
+                  <td><p>Wolin Viking Festival</p></td>
+                  <td><p>(PL)</p></td>
+                  <td><p>31 July - 2 August</p></td>
+                </tr>
+                <tr>
+                  <td><p>Medeltidsveckan på Gotland</p></td>
+                  <td><p>(SE)</p></td>
+                  <td><p>4 - 9 August, <a href="http://www.medeltidsveckan.se" target="_blank">Medieval Festival</a></p></td>
+                </tr>
+                <tr>
+                  <td><p>Horsens, Europaesk Middelalder Festival</p></td>
+                  <td><p>(DK)</p></td>
+                  <td><p>28 - 29 August, <a href="http://www.middelalderfestival.dk" target="_blank">Medieval Market</a></p></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="showolddivbutton" onclick="showGranfaderDiv(); this.style.display = 'none'">Show 2015</div>
+
+
+          <div id="lastTour"  style="display:none;">
+            <h3>THE ULVHAMN TOUR - 2014</h3>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col" >Event name</th>
+                  <th scope="col" >Country</th>
+                  <th scope="col" >Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><p>Valborg på Aifur</p></td>
+                  <td><p>(SE)</p></td>
+                  <td><p>30 April, <a href="http://www.aifur.se/" target="_blank">Aifur</a></p></td>
+                </tr>
+                <tr>
+                  <td><p>Leksands Medeltidsmarknad</p></td>
+                  <td><p>(SE)</p></td>
+                  <td><p>29 May - 1 June, <a href="http://www.medeltidsmarknad.se/" target="_blank">Medieval Market</a></p></td>
+                </tr>
+                <tr>
+                  <td><p>Nästan Midsommar på Aifur</p></td>
+                  <td><p>(SE)</p></td>
+                  <td><p>14 June, <a href="http://www.aifur.se/" target="_blank">Aifur</a></p></td>
+                </tr>
+                <tr>
+                  <td><p>Trondheim Vikingmarked</p></td>
+                  <td><p>(NO)</p></td>
+                  <td><p>19 - 22 June, <a href="http://www.trondheimvikingmarked.com/" target="_blank">Viking Market</a></p></td>
+                </tr>
+                <tr>
+                  <td><p>Stallarholmens Vikingafestival</p></td>
+                  <td><p>(SE)</p></td>
+                  <td><p>4 - 6 July, <a href="http://www.stallarholmensvikingar.se/" target="_blank">Viking Market</a></p></td>
+                </tr>
+                <tr>
+                  <td><p>Wolin (as a trio)</p></td>
+                  <td><p>(PL)</p></td>
+                  <td><p>1 - 3 August</p></td>
+                </tr>
+                <tr>
+                  <td><p>Medeltidsveckan i Visby</p></td>
+                  <td><p>(SE)</p></td>
+                  <td><p>4 - 9 August, <a href="http://www.medeltidsveckan.se/" target="_blank">Medieval Market Week</a></p></td>
+                </tr>
+                <tr>
+                  <td><p>Skeppen Kommer</p></td>
+                  <td><p>(SE)</p></td>
+                  <td><p>23 - 24 August, <a href="http://www.sjohistoriska.se/sv/Besok/Aktiviteter/Sjohistoriska-Skeppen-kommer-2014/?start=2014-08-23" target="_blank">Sjöhistoriska</a></p>
+                    <p><a href="https://www.facebook.com/events/617444648326370/" target="_blank">Event Link</a></p></td>
+                </tr>
+                <tr>
+                  <td><p>Horsens Medieval Festival</p></td>
+                  <td><p>(DK)</p></td>
+                  <td><p>29 - 30 August, <a href="http://www.middelalderfestival.dk/" target="_blank">Medieval Market</a></p></td>
+                </tr>
+                <tr>
+                  <td><p>Återträff efter Medeltidsveckan</p></td>
+                  <td><p>(SE)</p></td>
+                  <td><p>20 September, <a href="https://www.facebook.com/events/718055424927551/" target="_blank">Aifur Event</a></p></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="showolddivbutton" onclick="showLastDiv(); this.style.display = 'none'">Show 2014</div>
+          <div id="oldTour"  style="display:none;">
+            <h3>THE HYPE IS REAL TOUR - 2013</h3>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col" >Event name</th>
+                  <th scope="col" >Country</th>
+                  <th scope="col" >Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><p>Leksands Medeltidsmarknad</p></td>
+                  <td><p>(SE)</p></td>
+                  <td><p>May</p></td>
+                </tr>
+                <tr>
+                  <td><p>Husby-Långhundra</p></td>
+                  <td><p>(SE)</p></td>
+                  <td><p>June</p></td>
+                </tr>
+                <tr>
+                  <td><p>Stallarholmens Vikingafestival</p></td>
+                  <td><p>(SE)</p></td>
+                  <td><p>July</p></td>
+                </tr>
+                <tr>
+                  <td><p>Wolin Viking Festival</p></td>
+                  <td><p>(PL)</p></td>
+                  <td><p>July</p></td>
+                </tr>
+                <tr>
+                  <td><p>Medeltidsveckan i Visby</p></td>
+                  <td><p>(SE)</p></td>
+                  <td><p>August</p></td>
+                </tr>
+                <tr>
+                  <td><p>Gunnes Gard</p></td>
+                  <td><p>(SE)</p></td>
+                  <td><p>September</p></td>
+                </tr>
+                <tr>
+                  <td><p>Aifur</p></td>
+                  <td><p>(SE)</p></td>
+                  <td><p>November</p></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="showolddivbutton" onclick="showOldDiv(); this.style.display = 'none'">Show 2013</div>
+          <div id="olderTour"  style="display:none;">
+            <h3>THE BCHYRCH BDONK BEATING TOUR - 2012</h3>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col" >Event name</th>
+                  <th scope="col" >Country</th>
+                  <th scope="col" >Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><p>Leksands Medeltidsmarknad</p></td>
+                  <td><p>(SE)</p></td>
+                  <td><p>May</p></td>
+                </tr>
+                <tr>
+                  <td><p>Husby-Langhundra</p></td>
+                  <td><p>(SE)</p></td>
+                  <td><p>June</p></td>
+                </tr>
+                <tr>
+                  <td><p>Stallarholmens Vikingafestival</p></td>
+                  <td><p>(SE)</p></td>
+                  <td><p>July</p></td>
+                </tr>
+                <tr>
+                  <td><p>Medeltidsveckan i Visby</p></td>
+                  <td><p>(SE)</p></td>
+                  <td><p>August</p></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="showolddivbutton" onclick="showOlderDiv(); this.style.display = 'none'">Show 2012</div>
+        </div>
+	    <div class="row">
+	      <div class="col-sm-3" >
+            <div class="findusbox" >
+              <p>Find us</p>
+              <a href="https://www.facebook.com/kalabalikmusic" target="_blank"> <img class="img-responsive findusimage" src="images/fblogo2.png" /></a>
+            </div>
+          </div>
+          <div class="col-sm-3" >
+            <div class="findusbox" >
+              <p>Watch</p>
+              <a href="http://www.youtube.com/playlist?list=PLq_re4eJb-ivQ3mFFK0Qh7kzYXb0VeBvd" target="_blank" ><img class="img-responsive findusimage" src="images/youtube3.png" /></a>
+            </div>
+          </div>
+          <div class="col-sm-3" >
+            <div class="findusbox" >
+              <p>Look</p>
+              <a href="http://instagram.com/kalabalikmusic" target="_blank" ><img class="img-responsive findusimage" src="images/instagram-logo-transparent.png" /></a>
+            </div>
+          </div>
+          <div class="col-sm-3" >
+            <div class="findusbox" >
+              <p>Buy</p>
+              <a href="http://kalabalik.bandcamp.com" target="_blank" ><img class="img-responsive findusimage" src="images/bandcamp-button-square-green-256.png"  /></a>
+            </div>
+          </div>
+	    </div>
+	    <div class="footer">
+		  <p>- Copyright Kalabalik 2009-2018 -</p>
+	    </div>
+      </div>
+	</div>
+    <script>
+	 //$("#instruments").hide();
+	 $("#tourselector").css("background-color","#606060")
+	 $("#instrumentselector").css("background-color","#303030")
+	 $("#bandmemberselector").css("background-color","#303030")
+	 $("#tourselector").click(function(){
+		 $("#tourselector").css("background-color","#606060")
+		 $("#instrumentselector").css("background-color","#303030")
+	     $("#bandmemberselector").css("background-color","#303030")
+		 $("#tours").show();
+		 $("#instruments").hide();
+		 $("#bandmembers").hide();
+	 });
+	 $("#instrumentselector").click(function(){
+		 $("#tourselector").css("background-color","#303030")
+		 $("#instrumentselector").css("background-color","#606060")
+	     $("#bandmemberselector").css("background-color","#303030")
+		 $("#tours").hide();
+		 $("#instruments").show();
+		 $("#bandmembers").hide();
+	 });
+	 $("#bandmemberselector").click(function(){
+		 $("#tourselector").css("background-color","#303030")
+		 $("#instrumentselector").css("background-color","#303030")
+	     $("#bandmemberselector").css("background-color","#606060")
+		 $("#tours").hide();
+		 $("#instruments").hide();
+		 $("#bandmembers").show();
+	 });
+    </script>
+  </body>
+</html>

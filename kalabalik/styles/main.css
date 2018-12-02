@@ -19,6 +19,22 @@ h1{
   padding-bottom: 20px;
 }
 
+h2{
+  margin-top: 40px;
+  font-weight:lighter;
+  letter-spacing:2px;
+  color:#dddddd;
+  padding-bottom: 20px;
+}
+
+h3{
+  margin-top: 40px;
+  font-weight:lighter;
+  letter-spacing:2px;
+  color:#dddddd;
+  padding-bottom: 20px;
+}
+
 p{
   /* letter-spacing: 3px; */
   color:#dddddd;
@@ -26,6 +42,10 @@ p{
   padding-bottom: 10px;
   font-size: 14px;
 
+}
+
+#instruments p{
+    text-align: justify;
 }
 
 a{
@@ -118,6 +138,45 @@ a{
 
 #medeltidsveckan2018trs:hover{
   background-color: #606060;
+}
+
+
+
+.menurow{
+    padding-top:50px;
+    padding-bottom:50px;
+}
+
+#bandmembers {
+    padding-bottom: 100px;
+}
+#instruments {
+    padding-bottom: 100px;
+}
+#tours{
+    padding-bottom: 100px;
+}
+
+.bandmember{
+    max-width: 500px;
+    margin: auto;
+}
+
+.bandmember p{
+    text-align: justify;
+    text-align-last: center;
+}
+
+.bandmemberphoto{
+    max-width: 200px;
+}
+
+.menuitem{
+    color: #d0d0d0;
+}
+
+.menuitem:hover{
+    background-color: #606060;
 }
 
 .content {
