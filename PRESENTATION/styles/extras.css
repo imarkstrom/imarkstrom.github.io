@@ -1,0 +1,49 @@
+.reveal .title_enum{
+    margin-top: 3vh;
+    text-align: left;
+    font-size: 1.3em;
+}
+
+.reveal li{
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.reveal .title {
+    font-size: 1.3em;
+}
+
+.reveal .author {
+    font-size: 1.2em;
+}
+
+.reveal .slides {
+    margin-top: 0;
+}
+
+.reveal section {
+    font-size: 0.8em;
+}
+
+.reveal table{
+    margin-top: 5vh;
+}
+
+.pca_explanation{
+    margin-top: 20vh;
+}
+
+.tree_explanation{
+    text-align: left;
+    margin-top: 25vh;
+    float:left;
+}
+.pca_explanation_inactive{
+    margin-top: 20vh;
+    color: #202020
+}
+
+.pca_explanation_active{
+    margin-top: 20vh;
+    color: #e0e0e0
+}

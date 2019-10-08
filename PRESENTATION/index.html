@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Comparing normal estimation methods for the rendering of unorganized point clouds</title>
+<meta name="author" content="(Ingemar Markström)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/league.css" id="theme"/>
+
+<link rel="stylesheet" href="./styles/extras.css"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'http://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Comparing normal estimation methods for the rendering of unorganized point clouds</h1><h2 class="author">Ingemar Markström</h2>
+</section>
+
+
+<section>
+<section id="slide-sec-">
+<h2 id="org6df88a7">3D Graphics crash course</h2>
+<div class="outline-text-2" id="text-org6df88a7">
+</div>
+</section>
+<section id="slide-sec-">
+<h3 id="org45e0b0e">Vectors and planes</h3>
+<div class="outline-text-3" id="text-org45e0b0e">
+</div>
+<ul class="org-ul">
+<li><a id="orgb126f72"></a>Vectors<br />
+<ul>
+<li>A vector \(\vec{v}=(x,y,z)\) is:
+<ul>
+<li>&#x2026; a coordinate somewhere in space.</li>
+<li>&#x2026; the direction towards that point in space.</li>
+
+</ul></li>
+<li>Three non-equal points \([\vec{v_1}, \vec{v_2}, \vec{v_3}]\) make a triangle:</li>
+
+</ul>
+</li>
+<li><a id="org44c94fe"></a>Planes<br />
+<ol>
+<li>\(\vec{t_1} = \vec{v_2}-\vec{v_1}\)</li>
+<li>\(\vec{t_2} = \vec{v_3}-\vec{v_1}\)</li>
+
+</ol>
+
+
+<ul>
+<li>All vectors \(\vec{p} = a*\vec{t_1} + b*\vec{t_2}\) outline a plane.</li>
+<li>The normal is then a perpendicular vector to the plane.</li>
+
+</ul>
+
+
+<aside class="notes">
+<p>
+Small demo
+</p>
+
+<p>
+<iframe style="width: 60vw; height: 60vh"  src="https://www.youtube.com/embed/7H5-JOgVe_k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+
+</aside>
+</li>
+</ul>
+
+</section>
+<section id="slide-sec-">
+<h3 id="orgf7218b7">Small demo</h3>
+<p style="height:60vh;">
+
+<video controls>
+  <source src="./images/Presentation_edu_normal_updated.mp4" type="video/mp4" />
+</video>
+
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-sec-">
+<h2 id="org7166e1a">Definition of unorganized point clouds?</h2>
+<div class="outline-text-2" id="text-org7166e1a">
+</div>
+</section>
+<section id="slide-sec-">
+<h3 id="orgaaa815b">An unorganized point cloud is:</h3>
+<ul>
+<li>A collection of vectors \(P=[\vec{v_1},\vec{v_2},...,\vec{v_n}]\).</li>
+<li>No structure.</li>
+<li>No connectivity.</li>
+
+</ul>
+
+</section>
+<section id="slide-sec-">
+<h3 id="org605c8cd">Point clouds in this thesis</h3>
+<p>
+Complex and real world point clouds originating from:
+</p>
+<ul>
+<li>Visionair Aim@Shape Digital Shape Workbench.</li>
+<li>Stanford Computer Graphics Laboratory.</li>
+<li>My own creations, including the reference point clouds of spheres, cubes, and cones.</li>
+
+</ul>
+
+
+<p style="height:40vh;">
+<img src="./images/thumbnail_vase.png" alt="thumbnail_vase.png" style="height:40vh;" /> <img src="./images/thumbnail_raptor.png" alt="thumbnail_raptor.png" /> <img src="./images/thumbnail_bunny.png" alt="thumbnail_bunny.png" />
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-sec-">
+<h2 id="org13b9a65">Why this thesis</h2>
+<div class="outline-text-2" id="text-org13b9a65">
+</div>
+</section>
+<section id="slide-sec-">
+<h3 id="org9b7a98d">Why normals?</h3>
+<ul>
+<li>Needed for proper light calculations.</li>
+<li>Also extremely useful in computer vision and object recognition.</li>
+<li>If they are missing, we need to calculate them!</li>
+
+</ul>
+
+
+<div class="figure">
+<p><img src="./images/Presentation_nonormals_normals.png" alt="Presentation_nonormals_normals.png" style="height:60vh;" />
+</p>
+</div>
+
+</section>
+<section id="slide-sec-">
+<h3 id="org1b0e177">Research question</h3>
+<p style="width:40vw; margin:auto;">
+What are the comparative costs and benefits of two different algorithms and their associated data structures: triangle averaging; and principal component analysis, when estimating normals in unorganized point clouds, measured by output quality and calculation time?
+</p>
+
+<aside class="notes">
+<p>
+Normal estimation evaluation
+</p>
+<ul>
+<li>Output quality:
+<ul>
+<li>Visual image inspection compared to references.</li>
+<li>Numerical error distribution analysis.</li>
+
+</ul></li>
+<li>Estimation running-time and resources
+<ul>
+<li>Timing of each step in the estimation process.</li>
+<li>Static analysis of memory usage.</li>
+
+</ul></li>
+
+</ul>
+
+</aside>
+
+
+</section>
+<section id="slide-sec-">
+<h3 id="org5d62222">Summary overview</h3>
+
+<div class="figure">
+<p><img src="./images/OfflineOverview.png" alt="OfflineOverview.png" />
+</p>
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-sec-">
+<h2 id="org3b6a9ff">What is Inviwo?</h2>
+<div class="outline-text-2" id="text-org3b6a9ff">
+</div>
+</section>
+<section id="slide-sec-">
+<h3 id="orgca6e824">Inviwo</h3>
+<div class="outline-text-3" id="text-orgca6e824">
+</div>
+<ul class="org-ul">
+<li><a id="org052ea81"></a>In short<br />
+<ul>
+<li>Open source scientific visualization framework.</li>
+<li>Processors and modules written in C++, using OpenGL/Vulcan, OpenCL and OpenMP.</li>
+
+</ul>
+</li>
+<li><a id="org199b690"></a>Can visualize<br />
+<ul>
+<li>Geometry (Meshes, lines etc)</li>
+<li>Scalar fields (images, volumes)</li>
+<li>Vector field (streams, paths etc)</li>
+
+</ul>
+</li>
+</ul>
+
+</section>
+<section id="slide-sec-">
+<h3 id="org97c4b03">Implementation wish list</h3>
+<div class="outline-text-3" id="text-org97c4b03">
+</div>
+<ul class="org-ul">
+<li><a id="org6cb02eb"></a>Inviwo lacked:<br />
+<ul>
+<li>A normal estimation processor for unorganized point clouds.</li>
+<li>A useful point splatting module.</li>
+
+</ul>
+</li>
+<li><a id="org1b766b6"></a>Goal<br />
+<ul>
+<li>Implement a complete rendering module unorganized point clouds.</li>
+
+</ul>
+</li>
+</ul>
+</section>
+<section id="slide-sec-">
+<h3 id="orgfbf6f0f">Example of usage</h3>
+
+<div class="figure">
+<p><img src="./images/ui.png" alt="ui.png" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-sec-">
+<h2 id="org19b1389">Point splatting</h2>
+<div class="outline-text-2" id="text-org19b1389">
+</div>
+</section>
+<section id="slide-sec-">
+<h3 id="org3d413c6">Why?</h3>
+<ul>
+<li>To few points to cover enough screen surface.</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./images/points_vs_pointsplatting.png" alt="points_vs_pointsplatting.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-sec-">
+<h3 id="orgfd62b9b">Why a new point splatting processor?</h3>
+<p>
+I wanted:
+</p>
+<ul>
+<li>Color-coded debug output of estimated normals.</li>
+<li>Possible use of at least one light source.</li>
+
+</ul>
+
+<p style="height:40vh;">
+<img src="./images/thumbnail_bunny_normals.png" alt="thumbnail_bunny_normals.png" style="height:40vh;" /> <img src="./images/thumbnail_bunny.png" alt="thumbnail_bunny.png" />
+</p>
+
+</section>
+<section id="slide-sec-">
+<h3 id="orge67746d">How</h3>
+
+<div class="figure">
+<p><img src="./images/point_splatting_triangle_explained_simple.png" alt="point_splatting_triangle_explained_simple.png" class="fragment appear" style="width:80vw;" />
+</p>
+</div>
+
+<div class="figure">
+<p><img src="./images/point_splatting_explained_simple.png" alt="point_splatting_explained_simple.png" class="fragment appear" style="width:80vw;" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-sec-">
+<h3 id="orgfba6939">Point splatting variations? (1/2)</h3>
+
+<div class="figure">
+<p><img src="./images/point_splatting_explained_circle.png" alt="point_splatting_explained_circle.png" class="fragment appear" style="width:80vw;" />
+</p>
+</div>
+
+
+<div class="figure">
+<p><img src="./images/point_splatting_explained_angled.png" alt="point_splatting_explained_angled.png" class="fragment appear" style="width:80vw;" />
+</p>
+</div>
+
+</section>
+<section id="slide-sec-">
+<h3 id="org4de63fd">Point splatting variations? (2/2)</h3>
+<ul>
+<li>Different shapes.</li>
+<li>Placements offsets and angle.</li>
+<li>Adaptive size to neighboring points.</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./images/Presentation_Splat_Variations.png" alt="Presentation_Splat_Variations.png" style="width:50vw;" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-sec-">
+<h2 id="orgabed31b">Normal estimation</h2>
+<div class="outline-text-2" id="text-orgabed31b">
+</div>
+</section>
+<section id="slide-sec-">
+<h3 id="org271c3b4">Different approaches to normal estimation from neighborhoods</h3>
+<p>
+The two categories are:
+</p>
+<ol>
+<li>Averaging methods.</li>
+<li>Optimization methods.</li>
+
+</ol>
+
+</section>
+<section id="slide-sec-">
+<h3 id="orgad1e2cb">What we see on screen</h3>
+<p>
+A car:
+</p>
+
+<div class="figure">
+<p><img src="./images/Presentation_car_points.png" alt="Presentation_car_points.png" style="width:50vw;" />
+</p>
+</div>
+
+</section>
+<section id="slide-sec-">
+<h3 id="org688322d">What the computer see</h3>
+<p>
+The same car:
+</p>
+
+
+<div class="figure">
+<p><img src="./images/Presentation_car_computervision.png" alt="Presentation_car_computervision.png" style="height:60vh;" />
+</p>
+</div>
+
+</section>
+<section id="slide-sec-">
+<h3 id="org5c82b96">Finding \(k\) point neighbors in an unorganized point cloud</h3>
+<ul>
+<li>Linear search is painfully slow (\(O(n^2*k)\)).</li>
+<li>Two main types of neighborhoods:
+<ul>
+<li>Fixed size.</li>
+<li>All neighbors in a fixed radius.</li>
+<li>(Perhaps a combination of the above).</li>
+
+</ul></li>
+<li>Better data structure alternatives exist (Trees!), but which one to be used?</li>
+
+</ul>
+
+
+</section>
+<section id="slide-sec-">
+<h3 id="orgc8e5872">Summary of data structure research</h3>
+<ul>
+<li>KD-tree:
+<ul>
+<li>Balanced tree.</li>
+<li>Subdivides cells from the found median.</li>
+<li>Intuitive nearest neighbor querying.</li>
+
+</ul></li>
+<li>Oct-tree:
+<ul>
+<li>Often used in game engines. (Fast collision detection, and pre-rendering culling of objects out of sight).</li>
+<li>Unbalanced version of the general KD-tree.</li>
+<li>Subdivides using the measured center of each cell instead of median, allowing predictable location calculation of neighboring cells.</li>
+
+</ul></li>
+<li>Equally spaced voxel grid:
+<ul>
+<li>Intuitive neighboring voxel traversal.</li>
+<li>However, possibly many empty voxels.</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+<section id="slide-sec-">
+<h3 id="org5a4ec81">KD-Tree</h3>
+<aside class="notes">
+<p>
+Worth remembering:
+The unorganized point cloud lacks any specific ordering.
+Reordering points does not alter the visual output from the point splatting processor.
+</p>
+
+<p>
+Building a 3D KD-tree from an unorganized point cloud \(P=[\vec{p_{start}},\vec{p_{start+1}},...,\vec{p_{end}}]\):
+</p>
+<ol>
+<li>Find the median point \(p_m\) in a dimension \(d \in \left\{x,y,z\right\}\) among all points in \(P\).</li>
+<li>Put all points with \(x_i < p_m\) before, and the rest after the median</li>
+<li>Create two sub-trees (if there are any points left):
+<ul>
+<li>\(t_{left}\) \(\rightarrow\) points \([\vec{p_{start}},...,\vec{p_{m-1}}]\).</li>
+<li>\(t_{right}\) \(\rightarrow\) points \([\vec{p_{m+1}},...,\vec{p_{end}}]\).</li>
+
+</ul></li>
+<li>Start over from \(1)\) for each sub-tree in another dimension.</li>
+
+</ol>
+
+</aside>
+
+
+<div class="figure">
+<p><img src="./images/KDtree.png" alt="KDtree.png" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-sec-">
+<h3 id="orge86e970">Averaging methods</h3>
+<aside class="notes">
+<p>
+<iframe style="width: 60vw; height: 60vh" src="https://www.youtube.com/embed/piPkSkG255M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+
+</aside>
+
+<p>
+
+<video controls>
+  <source src="./images/Presentation_edu_averaging_updated.mp4" type="video/mp4" />
+</video>
+
+</p>
+</section>
+<section id="slide-sec-">
+<h3 id="org53eadbc">Variations</h3>
+<p style="height:40vh;">
+<img src="./images/averaging_overview_few.png" alt="averaging_overview_few.png" style="height:40vh;" />  <img src="./images/averaging_overview_all.png" alt="averaging_overview_all.png" />
+</p>
+<ul>
+<li>The number of triangles formed
+<ul>
+<li>Fast triangulation (fTA) fan-disk, as in the video.</li>
+<li>Complete triangulation (cTA) of all possible triangles from neighbors.</li>
+
+</ul></li>
+<li>Weighting the different triangles formed.
+<ul>
+<li>Triangle edge length.</li>
+<li>Triangle area.</li>
+
+</ul></li>
+
+</ul>
+
+
+</section>
+<section id="slide-sec-">
+<h3 id="orgedb6a99">Principal component analysis (PCA)</h3>
+<div class="outline-text-3" id="text-orgedb6a99">
+</div>
+<ul class="org-ul">
+<li><a id="org8d39a28"></a>Find the set of the \(k\) nearest neighboring points \(E=\left[ \vec{e_1},\vec{e_2},...,\vec{e_k} \right]\) to \(\vec{p_i}\).<br /></li>
+
+
+<li><a id="org8157bb4"></a>Create a covariance matrix from all the points in the neighborhood.<br />
+<div>
+\begin{equation}
+C =
+\left[
+    \begin{matrix}
+        cov(X,X) & cov(X,Y) & cov(X,Z) \\
+        cov(Y,X) & cov(Y,Y) & cov(Y,Z) \\
+        cov(Z,X) & cov(Z,Y) & cov(Z,Z)
+    \end{matrix}
+\right]
+\end{equation}
+
+</div>
+</li>
+
+
+<li><a id="org7f97f16"></a>Find the eigenvectors and eigenvalues (an orthogonal eigenbasis) of \(C\).<br />
+<div>
+\begin{equation}
+   \det\left(C - (\lambda I)\right) = 0
+\end{equation}
+
+</div>
+</li>
+
+
+<li><a id="orgc7ee958"></a>The smallest eigenvalue correspond to the neighborhood normal!<br />
+<aside class="notes">
+<p>
+Short standard image example in 2D
+./images/pca<sub>expl</sub><sub>img</sub><sub>points.png</sub>]]
+</p>
+
+<p>
++REVEAL: split
+</p>
+
+<p>
+./images/pca<sub>expl</sub><sub>img</sub><sub>points</sub><sub>mean.png</sub>]]
+</p>
+
+<p>
++REVEAL: split
+</p>
+
+<p>
+./images/pca<sub>expl</sub><sub>img</sub><sub>points</sub><sub>mean</sub><sub>arrows.png</sub>]]
+</p>
+
+</aside>
+</li>
+</ul>
+
+</section>
+<section id="slide-sec-">
+<h3 id="org72f39fe">When done on a 2D curve</h3>
+
+<div class="figure">
+<p><img src="./images/pca_expl_line_points.png" alt="pca_expl_line_points.png" style="height:50vh;" />
+</p>
+</div>
+
+</section>
+<section >
+
+
+<div class="figure">
+<p><img src="./images/pca_expl_line_points_seleceted.png" alt="pca_expl_line_points_seleceted.png" style="height:50vh;" />
+</p>
+</div>
+
+</section>
+<section >
+
+
+<div class="figure">
+<p><img src="./images/pca_expl_line_points_seleceted_neighbors.png" alt="pca_expl_line_points_seleceted_neighbors.png" style="height:50vh;" />
+</p>
+</div>
+
+</section>
+<section >
+
+
+<div class="figure">
+<p><img src="./images/pca_expl_line_points_seleceted_mean.png" alt="pca_expl_line_points_seleceted_mean.png" style="height:50vh;" />
+</p>
+</div>
+
+</section>
+<section >
+
+
+<div class="figure">
+<p><img src="./images/pca_expl_line_points_seleceted_spread.png" alt="pca_expl_line_points_seleceted_spread.png" style="height:50vh;" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-sec-">
+<h3 id="orgcd6ea88">Motivations for an offline approach</h3>
+<aside class="notes">
+<p>
+Triangle Averaging
+</p>
+<ul>
+<li>Intuitive.</li>
+<li>Expected to estimate decent normals.</li>
+<li>However, time complexity might be an issue.</li>
+
+</ul>
+
+<p>
+Principal component analysis
+</p>
+<ul>
+<li>Slower than the simple triangulation, but faster than the full triangulation for large neighborhoods.</li>
+<li>More consistent on a wide variety of models? On smaller neighborhoods than triangle averaging?</li>
+
+</ul>
+
+</aside>
+
+<ul>
+<li>Consistent repeatable evaluation was prioritized.</li>
+<li>Running time measurements would be stable.</li>
+<li>Numeric analysis results only dependent on neighborhood size.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-sec-">
+<h2 id="org7268cec">Evaluation methods</h2>
+<div class="outline-text-2" id="text-org7268cec">
+</div>
+</section>
+<section id="slide-sec-">
+<h3 id="org10a84e3">Overview</h3>
+<ol>
+<li>Running time with timing of both wall (and CPU) clock.</li>
+<li>Two approaches of evaluating the estimated normals:
+<ul>
+<li>Image analysis.
+<ul>
+<li>Convenient output performance overview.</li>
+<li>Quickly find problematic areas.</li>
+<li>Unfortunately subjective.</li>
+
+</ul></li>
+<li>Numerical analysis.
+<ul>
+<li>Acts as a non-subjective reference to the image analysis.</li>
+<li>Determine between close calls.</li>
+
+</ul></li>
+
+</ul></li>
+
+</ol>
+
+
+</section>
+<section id="slide-sec-">
+<h3 id="org86601b0">Runtime analysis</h3>
+<ul>
+<li>Steps that were measured:
+<ul>
+<li>KD-tree initialization.</li>
+<li>Neighborhood querying.</li>
+<li>Normal estimation.</li>
+
+</ul></li>
+<li>Variables of interest:
+<ul>
+<li>Point cloud size (number of points).</li>
+<li>Neighborhood size (number of neighbors).</li>
+<li>General point cloud structure.</li>
+<li>Threading gain (factor of single threads).</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+<section id="slide-sec-">
+<h3 id="orgde7610d">Image analysis</h3>
+<ol>
+<li>The normal \(\vec{n} = \left\{n_x, n_y, n_z\right\}\) components range \([-1.0, 1.0]\).</li>
+<li>The Fragment color \(\vec{c} = \left\{c_r, c_g, c_b\right\}\) components range \([0.0, 1.0]\).</li>
+<li>Converting a normal to a unique color:
+<ul>
+<li>\(\vec{c} = 0.5 \times \vec{n} + 0.5\)</li>
+
+</ul></li>
+
+</ol>
+
+
+<div class="figure">
+<p><img src="./images/thumbnail_bunny_normals.png" alt="thumbnail_bunny_normals.png" style="height:40vh;" />
+</p>
+</div>
+
+
+</section>
+<section id="slide-sec-">
+<h3 id="orge20117b">Image analysis (Two main types of point clouds)</h3>
+<div class="column" style="float:left; width: 50%;">
+<ul class="org-ul">
+<li><a id="org292807d"></a>Uniform point distribution (Stanford bunny)<br />
+<div class="figure">
+<p><img src="./images/POINTCLOUD_TYPE_UNIFORM.png" alt="POINTCLOUD_TYPE_UNIFORM.png" style="height:50vh; background-color: black;" />
+</p>
+</div>
+</div>
+<div class="column" style="float:left; width: 50%;">
+</li>
+<li><a id="orgc6351e6"></a>Line-scanned point cloud (Aim@Shape Galaad)<br />
+<div class="figure">
+<p><img src="./images/POINTCLOUD_TYPE_LASER.png" alt="POINTCLOUD_TYPE_LASER.png" style="height:50vh; background-color: black;" />
+</p>
+</div>
+</div>
+</li>
+</ul>
+
+</section>
+<section id="slide-sec-">
+<h3 id="orgcb3b62e">Normals image analysis</h3>
+<p>
+Compare the estimated normals to reference normals.
+</p>
+<ul>
+<li>For each pixel, output \(\vec{c_{grayscale}} = |\vec{c_{estimate}} - \vec{c_{original}}|\)</li>
+
+</ul>
+
+
+<div class="figure">
+<p><img src="./images/image_analysis_bunny_updated.png" alt="image_analysis_bunny_updated.png" style="height:40vh;" />
+</p>
+</div>
+
+<p>
+Model: Stanford bunny.
+</p>
+
+</section>
+<section id="slide-sec-">
+<h3 id="orgf46ecc5">Numerical error analysis</h3>
+<ul>
+<li>Visualize the distribution of error in the estimated normals.</li>
+<li>Bucket sort of absolute errors.</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./images/Stanford Bunny, K=10, fTA cTA and PCA, 100 error categories.png" alt="Stanford Bunny, K=10, fTA cTA and PCA, 100 error categories.png" style="height:40vh;" />
+</p>
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-sec-">
+<h2 id="orgbdc7e66">Results</h2>
+<div class="outline-text-2" id="text-orgbdc7e66">
+</div>
+</section>
+<section id="slide-sec-">
+<h3 id="orge62a837">KD-Tree initialization (1/3)</h3>
+
+<div class="figure">
+<p><img src="./images/diagram_kdtree_initialization.png" alt="diagram_kdtree_initialization.png" style="height:40vh;" />
+</p>
+</div>
+
+</section>
+<section id="slide-sec-">
+<h3 id="orgf331b07">Neighborhood querying (2/3)</h3>
+
+<div class="figure">
+<p><img src="./images/diagram_neighborhood_querying.png" alt="diagram_neighborhood_querying.png" style="height:40vh;" />
+</p>
+</div>
+
+</section>
+<section id="slide-sec-">
+<h3 id="org86bbdad">Wall Running-time (3/3)</h3>
+<div class="column" style="float:left; width: 50%; height: 40vh;">
+
+<div class="figure">
+<p><img src="./images/diagram_dragon_neighborhoodsizes.png" alt="diagram_dragon_neighborhoodsizes.png" style="height:40vh;" />
+</p>
+</div>
+</div>
+
+<div class="column" style="float:right; width: 50%;">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides" style="height:40vh;">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Aim@Shape Dragon</th>
+<th scope="col" class="org-right">fTA (s)</th>
+<th scope="col" class="org-right">cTA (s)</th>
+<th scope="col" class="org-right">PCA (s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">K = 5</td>
+<td class="org-right">0.09</td>
+<td class="org-right">0.12</td>
+<td class="org-right">5.9</td>
+</tr>
+
+<tr>
+<td class="org-left">K = 10</td>
+<td class="org-right">0.13</td>
+<td class="org-right">0.76</td>
+<td class="org-right">6.0</td>
+</tr>
+
+<tr>
+<td class="org-left">K = 15</td>
+<td class="org-right">0.16</td>
+<td class="org-right">2.6</td>
+<td class="org-right">5.9</td>
+</tr>
+
+<tr>
+<td class="org-left">K = 20</td>
+<td class="org-right">0.20</td>
+<td class="org-right">6.1</td>
+<td class="org-right">5.9</td>
+</tr>
+
+<tr>
+<td class="org-left">K = 50</td>
+<td class="org-right">0.38</td>
+<td class="org-right">110</td>
+<td class="org-right">6.3</td>
+</tr>
+
+<tr>
+<td class="org-left">K = 75</td>
+<td class="org-right">0.60</td>
+<td class="org-right">370</td>
+<td class="org-right">10</td>
+</tr>
+
+<tr>
+<td class="org-left">K = 100</td>
+<td class="org-right">0.73</td>
+<td class="org-right">900</td>
+<td class="org-right">12</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+</section>
+<section id="slide-sec-">
+<h3 id="orge24a19f">Image output analysis (Uniform point cloud)</h3>
+<div class="column" style="float:left; width: 50%;">
+<ul class="org-ul">
+<li><a id="org7d1b3b5"></a>Stanford bunny, \(k=10\) neighborhoods.<br />
+<div class="figure">
+<p><img src="./images/IMAGE_COMP_BUNNY_10_FTAM_CTAM_PCA.png" alt="IMAGE_COMP_BUNNY_10_FTAM_CTAM_PCA.png" style="height:70vh;" />
+</p>
+</div>
+</div>
+<div class="column" style="float:left; width: 50%;">
+</li>
+<li><a id="org81f6a54"></a>Aim@Shape Vase, \(k=10\) neighborhoods.<br />
+<div class="figure">
+<p><img src="./images/IMAGE_COMP_VASE_10_FTAM_CTAM_PCA.png" alt="IMAGE_COMP_VASE_10_FTAM_CTAM_PCA.png" style="height:70vh;" />
+</p>
+</div>
+</div>
+</li>
+</ul>
+
+
+</section>
+<section id="slide-sec-">
+<h3 id="orgae3cada">Image output analysis (Uniform reference point clouds)</h3>
+<div class="column" style="float:left; width: 50%;">
+<ul class="org-ul">
+<li><a id="orgd358279"></a>Reference sphere, \(k=5\) neighbors.<br />
+<div class="figure">
+<p><img src="./images/IMAGE_COMP_SPHERE_5_COMP.png" alt="IMAGE_COMP_SPHERE_5_COMP.png" style="height:70vh;" />
+</p>
+</div>
+</div>
+<div class="column" style="float:left; width: 50%;">
+</li>
+<li><a id="org72fdeff"></a>Reference cube, \(k=5\) neighbors.<br />
+<div class="figure">
+<p><img src="./images/IMAGE_COMP_BOX_5.png" alt="IMAGE_COMP_BOX_5.png" style="height:70vh;" />
+</p>
+</div>
+</div>
+</li>
+</ul>
+
+</section>
+<section id="slide-sec-">
+<h3 id="orga60a6f7">Image output analysis (issue of too many neighbors)</h3>
+<div class="column" style="float:left; width: 50%;">
+<ul class="org-ul">
+<li><a id="org250f8a4"></a>Reference cube, \(k=20\) neighbors.<br />
+<div class="figure">
+<p><img src="./images/IMAGE_COMP_BOX_20.png" alt="IMAGE_COMP_BOX_20.png" style="height:70vh;" />
+</p>
+</div>
+</div>
+<div class="column" style="float:left; width: 50%;">
+</li>
+<li><a id="orgbaf78c5"></a>Reference cube, \(k=50\) neighbors.<br />
+<div class="figure">
+<p><img src="./images/IMAGE_COMP_BOX_50.png" alt="IMAGE_COMP_BOX_50.png" style="height:70vh;" />
+</p>
+</div>
+</div>
+</li>
+</ul>
+
+</section>
+<section id="slide-sec-">
+<h3 id="org6f51f82">Image output analysis (Line-scan, too few neighbors)</h3>
+<div class="column" style="float:left; width: 50%;">
+<ul class="org-ul">
+<li><a id="org2fea101"></a>Aim@Shape Galaad, \(k=10\).<br />
+<div class="figure">
+<p><img src="./images/IMAGE_COMP_GALAAD_NORMALS_10.png" alt="IMAGE_COMP_GALAAD_NORMALS_10.png" style="height:70vh;" />
+</p>
+</div>
+</div>
+<div class="column" style="float:left; width: 50%;">
+</li>
+<li><a id="orgbd06116"></a>Aim@Shape, \(k=70\).<br />
+<div class="figure">
+<p><img src="./images/IMAGE_COMP_GALAAD_NORMALS_70.png" alt="IMAGE_COMP_GALAAD_NORMALS_70.png" style="height:70vh;" />
+</p>
+</div>
+</div>
+</li>
+</ul>
+
+
+</section>
+<section id="slide-sec-">
+<h3 id="org305c6f0">Numerical analysis</h3>
+<div class="column" style="float:left; width: 50%;">
+<p>
+Sphere:
+</p>
+
+<div class="figure">
+<p><img src="./images/diagrams/SPHERE_10.png" alt="SPHERE_10.png" style="height: 30vh;" />
+</p>
+</div>
+</div>
+<div class="column" style="float:left; width: 50%;">
+<p>
+Cube:
+</p>
+
+<div class="figure">
+<p><img src="./images/diagrams/CUBE_10.png" alt="CUBE_10.png" style="height: 30vh;" />
+</p>
+</div>
+</div>
+
+<div class="column" style="float:left; width: 50%;">
+<p>
+Stanford Bunny:
+</p>
+
+<div class="figure">
+<p><img src="./images/diagrams/BUNNY_10.png" alt="BUNNY_10.png" style="height: 30vh;" />
+</p>
+</div>
+</div>
+<div class="column" style="float:left; width: 50%;">
+<p>
+Aim@Shape Galaad:
+</p>
+
+<div class="figure">
+<p><img src="./images/diagrams/GALAAD_70.png" alt="GALAAD_70.png" style="height: 30vh;" />
+</p>
+</div>
+</div>
+
+
+
+
+
+
+</section>
+</section>
+<section>
+<section id="slide-sec-">
+<h2 id="orgb73b3cf">Summary and Conclusions</h2>
+<div class="outline-text-2" id="text-orgb73b3cf">
+</div>
+</section>
+<section id="slide-sec-">
+<h3 id="org2b9771c">Uniform point clouds</h3>
+
+<div class="figure">
+<p><img src="./images/UniformNormalOverview.png" alt="UniformNormalOverview.png" />
+</p>
+</div>
+</section>
+<section id="slide-sec-">
+<h3 id="org917c650">Line-scan point clouds</h3>
+
+<div class="figure">
+<p><img src="./images/LineScanNormalOverview.png" alt="LineScanNormalOverview.png" />
+</p>
+</div>
+
+
+</section>
+</section>
+
+<section>
+<section id="slide-sec-">
+<h2 id="orgfa2ab48">But there's more..!</h2>
+<div class="outline-text-2" id="text-orgfa2ab48">
+</div>
+</section>
+<section id="slide-sec-">
+<h3 id="org7d0d412">Lets dive deeper into the flow of data</h3>
+
+<div class="figure">
+<p><img src="./images/OfflineOverview.png" alt="OfflineOverview.png" class="fragment appear" />
+</p>
+</div>
+
+<div class="figure">
+<p><img src="./images/OnlineOverview.png" alt="OnlineOverview.png" class="fragment appear" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-sec-">
+<h2 id="orga0040e5">The end</h2>
+</section>
+</section>
+</div>
+</div>
+<script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: false,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+width: 1024,
+height: 900,
+minScale: 1.00,
+maxScale: 1.00,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>

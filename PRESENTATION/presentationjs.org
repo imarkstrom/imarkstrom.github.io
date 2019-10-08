@@ -1,0 +1,509 @@
+#+TITLE:     Comparing normal estimation methods for the rendering of unorganized point clouds
+#+SUBTITLE:  Stay a while and listen...
+#+AUTHOR:    Ingemar Markström
+#+EMAIL:     ingemarm@kth.se
+#+DATE:
+
+#+OPTIONS: timestamp:nil toc:nil  num:nil reveal_width:1680 reveal_height:1200 reveal_center:nil
+#+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/3.0.0/
+#+REVEAL_HLEVEL: 1
+#+REVEAL_TRANS: default
+#+REVEAL_THEME: league
+#+REVEAL_MIN_SCALE: 1
+#+REVEAL_MAX_SCALE: 1
+#+REVEAL_EXTRA_CSS: ./styles/extras.css
+
+
+* 3D Graphics crash course
+** Vectors and planes
+
+**** Vectors
+- A vector $\vec{v}=(x,y,z)$ is:
+  - ... a coordinate somewhere in space.
+  - ... the direction towards that point in space.
+- Three non-equal points $[\vec{v_1}, \vec{v_2}, \vec{v_3}]$ make a triangle:
+**** Planes
+1. $\vec{t_1} = \vec{v_2}-\vec{v_1}$
+2. $\vec{t_2} = \vec{v_3}-\vec{v_1}$
+
+
+- All vectors $\vec{p} = a*\vec{t_1} + b*\vec{t_2}$ outline a plane.
+- The normal is then a perpendicular vector to the plane.
+
+
+#+BEGIN_NOTES
+Small demo
+
+@@html:<iframe style="width: 60vw; height: 60vh"  src="https://www.youtube.com/embed/7H5-JOgVe_k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>@@
+#+END_NOTES
+
+** Small demo (2)
+
+#+ATTR_HTML: :style height:60vh;
+@@html:
+<video controls>
+  <source src="./images/Presentation_edu_normal_updated.mp4" type="video/mp4" />
+</video>
+@@
+
+* Definition of unorganized point clouds?
+** An unorganized point cloud is:
++ A collection of vectors $P=[\vec{v_1},\vec{v_2},...,\vec{v_n}]$.
++ No structure.
++ No connectivity.
+
+** Point clouds in this thesis
+Complex and real world point clouds originating from:
+- Visionair Aim@Shape Digital Shape Workbench.
+- Stanford Computer Graphics Laboratory.
+- My own creations, including the reference point clouds of spheres, cubes, and cones.
+
+
+#+ATTR_HTML: :style height:40vh;
+[[./images/thumbnail_vase.png]] [[./images/thumbnail_raptor.png]] [[./images/thumbnail_bunny.png]]
+
+
+* Why this thesis
+
+** Why normals?
+- Needed for proper light calculations.
+- Also extremely useful in computer vision and object recognition.
+- If they are missing, we need to calculate them!
+
+#+ATTR_HTML: :style height:60vh;
+[[./images/Presentation_nonormals_normals.png]]
+
+** Research question
+#+ATTR_HTML: :style width:40vw; margin:auto;
+What are the comparative costs and benefits of two different algorithms and their associated data structures: triangle averaging; and principal component analysis, when estimating normals in unorganized point clouds, measured by output quality and calculation time?
+
+#+BEGIN_NOTES
+Normal estimation evaluation
+- Output quality:
+  - Visual image inspection compared to references.
+  - Numerical error distribution analysis.
+- Estimation running-time and resources
+  - Timing of each step in the estimation process.
+  - Static analysis of memory usage.
+#+END_NOTES
+
+
+** Summary overview
+[[./images/OfflineOverview.png]]
+
+
+* What is Inviwo?
+** Inviwo
+**** In short
+ - Open source scientific visualization framework.
+ - Processors and modules written in C++, using OpenGL/Vulcan, OpenCL and OpenMP.
+**** Can visualize
+ - Geometry (Meshes, lines etc)
+ - Scalar fields (images, volumes)
+ - Vector field (streams, paths etc)
+
+** Implementation wish list
+**** Inviwo lacked:
+  - A normal estimation processor for unorganized point clouds.
+  - A useful point splatting module.
+**** Goal
+  - Implement a complete rendering module unorganized point clouds.
+** Example of usage
+[[./images/ui.png]]
+
+* Point splatting
+** Why?
+ - To few points to cover enough screen surface.
+[[./images/points_vs_pointsplatting.png]]
+
+** Why a new point splatting processor?
+ I wanted:
+ - Color-coded debug output of estimated normals.
+ - Possible use of at least one light source.
+
+#+ATTR_HTML: :style height:40vh;
+[[./images/thumbnail_bunny_normals.png]] [[./images/thumbnail_bunny.png]]
+
+** How
+#+ATTR_HTML: :style width:80vw;
+#+ATTR_REVEAL: :frag appear
+[[./images/point_splatting_triangle_explained_simple.png]]
+#+ATTR_HTML: :style width:80vw;
+#+ATTR_REVEAL: :frag appear
+[[./images/point_splatting_explained_simple.png]]
+
+
+** Point splatting variations? (1/2)
+
+#+ATTR_HTML: :style width:80vw;
+#+ATTR_REVEAL: :frag appear
+[[./images/point_splatting_explained_circle.png]]
+
+#+ATTR_HTML: :style width:80vw;
+#+ATTR_REVEAL: :frag appear
+[[./images/point_splatting_explained_angled.png]]
+
+** Point splatting variations? (2/2)
+ - Different shapes.
+ - Placements offsets and angle.
+ - Adaptive size to neighboring points.
+#+ATTR_HTML: :style width:50vw;
+[[./images/Presentation_Splat_Variations.png]]
+
+* Normal estimation
+
+
+
+** Different approaches to normal estimation from neighborhoods
+The two categories are:
+1) Averaging methods.
+2) Optimization methods.
+
+** What we see on screen
+A car:
+#+ATTR_HTML: :style width:50vw;
+[[./images/Presentation_car_points.png]]
+
+** What the computer see
+The same car:
+
+#+ATTR_HTML: :style height:60vh;
+[[./images/Presentation_car_computervision.png]]
+
+** Finding $k$ point neighbors in an unorganized point cloud
+- Linear search is painfully slow ($O(n^2*k)$).
+- Two main types of neighborhoods:
+  - Fixed size.
+  - All neighbors in a fixed radius.
+  - (Perhaps a combination of the above).
+- Better data structure alternatives exist (Trees!), but which one to be used?
+
+
+** Summary of data structure research
+- KD-tree:
+  - Balanced tree.
+  - Subdivides cells from the found median.
+  - Intuitive nearest neighbor querying.
+- Oct-tree:
+  - Often used in game engines. (Fast collision detection, and pre-rendering culling of objects out of sight).
+  - Unbalanced version of the general KD-tree.
+  - Subdivides using the measured center of each cell instead of median, allowing predictable location calculation of neighboring cells.
+- Equally spaced voxel grid:
+  - Intuitive neighboring voxel traversal.
+  - However, possibly many empty voxels.
+
+** KD-Tree
+#+BEGIN_NOTES
+Worth remembering:
+The unorganized point cloud lacks any specific ordering.
+Reordering points does not alter the visual output from the point splatting processor.
+
+Building a 3D KD-tree from an unorganized point cloud $P=[\vec{p_{start}},\vec{p_{start+1}},...,\vec{p_{end}}]$:
+1) Find the median point $p_m$ in a dimension $d \in \left\{x,y,z\right\}$ among all points in $P$.
+2) Put all points with $x_i < p_m$ before, and the rest after the median
+3) Create two sub-trees (if there are any points left):
+  - $t_{left}$ $\rightarrow$ points $[\vec{p_{start}},...,\vec{p_{m-1}}]$.
+  - $t_{right}$ $\rightarrow$ points $[\vec{p_{m+1}},...,\vec{p_{end}}]$.
+4) Start over from $1)$ for each sub-tree in another dimension.
+
+#+END_NOTES
+
+[[./images/KDtree.png]]
+
+
+** Averaging methods
+
+#+BEGIN_NOTES
+@@html:<iframe style="width: 60vw; height: 60vh" src="https://www.youtube.com/embed/piPkSkG255M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>@@
+#+END_NOTES
+
+@@html:
+<video controls>
+  <source src="./images/Presentation_edu_averaging_updated.mp4" type="video/mp4" />
+</video>
+@@
+** Variations
+#+ATTR_HTML: :style height:40vh;
+[[./images/averaging_overview_few.png]]  [[./images/averaging_overview_all.png]]
+- The number of triangles formed
+  - Fast triangulation (fTA) fan-disk, as in the video.
+  - Complete triangulation (cTA) of all possible triangles from neighbors.
+- Weighting the different triangles formed.
+  - Triangle edge length.
+  - Triangle area.
+
+
+** Principal component analysis (PCA)
+**** Find the set of the $k$ nearest neighboring points $E=\left[ \vec{e_1},\vec{e_2},...,\vec{e_k} \right]$ to $\vec{p_i}$.
+
+
+**** Create a covariance matrix from all the points in the neighborhood.
+ \begin{equation}
+ C =
+ \left[
+     \begin{matrix}
+         cov(X,X) & cov(X,Y) & cov(X,Z) \\
+         cov(Y,X) & cov(Y,Y) & cov(Y,Z) \\
+         cov(Z,X) & cov(Z,Y) & cov(Z,Z)
+     \end{matrix}
+ \right]
+ \end{equation}
+
+
+**** Find the eigenvectors and eigenvalues (an orthogonal eigenbasis) of $C$.
+ \begin{equation}
+    \det\left(C - (\lambda I)\right) = 0
+ \end{equation}
+
+
+**** The smallest eigenvalue correspond to the neighborhood normal!
+
+
+#+BEGIN_NOTES
+Short standard image example in 2D
+./images/pca_expl_img_points.png]]
+
++REVEAL: split
+
+./images/pca_expl_img_points_mean.png]]
+
++REVEAL: split
+
+./images/pca_expl_img_points_mean_arrows.png]]
+
+#+END_NOTES
+
+** When done on a 2D curve
+
+#+ATTR_HTML: :style height:50vh;
+[[./images/pca_expl_line_points.png]]
+
+#+REVEAL: split
+
+#+ATTR_HTML: :style height:50vh;
+[[./images/pca_expl_line_points_seleceted.png]]
+
+#+REVEAL: split
+
+#+ATTR_HTML: :style height:50vh;
+[[./images/pca_expl_line_points_seleceted_neighbors.png]]
+
+#+REVEAL: split
+
+#+ATTR_HTML: :style height:50vh;
+[[./images/pca_expl_line_points_seleceted_mean.png]]
+
+#+REVEAL: split
+
+#+ATTR_HTML: :style height:50vh;
+[[./images/pca_expl_line_points_seleceted_spread.png]]
+
+
+** Motivations for an offline approach
+#+BEGIN_NOTES
+ Triangle Averaging
+ - Intuitive.
+ - Expected to estimate decent normals.
+ - However, time complexity might be an issue.
+
+ Principal component analysis
+ - Slower than the simple triangulation, but faster than the full triangulation for large neighborhoods.
+ - More consistent on a wide variety of models? On smaller neighborhoods than triangle averaging?
+#+END_NOTES
+
+ - Consistent repeatable evaluation was prioritized.
+ - Running time measurements would be stable.
+ - Numeric analysis results only dependent on neighborhood size.
+
+* Evaluation methods
+
+** Overview
+1) Running time with timing of both wall (and CPU) clock.
+2) Two approaches of evaluating the estimated normals:
+   + Image analysis.
+     - Convenient output performance overview.
+     - Quickly find problematic areas.
+     - Unfortunately subjective.
+   + Numerical analysis.
+     - Acts as a non-subjective reference to the image analysis.
+     - Determine between close calls.
+
+
+** Runtime analysis
+- Steps that were measured:
+  - KD-tree initialization.
+  - Neighborhood querying.
+  - Normal estimation.
+- Variables of interest:
+  - Point cloud size (number of points).
+  - Neighborhood size (number of neighbors).
+  - General point cloud structure.
+  - Threading gain (factor of single threads).
+
+** Image analysis
+1) The normal $\vec{n} = \left\{n_x, n_y, n_z\right\}$ components range $[-1.0, 1.0]$.
+2) The Fragment color $\vec{c} = \left\{c_r, c_g, c_b\right\}$ components range $[0.0, 1.0]$.
+3) Converting a normal to a unique color:
+   + $\vec{c} = 0.5 \times \vec{n} + 0.5$
+
+#+ATTR_HTML: :style height:40vh;
+[[./images/thumbnail_bunny_normals.png]]
+
+
+** Image analysis (Two main types of point clouds)
+#+REVEAL_HTML: <div class="column" style="float:left; width: 50%;">
+**** Uniform point distribution (Stanford bunny)
+#+ATTR_HTML: :style height:50vh; background-color: black;
+[[./images/POINTCLOUD_TYPE_UNIFORM.png]]
+#+REVEAL_HTML: </div>
+#+REVEAL_HTML: <div class="column" style="float:left; width: 50%;">
+**** Line-scanned point cloud (Aim@Shape Galaad)
+#+ATTR_HTML: :style height:50vh; background-color: black;
+[[./images/POINTCLOUD_TYPE_LASER.png]]
+#+REVEAL_HTML: </div>
+
+** Normals image analysis
+Compare the estimated normals to reference normals.
+   - For each pixel, output $\vec{c_{grayscale}} = |\vec{c_{estimate}} - \vec{c_{original}}|$
+
+#+ATTR_HTML: :style height:40vh;
+[[./images/image_analysis_bunny_updated.png]]
+
+Model: Stanford bunny.
+
+** Numerical error analysis
+- Visualize the distribution of error in the estimated normals.
+- Bucket sort of absolute errors.
+#+ATTR_HTML: :style height:40vh;
+[[./images/Stanford Bunny, K=10, fTA cTA and PCA, 100 error categories.png]]
+
+
+* Results
+
+** KD-Tree initialization (1/3)
+#+ATTR_HTML: :style height:40vh;
+[[./images/diagram_kdtree_initialization.png]]
+
+** Neighborhood querying (2/3)
+#+ATTR_HTML: :style height:40vh;
+[[./images/diagram_neighborhood_querying.png]]
+
+** Wall Running-time (3/3)
+#+REVEAL_HTML: <div class="column" style="float:left; width: 50%; height: 40vh;">
+#+ATTR_HTML: :style height:40vh;
+[[./images/diagram_dragon_neighborhoodsizes.png]]
+#+REVEAL_HTML: </div>
+
+#+REVEAL_HTML: <div class="column" style="float:right; width: 50%;">
+#+ATTR_HTML: :style height:40vh;
+| Aim@Shape Dragon | fTA (s) | cTA (s) | PCA (s) |
+|------------------+---------+---------+---------|
+| K = 5            |    0.09 |    0.12 |     5.9 |
+| K = 10           |    0.13 |    0.76 |     6.0 |
+| K = 15           |    0.16 |     2.6 |     5.9 |
+| K = 20           |    0.20 |     6.1 |     5.9 |
+| K = 50           |    0.38 |     110 |     6.3 |
+| K = 75           |    0.60 |     370 |      10 |
+| K = 100          |    0.73 |     900 |      12 |
+#+REVEAL_HTML: </div>
+
+
+
+** Image output analysis (Uniform point cloud)
+
+#+REVEAL_HTML: <div class="column" style="float:left; width: 50%;">
+**** Stanford bunny, $k=10$ neighborhoods.
+#+ATTR_HTML: :style height:70vh;
+[[./images/IMAGE_COMP_BUNNY_10_FTAM_CTAM_PCA.png]]
+#+REVEAL_HTML: </div>
+#+REVEAL_HTML: <div class="column" style="float:left; width: 50%;">
+**** Aim@Shape Vase, $k=10$ neighborhoods.
+#+ATTR_HTML: :style height:70vh;
+[[./images/IMAGE_COMP_VASE_10_FTAM_CTAM_PCA.png]]
+#+REVEAL_HTML: </div>
+
+
+** Image output analysis (Uniform reference point clouds)
+#+REVEAL_HTML: <div class="column" style="float:left; width: 50%;">
+**** Reference sphere, $k=5$ neighbors.
+#+ATTR_HTML: :style height:70vh;
+[[./images/IMAGE_COMP_SPHERE_5_COMP.png]]
+#+REVEAL_HTML: </div>
+#+REVEAL_HTML: <div class="column" style="float:left; width: 50%;">
+**** Reference cube, $k=5$ neighbors.
+#+ATTR_HTML: :style height:70vh;
+[[./images/IMAGE_COMP_BOX_5.png]]
+#+REVEAL_HTML: </div>
+
+** Image output analysis (issue of too many neighbors)
+#+REVEAL_HTML: <div class="column" style="float:left; width: 50%;">
+**** Reference cube, $k=20$ neighbors.
+#+ATTR_HTML: :style height:70vh;
+[[./images/IMAGE_COMP_BOX_20.png]]
+#+REVEAL_HTML: </div>
+#+REVEAL_HTML: <div class="column" style="float:left; width: 50%;">
+**** Reference cube, $k=50$ neighbors.
+#+ATTR_HTML: :style height:70vh;
+[[./images/IMAGE_COMP_BOX_50.png]]
+#+REVEAL_HTML: </div>
+
+** Image output analysis (Line-scan, too few neighbors)
+#+REVEAL_HTML: <div class="column" style="float:left; width: 50%;">
+**** Aim@Shape Galaad, $k=10$.
+#+ATTR_HTML: :style height:70vh;
+[[./images/IMAGE_COMP_GALAAD_NORMALS_10.png]]
+#+REVEAL_HTML: </div>
+#+REVEAL_HTML: <div class="column" style="float:left; width: 50%;">
+**** Aim@Shape, $k=70$.
+#+ATTR_HTML: :style height:70vh;
+[[./images/IMAGE_COMP_GALAAD_NORMALS_70.png]]
+#+REVEAL_HTML: </div>
+
+
+** Numerical analysis
+#+REVEAL_HTML: <div class="column" style="float:left; width: 50%;">
+Sphere:
+#+ATTR_HTML: :style  height: 30vh;
+[[./images/diagrams/SPHERE_10.png]]
+#+REVEAL_HTML: </div>
+#+REVEAL_HTML: <div class="column" style="float:left; width: 50%;">
+Cube:
+#+ATTR_HTML: :style  height: 30vh;
+[[./images/diagrams/CUBE_10.png]]
+#+REVEAL_HTML: </div>
+
+#+REVEAL_HTML: <div class="column" style="float:left; width: 50%;">
+Stanford Bunny:
+#+ATTR_HTML: :style  height: 30vh;
+[[./images/diagrams/BUNNY_10.png]]
+#+REVEAL_HTML: </div>
+#+REVEAL_HTML: <div class="column" style="float:left; width: 50%;">
+Aim@Shape Galaad:
+#+ATTR_HTML: :style  height: 30vh;
+[[./images/diagrams/GALAAD_70.png]]
+#+REVEAL_HTML: </div>
+
+
+
+
+
+
+* Summary and Conclusions
+** Uniform point clouds
+[[./images/UniformNormalOverview.png]]
+** Line-scan point clouds
+[[./images/LineScanNormalOverview.png]]
+
+
+* Demo
+
+* Opposition
+
+* But there's more..!
+** Lets dive deeper into the flow of data
+#+ATTR_REVEAL: :frag appear
+  [[./images/OfflineOverview.png]]
+#+ATTR_REVEAL: :frag appear
+  [[./images/OnlineOverview.png]]
+
+* The end
