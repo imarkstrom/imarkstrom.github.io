@@ -4,14 +4,35 @@ import json
 # questions are importance in life: work, then family
 # 
 
-dimensions = 10
+
+#State of health                                  W3_11  W4_12  W5_11  W6_11  W7_
+#Feeling of happiness                             W3_10  W4_11  W5_10  W6_10  W7_
+#Satisfacttion in financial household yadayada    W3_64  W4_80  W5_68  W6_59  W7_
+#Satisfacttion with life                          W3_65  W4_81  W5_22  W6_23  W7_
+#How much freedom of control and choice           W3_66  W4_82  W5_46  W6_55  W7_
+#Income equality                                  W3_125 W4_141 W5_116 W6_96  W7_
+#Confidence in major companies                    W3_146 W4_157 W5_142 W6_120 W7_
+#Confidence in women movement                     W3_148 W4_159 W5_144 W6_123 W7_
+#Meaning of life?                                 W3_177 W4_182 W5_184 W6_143 W7_
+
+
+
+#####Live up to friends expectations W3_71 W4_114 W5_66
+#######Wiimmenn being independendd W4_IV88
+#####WIMMENENN biing sociable W4_IV91
+####Drinking alcohol W4_167
+#######Good human relationships W3_48 W4_38
+############Men should have more rights to work W4_78
+
+
 
 q = {} 
-q["3"]= "V214,V216,V8,V4,V27,V141,V41,V6,V7,V9".split(",")
-q["4"]= "V223,V225,V8,V4,V25,V152,V36,V6,V7,V9".split(",")
-q["5"]= "V235,V237,V8,V4,V23,V136,V104,V6,V7,V9".split(",")
-q["6"]= "V240,V242,V8,V4,V24,V113,V81,V6,V7,V9".split(",")
+q["3"]= "V214,V216,V8,V4,V27,V141,V41,V6,V7,V9,V11,V10,V64,V65,V66,V125,V146,V148,V177".split(",")
+q["4"]= "V223,V225,V8,V4,V25,V152,V36,V6,V7,V9,V12,V11,V80,V81,V82,V141,V157,V159,V182".split(",")
+q["5"]= "V235,V237,V8,V4,V23,V136,V104,V6,V7,V9,V11,V10,V68,V22,V46,V116,V142,V144,V184".split(",")
+q["6"]= "V240,V242,V8,V4,V24,V113,V81,V6,V7,V9,V11,V10,V59,V23,V55,V96,V120,V123,V143".split(",")
 
+dimensions = len(q["3"])
 q_i = {}
 q_i["3"] = []
 q_i["4"] = []
@@ -30,7 +51,7 @@ interview_numbers = {}
 waves = "3456"
 
 for i in waves:
-    with open("DATA/WV"+i+".sts","r") as f:
+    with open("DATA/WV"+i+".sts","r", encoding="utf-8") as f:
         questions = {}
         all_lines = f.readlines()[8:]
         ii = 0
@@ -93,6 +114,7 @@ for i in waves:
                 ii += 1
         country_codes_all[i] = country_codes
         questions_all[i] = questions
+        print(questions)
 
 
 
@@ -100,7 +122,19 @@ for i in waves:
 
 ##print (q_i)
 
-print(json.dumps(questions_all))
+
+
+
+
+
+#print(json.dumps(questions_all))
+with open("questions.sofartxt", "w") as questOut:
+    questOut.write(json.dumps(questions_all))
+
+
+
+
+
 
 #for key in questions_all:
 #    one_round = questions_all[key]
@@ -154,8 +188,11 @@ for wave in waves:
             
 
             for ii in range(dimensions):
-                if parts[q_i[wave][ii][1]] != '':
-                    person[int(ii)+3] = int(float( parts[ q_i[wave][ii][1]]))
+                try:
+                    if parts[q_i[wave][ii][1]] != '':
+                        person[int(ii)+3] = int(float( parts[ q_i[wave][ii][1]]))
+                except Exception:
+                    print("bork" , wave)
             
             if person[3] == 1:
                 person[3] = 'Male'
@@ -173,12 +210,14 @@ for wave in waves:
 
             countries[parts[0]].append( person)
              
-       
-       
+
 countries[wave].sort(key=lambda x : x[1]) 
-for wave in "3456":
-    if wave in countries:
-        for row in countries[wave]:
-            for e in row:
-                print(e, end =";")
-            print()
+with open("newdata.sofartxt", "w") as datOut:
+    datOut.write("Wave,Id,Country,Sex,Age,Work,Family,Trust,Police,Environment,Leisure,Politics,Religion,")
+    datOut.write("(sr sf)Happiness,(sr sf)Household economy,(sr sf)Life,Freedom Control and choice,Income Equality,Confidence major companies,Confidence women movement,Contemplating meaning of life,")
+    for wave in waves:
+        if wave in countries:
+            for row in countries[wave]:
+                datOut.write(",".join([str(p) for p in row]) + ",\n")
+                #for e in row:
+                    #print(e, end =";")
