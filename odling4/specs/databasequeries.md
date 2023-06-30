@@ -1,6 +1,6 @@
 # APIer
 
-![Historisk vy](./vis.png)
+![Historisk vy](./vis.PNG)
 
 Denna vy drivs i dagsläget från en enkel csv-fil med följande headers och data 
 
