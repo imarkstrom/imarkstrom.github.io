@@ -28,6 +28,17 @@ Headers sätter date motsvarande leveransdagen, och sedan följer samtliga gröd
 Enklast vore ett end-point API som jag kan slå via exempelvis "addr/historcal.csv" eller "addr/historical.json" och få ut ovan angivna datapunkter.
 
 
+## Skissade Queries
+
+``` 
+select 
+  date, 
+  company_name, 
+  crop_name,  
+  order_volume 
+from 
+  Table1 x Table2 x ... x TableN;
+```
 
 # Hallarna
 ![Översiktsvyn](./hall.PNG)
@@ -64,7 +75,7 @@ Samma sak här. Första raden specar företag och färg, följt av varje rad und
 /lanes.csv:
 __________________________________________________
 1    "lane","company","crop","amount","planted","harvestdate", "qrlink"
-2    "0","Coop","Basilika","21","2023-01-01", "id-to-qrcode"
+2    "0","Coop","Basilika","21","2023-01-01", "2023-01-20", "id-to-qrcode"
 3    "0","Ej Beställt","Basilika","23","2023-01-01","2023-01-25", "id-to-qrcode"
 4    "0","McDonalds","Basilika","23","2023-01-01","2023-01-25", "id-to-qrcode"
 5    "0","Empty","Empty","40","2023-01-04","2023-01-29", "id-to-qrcode"
@@ -88,3 +99,24 @@ __________________________________________________
 
  Fältet "id-to-qrcode" är antingen en url eller id som kan användas för att konstruera en korrekt url att hämta bild på qr-koden med.
 
+
+## Skissade Queries
+```
+select 
+  company_name,
+  company_color,
+from
+  Companies;
+
+
+select
+  lane_idx,
+  company_name,
+  crop_name,
+  order_volume,
+  planted_date,
+  harvest_date,
+  qrcode_link
+from
+  Table1 x Table2 x ... x TableN;
+```
