@@ -1,0 +1,231 @@
+body{
+  /* background-color: #1a1c1c; */
+  background-attachment:fixed;
+  width:100%;
+  background:url('../images/banner5.jpg');
+  background-color: #000000;
+  background-repeat:no-repeat;
+  background-position: fixed;
+  background-size: 100%;
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  text-align: center;
+}
+
+h1{
+  margin-top: 40px;
+  font-weight:lighter;
+  letter-spacing:2px;
+  color:#dddddd;
+  padding-bottom: 20px;
+}
+
+h2{
+  margin-top: 40px;
+  font-weight:lighter;
+  letter-spacing:2px;
+  color:#dddddd;
+  padding-bottom: 20px;
+}
+
+h3{
+  margin-top: 40px;
+  font-weight:lighter;
+  letter-spacing:2px;
+  color:#dddddd;
+  padding-bottom: 20px;
+}
+
+p{
+  /* letter-spacing: 3px; */
+  color:#dddddd;
+  font-weight:lighter;
+  padding-bottom: 10px;
+  font-size: 14px;
+
+}
+
+#instruments p{
+    text-align: justify;
+}
+
+a{
+	letter-spacing: 3px;
+	color:#dddddd;
+	font-weight:lighter;
+	padding-bottom: 10px;
+  /* font-size: 20px; */
+	text-decoration: underline;
+	font-style: italic;
+}
+#nav{
+  z-index: 1030;
+  width: 100%;
+  float: left;
+  margin: 0 0 3em 0;
+  padding: 0;
+  list-style: none;
+  position:fixed;
+  position: left top;
+}
+#nav li {
+  float: left;
+  margin:0 auto;
+  /* font-size: 15px; */
+}
+#nav li a {
+  display: block;
+  float:left;
+  padding: 4px 10px;
+  text-decoration: none;
+  color: #dddddd;
+}
+#nav li p{
+  color:#dddddd;
+}
+
+.infoboxcontent{
+  max-width: 700px;
+  margin: auto;
+  letter-spacing: 3px;
+  padding-bottom: 3vw;
+  padding-top: 3vw;
+}
+
+.findus{
+
+}
+
+.headerInfo{
+
+}
+
+#titleImageDiv{
+  padding-top: 15vw;
+  padding-bottom: 15vw;
+  margin: auto;
+}
+
+#titleImage{
+  width: 30vw;
+}
+
+#pageContainer{
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-bottom: 5vw;
+  max-width: 900px;
+  margin:auto;
+  background-color:#1a1c1c;
+  box-shadow: 0px 0px 120px 40px #000000;
+}
+
+.showolddivbutton {
+  padding: 0.5vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.5vw;
+  margin-bottom: 0.5vw;
+  border-size: 2px;
+  border-style: solid;
+  border-color: #d0d0d0;
+  color: #d0d0d0;
+  max-width: 200px;
+}
+
+.showolddivbutton:hover{
+  background-color: #606060;
+}
+
+#medeltidsveckan2018trs:hover{
+  background-color: #606060;
+}
+
+
+
+.menurow{
+    padding-top:50px;
+    padding-bottom:50px;
+}
+
+#bandmembers {
+    padding-bottom: 100px;
+}
+#instruments {
+    padding-bottom: 100px;
+}
+#tours{
+    padding-bottom: 100px;
+}
+
+.bandmember{
+    max-width: 500px;
+    margin: auto;
+}
+
+.bandmember p{
+    text-align: justify;
+    text-align-last: center;
+}
+
+.bandmemberphoto{
+    max-width: 200px;
+}
+
+.menuitem{
+    color: #d0d0d0;
+}
+
+.menuitem:hover{
+    background-color: #606060;
+}
+
+.content {
+
+}
+
+.contact{
+
+}
+
+#contact li{
+	float:left;
+
+}
+
+.findusbox {
+  padding-top:30px;
+}
+
+.findusimage {
+  max-width: 80px;
+}
+
+table {
+  table-layout: fixed;
+  word-wrap: break-space;
+}
+
+.table td {
+  border: none;
+}
+
+.table th {
+  color:#dddddd;
+}
+
+#contact li a {
+	display: block;
+	padding: 8px 15px;
+	text-decoration: none;
+	font-weight: bold;
+	float:left;
+}
+
+#contact img{
+	overflow:auto;
+}
+
+.footer{
+  padding-top: 5vw;
+  font-size: 10px;
+}
